@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/master/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/security/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -28,7 +29,8 @@ export const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AppRoutingModule
   ],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]
