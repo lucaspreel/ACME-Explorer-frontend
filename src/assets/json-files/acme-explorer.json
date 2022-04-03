@@ -1,5 +1,15 @@
 {
     "actors": [
-        
+        {
+          "name":"Tatum Larse",
+          "surname":"Travis",
+          "email":"Tatum.larse@mail.com",
+          "password":"tatum.larsen",
+          "phone":"+1 (557)142-7035",
+          "address":"Ut suscipit beatae e",
+          "role":"EXPLORER",
+          "validate":"true",
+          "id":2
+        }
     ]
 }

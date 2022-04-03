@@ -2,19 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
-import { TranslateService } from '@ngx-translate/core';
-import { TranslatableComponent } from '../../shared/translatable/translatable.component';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent extends TranslatableComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private translateService: TranslateService) {
-    super(translateService);
-  }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }

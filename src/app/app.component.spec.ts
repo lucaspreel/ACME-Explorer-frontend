@@ -29,3 +29,7 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to acme-explorer-frontend!');
   });
 });
+function beforeEach(arg0: any) {
+  throw new Error('Function not implemented.');
+}
+
