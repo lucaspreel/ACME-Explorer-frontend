@@ -15,32 +15,45 @@ const httpOptions = {
 })
 export class AuthService {
 
-  constructor(private fireAuth: AngularFireAuth, 
-    private http: HttpClient) { }
+  constructor(private fireAuth: AngularFireAuth , private http: HttpClient) { }
 
     login(email: string, password: string) {
+      // tslint:disable-next-line:no-shadowed-variable
       return new Promise<any>((resolve, reject) => {
         this.fireAuth.auth.signInWithEmailAndPassword(email, password)
         .then(res => {
-          resolve(res)
+          resolve(res);
         }).catch(error => {
-          reject(error)
-        })
-      })
+          reject(error);
+        });
+      });
     }
 
     logout() {
+      // tslint:disable-next-line:no-shadowed-variable
       return new Promise<any>((resolve, reject) => {
         this.fireAuth.auth.signOut()
         .then(res => {
-          resolve(res)
+          resolve(res);
         }).catch(error => {
-          reject(error)
-        })
-      })
+          reject(error);
+        });
+      });
     }
 
     getRoles(): string[] {
       return ['EXPLORER', 'MANAGER', 'ADMINISTRATOR'];
+    }
+
+    registerUser(email: string, password: string) {
+      // tslint:disable-next-line:no-shadowed-variable
+      return new Promise<any>((resolve, reject) => {
+        this.fireAuth.auth.createUserWithEmailAndPassword(email, password)
+        .then(res => {
+          resolve(res);
+        }).catch(error => {
+          reject(error);
+        });
+      });
     }
 }
