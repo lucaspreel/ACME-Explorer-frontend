@@ -1,0 +1,25 @@
+{
+    "actor": {
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "name": "Nombre",
+        "surname": "Apellido",
+        "phone": "Teléfono",
+        "address": "Dirección",
+        "role": "Rol",
+        "register": "Registrar",
+        "update": "Actualizar",
+        "register.title": "Registro de actor",
+        "placeholder.email": "Introduzca su email",
+        "placeholder.password": "Introduzca su contraseña"
+    },
+    "header": {
+        "search": "Busqueda",
+        "placeholder.search": "Introduzca busqueda"
+    },
+    "security": {
+        "login": "Entrar",
+        "logout": "Salir",
+        "register": "Registrarse"
+    }
+}
