@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/security/login/login.component";
-//import { RegisterComponent } from "./components/security/register/register.component";
+import { RegisterComponent } from "./components/security/register/register.component";
 
 const appRoutes: Routes = [
-  {path: 'login', component: LoginComponent}
-  //,{path: 'register', component: RegisterComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ]
 
 @NgModule({

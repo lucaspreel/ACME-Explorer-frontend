@@ -45,12 +45,19 @@ export class AuthService {
       return ['EXPLORER', 'MANAGER', 'ADMINISTRATOR'];
     }
 
-    registerUser(email: string, password: string) {
+    registerUser(actor: Actor) {
       // tslint:disable-next-line:no-shadowed-variable
       return new Promise<any>((resolve, reject) => {
-        this.fireAuth.auth.createUserWithEmailAndPassword(email, password)
-        .then(res => {
-          resolve(res);
+        this.fireAuth.auth.createUserWithEmailAndPassword(actor.email, actor.password)
+        .then(_ => {
+          const url = `${environment.json_server_baseURL + '/actors'}`;
+          const body = JSON.stringify(actor);
+          this.http.post(url, body, httpOptions).toPromise()
+          .then(res => {
+            resolve(res);
+          }, err => {
+            reject(err);
+          });
         }).catch(error => {
           reject(error);
         });

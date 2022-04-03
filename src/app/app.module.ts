@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth'
 import { HeaderComponent } from './components/master/header/header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/security/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemDisplayComponent } from './components/item/item-display/item-display.component';
 import { RegisterComponent } from './components/security/register/register.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDEyDXvLfEu1B59iAHLvgvWluRYpZRBi3I",
@@ -20,7 +22,9 @@ const firebaseConfig = {
   appId: "1:458761220785:web:964c4613315178cce7a890"
 };
 
-
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -36,6 +40,13 @@ const firebaseConfig = {
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateHttpLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }) ,
     AppRoutingModule
   ],
   providers: [AngularFireAuth],

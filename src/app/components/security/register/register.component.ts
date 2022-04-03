@@ -32,13 +32,11 @@ export class RegisterComponent  {
         address: [''],
         role: [''],
         validated: ['true']
-
       });
     }
 
     onRegister() {
-      this.authService.registerUser(this.registrationForm.value.email,
-        this.registrationForm.value.password)
+      this.authService.registerUser(this.registrationForm.value)
       .then(res => {
         console.log(res);
       }, err => {
