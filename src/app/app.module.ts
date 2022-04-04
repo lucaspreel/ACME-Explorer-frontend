@@ -15,13 +15,13 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslatableComponent } from './components/shared/translatable/translatable.component';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDEyDXvLfEu1B59iAHLvgvWluRYpZRBi3I",
-  authDomain: "acme-explorer-ad626.firebaseapp.com",
-  projectId: "acme-explorer-ad626",
-  storageBucket: "acme-explorer-ad626.appspot.com",
-  messagingSenderId: "458761220785",
-  appId: "1:458761220785:web:964c4613315178cce7a890"
+  apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
+  authDomain: "acme-explorer-frontend-71af9.firebaseapp.com",
+  projectId: "acme-explorer-frontend-71af9",
+  storageBucket: "acme-explorer-frontend-71af9.appspot.com",
+  messagingSenderId: "612655358968"
 };
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
