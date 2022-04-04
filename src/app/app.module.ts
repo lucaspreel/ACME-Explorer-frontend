@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ItemDisplayComponent } from './components/item/item-display/item-display.component';
 import { RegisterComponent } from './components/security/register/register.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslatableComponent } from './components/shared/translatable/translatable.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDEyDXvLfEu1B59iAHLvgvWluRYpZRBi3I",
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     LoginComponent,
     ItemDisplayComponent,
-    RegisterComponent
+    RegisterComponent,
+    TranslatableComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +44,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AngularFireModule.initializeApp(firebaseConfig),
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateHttpLoader,
+        provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+        deps : [HttpClient]
       }
-    }) ,
+    }),
     AppRoutingModule
   ],
   providers: [AngularFireAuth],
