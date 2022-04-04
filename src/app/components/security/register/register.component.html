@@ -2,7 +2,7 @@
   <fieldset>
     <legend>Registrar new actor</legend>
     <div class="form-group has-danger">
-      <label for="role" class="form-control-label">Role:</label>
+      <label for="role" class="form-control-label">{{'actor.role' | translate}}</label>
       <select id="role" class="form-control">
         <option *ngFor="let role of roleList" [value]="role">
           {{role}}
@@ -11,48 +11,48 @@
     </div>
 
     <div>
-      <label for="name" class="form-control-label">Name:</label>
+      <label for="name" class="form-control-label">{{'actor.name' | translate}}</label>
       <input id="name " type="text" formControlName="name" class="form-control">
     </div>
 
 
     <div class="form-group has-danger">
-      <label for="surname" class="form-control-label">Surname:</label>
+      <label for="surname" class="form-control-label">{{'actor.surname' | translate}}</label>
       <input id="surname" type="text" formControlName="surname" class="form-control">
     </div>
 
     <div class="form-group has-danger">
-      <label for="phone" class="form-control-label">Phone:</label>
+      <label for="phone" class="form-control-label">{{'actor.phone' | translate}}</label>
       <input id="phone" type="text" formControlName="phone" class="form-control">
     </div>
 
 
 
     <div class="form-group has-danger">
-      <label for="address" class="form-control-label">Address:</label>
+      <label for="address" class="form-control-label">{{'actor.address' | translate}}</label>
       <input id="address" type="text" formControlName="address" class="form-control">
     </div>
 
 
     <div class="form-group has-danger">
-      <label for="email" class="form-control-label">Email:</label>
+      <label for="email" class="form-control-label">{{'actor.email' | translate}}</label>
       <input id="email" type="text" formControlName="email" class="form-control">
     </div>
 
     <div class="form-group has-danger">
-      <label for="password" class="form-control-label">Password:</label>
+      <label for="password" class="form-control-label">{{'actor.password' | translate}}</label>
       <input id="password" type="password" formControlName="password" class="form-control">
     </div>
 
     <button type="submit" class="btn btn-primary">
-      Register
+      {{'security.register' | translate}}
     </button>
   </fieldset>
 </form>
 
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
-    <p>Already registered?<a href="/login"> Click here</a></p>
+    <p>{{'registerMessages.alreadyRegistered' | translate}}<a href="/login"> {{'registerMessages.click' | translate}}</a></p>
   </div>
 
 </div>

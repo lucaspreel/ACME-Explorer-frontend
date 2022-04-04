@@ -21,5 +21,9 @@
         "login": "Entrar",
         "logout": "Salir",
         "register": "Registrarse"
+    },
+    "registerMessages": {
+        "alreadyRegistered": "¿Ya está registrado?",
+        "click": "Haga clic aquí"
     }
 }
