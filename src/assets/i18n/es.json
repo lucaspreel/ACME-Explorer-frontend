@@ -60,5 +60,13 @@
     },
     "sponsorships": {
         "list": "Mis sponsorships"
+    },
+    "denied-access-page": {
+        "title": "Acceso denegado",
+        "message": "No tiene permiso para acceder a este url"
+    },
+    "not-found-page": {
+        "title": "Not found",
+        "message": "No hemos encontrado la url que busca."
     }
 }

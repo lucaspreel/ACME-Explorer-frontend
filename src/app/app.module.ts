@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslatableComponent } from './components/shared/translatable/translatable.component';
 import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
+import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterComponent,
     TranslatableComponent,
     TripListComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    DeniedAccesPageComponent
   ],
   imports: [
     BrowserModule,
