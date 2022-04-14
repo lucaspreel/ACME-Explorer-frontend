@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemDisplayComponent } from './item-display.component';
+import { DeniedAccesPageComponent } from './denied-acces-page.component';
 
-describe('ItemDisplayComponent', () => {
-  let component: ItemDisplayComponent;
-  let fixture: ComponentFixture<ItemDisplayComponent>;
+describe('DeniedAccesPageComponent', () => {
+  let component: DeniedAccesPageComponent;
+  let fixture: ComponentFixture<DeniedAccesPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemDisplayComponent ]
+      declarations: [ DeniedAccesPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemDisplayComponent);
+    fixture = TestBed.createComponent(DeniedAccesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

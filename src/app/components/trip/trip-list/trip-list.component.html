@@ -1,0 +1,24 @@
+<table class="table table-hover">
+  <thead>
+      <tr>
+          <th scope="col">{{'trips.attributes.ticker' | translate}}</th>
+          <th scope="col">{{'trips.attributes.title' | translate}}</th>
+          <th scope="col">{{'trips.attributes.description' | translate}}</th>
+          <th scope="col">{{'trips.attributes.picture' | translate}}</th>
+          <th scope="col">{{'trips.attributes.startDate' | translate}}</th>
+          <th scope="col">{{'trips.attributes.endDate' | translate}}</th>
+          <th scope="col">{{'trips.attributes.price' | translate}}</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let trip of trips; let i = index">
+      <tr *ngIf="!trip.cancelled">
+          <td>{{trip.ticker}}</td>
+          <td>{{trip.title}}</td>
+          <td>{{trip.description}}</td>
+          <td><img src="{{trip.picture}}" alt = "" class="card-img-top img-fluid"></td>
+          <td>{{trip.startDate}}</td>
+          <td>{{trip.endDate}}</td>   
+          <td>{{trip.price}}</td> 
+      </tr>
+  </tbody>
+</table>
