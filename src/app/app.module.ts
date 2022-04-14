@@ -8,11 +8,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/security/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ItemDisplayComponent } from './components/item/item-display/item-display.component';
 import { RegisterComponent } from './components/security/register/register.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslatableComponent } from './components/shared/translatable/translatable.component';
+import { TripListComponent } from './components/trip/trip-list/trip-list.component';
+import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -32,9 +33,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    ItemDisplayComponent,
     RegisterComponent,
-    TranslatableComponent
+    TranslatableComponent,
+    TripListComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     AppRoutingModule
   ],
+  exports: [AppRoutingModule],
   providers: [AngularFireAuth],
   bootstrap: [AppComponent]
 })

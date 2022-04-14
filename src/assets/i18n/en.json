@@ -11,7 +11,11 @@
         "update": "Update",
         "register.title": "Register new actor",
         "placeholder.email": "Enter email",
-        "placeholder.password": "Enter password"
+        "placeholder.password": "Enter password",
+        "profile": {
+            "title": "Profile",
+            "edit": "Edit profile"
+        }
     },
     "header": {
         "search": "Search",
@@ -25,5 +29,36 @@
     "registerMessages": {
         "alreadyRegistered": "Already registered ?",
         "click": "Click here"
+    },
+    "trips": {
+        "title": "Trips",
+        "list": "List trips",
+        "manager": {
+            "create": "Create new trip",
+            "list": "My trips"
+        },
+        "attributes": {
+            "ticker": "Ticker",
+            "picture": "Picture",
+            "title": "Title",
+            "description": "Description",
+            "price": "Price",
+            "startDate" : "Start",
+            "endDate": "End"
+        }
+    },
+    "applications": {
+        "list": "My applications",
+        "manage": "Manage applications"
+    },
+    "administrator": {
+        "title": "Administration",
+        "dashboard": "Display dashboard",
+        "user": {
+            "list": "List users"
+        }
+    },
+    "sponsorships": {
+        "list": "My sponsorships"
     }
 }

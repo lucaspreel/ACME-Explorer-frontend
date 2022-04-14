@@ -11,7 +11,11 @@
         "update": "Actualizar",
         "register.title": "Registro de actor",
         "placeholder.email": "Introduzca su email",
-        "placeholder.password": "Introduzca su contraseña"
+        "placeholder.password": "Introduzca su contraseña",
+        "profile": {
+            "title": "Perfil",
+            "edit": "Editar perfil"
+        }
     },
     "header": {
         "search": "Busqueda",
@@ -25,5 +29,36 @@
     "registerMessages": {
         "alreadyRegistered": "¿Ya está registrado?",
         "click": "Haga clic aquí"
+    },
+    "trips": {
+        "title": "Viajes",
+        "list": "Listar viajes",
+        "manager": {
+            "create": "Crear nuevo viaje",
+            "list": "Mis viajes"
+        },
+        "attributes": {
+            "ticker": "Ticker",
+            "picture": "Foto",
+            "title": "Título",
+            "description": "Descripción",
+            "price": "Precio",
+            "startDate" : "Inicio",
+            "endDate": "Fin"
+        }
+    },
+    "applications": {
+        "list": "Mis solicitudes",
+        "manage": "Gestionar solicitudes"
+    },
+    "administrator": {
+        "title": "Administración",
+        "dashboard": "Mostrar dashboard",
+        "user": {
+            "list": "Listar los usarios"
+        }
+    },
+    "sponsorships": {
+        "list": "Mis sponsorships"
     }
 }
