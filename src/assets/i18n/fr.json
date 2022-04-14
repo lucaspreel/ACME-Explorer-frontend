@@ -1,0 +1,72 @@
+{
+    "actor": {
+        "email": "Email",
+        "password": "Mot de passe",
+        "name": "Prenom",
+        "surname": "Nom",
+        "phone": "Téléphone",
+        "address": "Adresse",
+        "role": "Rôle",
+        "register": "S'inscrire",
+        "update": "Mettre à jour",
+        "register.title": "Inscription d'un acteur",
+        "placeholder.email": "Entrez votre email",
+        "placeholder.password": "Entrez votre mot de passe",
+        "profile": {
+            "title": "Profil",
+            "edit": "Editer profil"
+        }
+    },
+    "header": {
+        "search": "Chercher",
+        "placeholder.search": "Entrez votre recherche"
+    },
+    "security": {
+        "login": "Connexion",
+        "logout": "Déconnexion",
+        "register": "S'inscrire"
+    },
+    "registerMessages": {
+        "alreadyRegistered": "Déjà inscrit ?",
+        "click": "Cliquez ici"
+    },
+    "trips": {
+        "title": "Voyages",
+        "list": "Lister les voyages",
+        "manager": {
+            "create": "Créer un nouveau voyage",
+            "list": "Mes voyages"
+        },
+        "attributes": {
+            "ticker": "Ticker",
+            "picture": "Photo",
+            "title": "Titre",
+            "description": "Description",
+            "price": "Prix",
+            "startDate" : "Début",
+            "endDate": "Fin"
+        }
+    },
+    "applications": {
+        "list": "Mes demandes d'inscription",
+        "manage": "Gérer les demandes d'inscription"
+    },
+    "administrator": {
+        "title": "Administration",
+        "dashboard": "Afficher le dashboard",
+        "user": {
+            "list": "Lister les utilisateurs"
+        }
+    },
+    "sponsorships": {
+        "list": "Mes sponsorships"
+    },
+    "denied-access-page": {
+        "title": "Accès refusé",
+        "message": "Vous n'avez pas la permission d'accéder à cette url."
+    },
+    "not-found-page": {
+        "title": "Non trouvé",
+        "message": "Nous n'avons pas trouvé l'url que vous recherchez."
+    }
+}
