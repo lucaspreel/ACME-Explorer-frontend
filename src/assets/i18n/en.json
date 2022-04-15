@@ -68,5 +68,15 @@
     "not-found-page": {
         "title": "Not found",
         "message": "We did not find the url you're looking for."
+    },
+    "messages": {
+        "auth.registration.correct": "The user has been correctly registered",
+        "auth.logout.correct": "The user has been correctly logged out",
+        "auth.login.correct": "The user has been correctly logged in"
+    },
+    "errorMessages": {
+        "auth.registration.failed": "Registration failed",
+        "auth.logout.failed": "Logout failed",
+        "auth.login.failed": "Login failed"
     }
 }

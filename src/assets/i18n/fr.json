@@ -68,5 +68,15 @@
     "not-found-page": {
         "title": "Non trouvé",
         "message": "Nous n'avons pas trouvé l'url que vous recherchez."
+    },
+    "messages": {
+        "auth.registration.correct": "L'utilisateur a été enregistré avec succès",
+        "auth.logout.correct": "L'utilisateur s'est déconnecté avec succès",
+        "auth.login.correct": "L'utilisateur s'est connecté avec succès"
+    },
+    "errorMessages": {
+        "auth.registration.failed": "Erreur lors de l'inscription",
+        "auth.logout.failed": "Erreur lors de la déconnexion",
+        "auth.login.failed": "Erreur lors de la connexion"
     }
 }

@@ -15,6 +15,7 @@ import { TranslatableComponent } from './components/shared/translatable/translat
 import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
+import { MessageComponent } from './components/master/message/message.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -38,7 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslatableComponent,
     TripListComponent,
     NotFoundPageComponent,
-    DeniedAccesPageComponent
+    DeniedAccesPageComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

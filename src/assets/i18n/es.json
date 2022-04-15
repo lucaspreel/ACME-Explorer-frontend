@@ -68,5 +68,15 @@
     "not-found-page": {
         "title": "Not found",
         "message": "No hemos encontrado la url que busca."
+    },
+    "messages": {
+        "auth.registration.correct": "El usario ha sido registrado correctamente",
+        "auth.logout.correct": "El usario se ha desconectado correctamente",
+        "auth.login.correct": "El usario se ha conectado correctamente"
+    },
+    "errorMessages": {
+        "auth.registration.failed": "Fallo en el registro",
+        "auth.logout.failed": "Fallo en la desconexión",
+        "auth.login.failed": "Fallo en la conexión"
     }
 }
