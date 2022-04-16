@@ -40,7 +40,7 @@ export class AuthService {
             reject(error);
           });
         }).catch(error => {
-          this.messageService.notifyMessage('errorMessages.auth.login.failed', 'alert alert-danger');
+          this.messageService.notifyMessage('errorMessages.' + error.code.replace(/\//gi, '.').replace(/\-/gi, '.'), 'alert alert-danger');
           reject(error);
         });
       });
@@ -78,7 +78,7 @@ export class AuthService {
             reject(err);
           });
         }).catch(error => {
-          this.messageService.notifyMessage('errorMessages.auth.registration.failed', 'alert alert-danger');
+          this.messageService.notifyMessage('errorMessages.' + error.code.replace(/\//gi, '.').replace(/\-/gi, '.'), 'alert alert-danger');
           reject(error);
         });
       });

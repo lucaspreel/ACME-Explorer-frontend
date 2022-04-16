@@ -1,6 +1,6 @@
 <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
   <fieldset>
-    <legend>Registrar new actor</legend>
+    <legend>{{'actor.register.title' | translate}}</legend>
     <div class="form-group has-danger">
       <label for="role" class="form-control-label">{{'actor.role' | translate}}</label>
       <select id="role" class="form-control">

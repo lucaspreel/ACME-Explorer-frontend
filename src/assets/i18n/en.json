@@ -77,6 +77,11 @@
     "errorMessages": {
         "auth.registration.failed": "Registration failed",
         "auth.logout.failed": "Logout failed",
-        "auth.login.failed": "Login failed"
+        "auth.login.failed": "Login failed",
+        "auth.wrong.password": "The password is not valid",
+        "auth.argument.error": "Email must be a valid string",
+        "auth.invalid.email" : "Email is badly formatted",
+        "auth.weak.password": "Password should be at least 6 characters long",
+        "auth.user.not.found": "There is no user corresponding to this identifier"
     }
 }

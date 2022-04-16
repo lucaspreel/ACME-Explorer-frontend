@@ -77,6 +77,11 @@
     "errorMessages": {
         "auth.registration.failed": "Fallo en el registro",
         "auth.logout.failed": "Fallo en la desconexión",
-        "auth.login.failed": "Fallo en la conexión"
+        "auth.login.failed": "Fallo en la conexión",
+        "auth.wrong.password": "La contraseña es inválida",
+        "auth.argument.error": "El correo electrónico debe ser una cadena válida",
+        "auth.invalid.email" : "El correo eletrónico no tiene un formato correcto",
+        "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
+        "auth.user.not.found": "No existe un usario asociado a estos datos"
     }
 }

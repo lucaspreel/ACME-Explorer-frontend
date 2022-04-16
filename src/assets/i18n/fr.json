@@ -77,6 +77,11 @@
     "errorMessages": {
         "auth.registration.failed": "Erreur lors de l'inscription",
         "auth.logout.failed": "Erreur lors de la déconnexion",
-        "auth.login.failed": "Erreur lors de la connexion"
+        "auth.login.failed": "Erreur lors de la connexion",
+        "auth.wrong.password": "Mot de passe non valide",
+        "auth.argument.error": "L'email doit être une chaine de caractères valide",
+        "auth.invalid.email" : "Le format de l'adresse mail est incorrect",
+        "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
+        "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants"
     }
 }
