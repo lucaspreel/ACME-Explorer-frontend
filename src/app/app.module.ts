@@ -27,6 +27,7 @@ import { HttpModule } from '@angular/http';
 import { SponsorshipListComponent } from './components/sponsorship/sponsorship-list/sponsorship-list.component';
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
 import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -63,6 +64,7 @@ registerLocaleData(locales, 'fr');
     SponsorshipListComponent,
     SponsorshipDisplayComponent,
     SponsorshipCreateComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
