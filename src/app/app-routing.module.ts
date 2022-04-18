@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   {path: 'trips', children: [
     {path: '', component: TripListComponent}
   ]},
-  {path: 'not-found', component: NotFoundPageComponent, canActivate: [ActorRoleGuard]},
+  {path: 'not-found', component: NotFoundPageComponent},
   {path: 'denied-access', component: DeniedAccesPageComponent},
   {path: '**', redirectTo: '/not-found'}
 ]

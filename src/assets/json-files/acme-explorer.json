@@ -7,9 +7,53 @@
       "password": "123456789",
       "phone": "666333222",
       "address": "Calle imaginaria",
-      "role": "",
+      "role": "EXPLORER",
       "validated": "true",
       "id": 1
+    },
+    {
+      "name": "Explorer",
+      "surname": "Explorer",
+      "email": "explorer2@gmail.com",
+      "password": "explorer",
+      "phone": "0000000000",
+      "address": "Explorer",
+      "role": "EXPLORER",
+      "validated": "true",
+      "id": 2
+    },
+    {
+      "name": "Manager",
+      "surname": "Manager",
+      "email": "manager@gmail.com",
+      "password": "manager",
+      "phone": "0000000000",
+      "address": "Manager",
+      "role": "MANAGER",
+      "validated": "true",
+      "id": 3
+    },
+    {
+      "name": "Admin",
+      "surname": "Admin",
+      "email": "admin@gmail.com",
+      "password": "adminadmin",
+      "phone": "0000000000",
+      "address": "Admin",
+      "role": "ADMINISTRATOR",
+      "validated": "true",
+      "id": 4
+    },
+    {
+      "name": "Sponsor",
+      "surname": "Sponsor",
+      "email": "sponsor@gmail.com",
+      "password": "sponsor",
+      "phone": "0000000000",
+      "address": "Sponsor",
+      "role": "SPONSOR",
+      "validated": "true",
+      "id": 5
     }
   ]
 }

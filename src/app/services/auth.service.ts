@@ -60,7 +60,11 @@ export class AuthService {
     }
 
     getRoles(): string[] {
-      return ['EXPLORER', 'MANAGER', 'ADMINISTRATOR'];
+      return ['EXPLORER', 'MANAGER', 'ADMINISTRATOR', 'SPONSOR'];
+    }
+
+    getCurrentActor() {
+      return this.currentActor;
     }
 
     registerUser(actor: Actor) {
