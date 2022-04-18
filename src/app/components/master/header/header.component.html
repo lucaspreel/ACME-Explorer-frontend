@@ -49,9 +49,7 @@
         role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">{{'administrator.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-          <a class="dropdown-item" href="#">{{'administrator.dashboard' | translate}}</a>
-
+          <a class="dropdown-item" href="dashboard">{{'administrator.dashboard' | translate}}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">{{'administrator.user.list' | translate}}</a>
 
@@ -72,7 +70,7 @@
       <li class="nav-item active">
         <button (click)="changeLanguage('en')" class="btn-sm btn-primary mr-1 mt-2">EN</button>
         <button (click)="changeLanguage('es')" class="btn-sm btn-primary mr-1 mt-2">ES</button>
-        <button (click)="changeLanguage('fr')" class="btn-sm btn-primary mr-1 mt-2">FR</button> 
+        <button (click)="changeLanguage('fr')" class="btn-sm btn-primary mr-1 mt-2">FR</button>
       </li>
       <li class="nav-item" *ngIf="!currentActor">
         <a routerLink="/register" class="nav-link">{{'security.register' | translate}}</a>

@@ -15,11 +15,13 @@ import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship
 import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
 import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
 import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'trips', children: [
     {path: 'display/:id', component: TripDisplayComponent},
     {path: 'create', component: TripCreateComponent},
