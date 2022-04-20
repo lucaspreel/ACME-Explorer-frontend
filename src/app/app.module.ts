@@ -16,6 +16,13 @@ import { TripListComponent } from './components/trip/trip-list/trip-list.compone
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
 import { MessageComponent } from './components/master/message/message.component';
+import { FooterComponent } from './components/master/footer/footer.component';
+import { LocalizedDatePipe } from './components/shared/localized-date.pipe';
+import { LocalizedDecimalPipe } from './components/shared/localized-decimal.pipe';
+import { registerLocaleData } from '@angular/common';
+import locales from '@angular/common/locales/es';
+import { TermsAndConditionsComponent } from './components/master/terms-and-conditions/terms-and-conditions.component';
+import { HttpModule } from '@angular/http';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -30,6 +37,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
+registerLocaleData(locales, 'es');
+registerLocaleData(locales, 'fr');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +50,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     TripListComponent,
     NotFoundPageComponent,
     DeniedAccesPageComponent,
-    MessageComponent
+    MessageComponent,
+    FooterComponent,
+    LocalizedDatePipe,
+    LocalizedDecimalPipe,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +69,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps : [HttpClient]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   exports: [AppRoutingModule],
   providers: [AngularFireAuth],

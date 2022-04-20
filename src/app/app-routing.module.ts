@@ -7,6 +7,7 @@ import { TripListComponent } from './components/trip/trip-list/trip-list.compone
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { ActorRoleGuard } from './guards/actor-role.guard';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
+import { TermsAndConditionsComponent } from './components/master/terms-and-conditions/terms-and-conditions.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -15,10 +16,11 @@ const appRoutes: Routes = [
   {path: 'trips', children: [
     {path: '', component: TripListComponent}
   ]},
+  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   {path: 'not-found', component: NotFoundPageComponent},
   {path: 'denied-access', component: DeniedAccesPageComponent},
   {path: '**', redirectTo: '/not-found'}
-]
+];
 
 @NgModule({
   imports: [
