@@ -13,7 +13,7 @@ import { TranslatableComponent } from '../../shared/translatable/translatable.co
 export class HeaderComponent extends TranslatableComponent implements OnInit {
 
   private currentActor: Actor;
-  private activeRole : string;
+  private activeRole: string;
 
   constructor(private authService: AuthService,
     private translateService: TranslateService) {
@@ -33,7 +33,7 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
         this.activeRole = 'anonymous';
         this.currentActor = null;
       }
-    })
+    });
   }
 
   logout() {
@@ -43,7 +43,7 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
         this.currentActor = null;
       }).catch(error => {
         console.log(error);
-      })
+      });
   }
 
 

@@ -23,6 +23,9 @@ import { registerLocaleData } from '@angular/common';
 import locales from '@angular/common/locales/es';
 import { TermsAndConditionsComponent } from './components/master/terms-and-conditions/terms-and-conditions.component';
 import { HttpModule } from '@angular/http';
+import { SponsorshipListComponent } from './components/sponsorship/sponsorship-list/sponsorship-list.component';
+import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
+import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -54,7 +57,10 @@ registerLocaleData(locales, 'fr');
     FooterComponent,
     LocalizedDatePipe,
     LocalizedDecimalPipe,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    SponsorshipListComponent,
+    SponsorshipDisplayComponent,
+    SponsorshipCreateComponent
   ],
   imports: [
     BrowserModule,

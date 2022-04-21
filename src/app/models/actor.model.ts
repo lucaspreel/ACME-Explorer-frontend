@@ -7,7 +7,7 @@ export class Actor extends Entity {
   email: string;
   password: string;
   address: string;
-  validated :string;
+  validated: string;
   constructor() {
     super();
   }

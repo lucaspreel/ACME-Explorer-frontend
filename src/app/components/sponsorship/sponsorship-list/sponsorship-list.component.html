@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">{{'sponsorships.attributes.tripTicker' | translate}}</th>
+      <th scope="col">{{'sponsorships.attributes.banner' | translate}}</th>
+      <th scope="col">{{'sponsorships.attributes.page' | translate}}</th>
+      <th scope="col">{{'sponsorships.attributes.isPayed' | translate}}</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let sponsorship of sponsorships; let i = index">
+    <td>{{sponsorship.tripTicker}}</td>
+    <td>{{sponsorship.banner}}</td>
+    <td>{{sponsorship.page}}</td>
+    <td>{{sponsorship.isPayed}}</td>
+  </tbody>
+</table>

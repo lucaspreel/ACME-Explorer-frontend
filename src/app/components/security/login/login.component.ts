@@ -36,7 +36,7 @@ export class LoginComponent extends TranslatableComponent implements OnInit {
       this.router.navigateByUrl(this.returnUrl);
     }).catch((error) => {
       console.log(error);
-    })
+    });
   }
 
 }

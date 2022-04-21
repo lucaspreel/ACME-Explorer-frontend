@@ -1,0 +1,25 @@
+<form [formGroup]="sponsorshipForm" (ngSubmit)="onCreate()">
+  <fieldset>
+    <legend>{{'sponsorships.title' | translate}}</legend>
+
+    <div class="form-group has-danger">
+      <label for="tripTicker" class="form-control-label">{{'sponsorships.attributes.tripTicker' | translate}}</label>
+      <input id="tripTicker " type="text" formControlName="tripTicker" class="form-control">
+    </div>
+
+
+    <div class="form-group has-danger">
+      <label for="banner" class="form-control-label">{{'sponsorships.attributes.banner' | translate}}</label>
+      <input id="banner" type="text" formControlName="banner" class="form-control">
+    </div>
+
+    <div class="form-group has-danger">
+      <label for="page" class="form-control-label">{{'sponsorships.attributes.page' | translate}}</label>
+      <input id="page" type="text" formControlName="page" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      {{'sponsorships.create' | translate}}
+    </button>
+  </fieldset>
+</form>
