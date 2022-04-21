@@ -53,6 +53,19 @@
             "endDate": "Fin"
         }
     },
+    "sponsorships": {
+        "title": "Sponsorships",
+        "sponsor": {
+            "list": "Mes sponsorships",
+            "create": "Créer un nouveau sponsorship"
+        },
+        "attributes": {
+            "tripTicker": "Trip Ticker",
+            "banner": "Banner",
+            "page": "More information",
+            "isPayed": "Is payed"
+        }
+    },
     "applications": {
         "list": "Mes demandes d'inscription",
         "manage": "Gérer les demandes d'inscription"
@@ -69,10 +82,6 @@
         "applications": {
             "list": "Lister les demandes d'inscription"
         }
-    },
-    "sponsorships": {
-        "list": "Mes sponsorships",
-        "create": "Créer un nouveau sponsorship"
     },
     "denied-access-page": {
         "title": "Accès refusé",

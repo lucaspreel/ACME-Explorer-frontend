@@ -53,6 +53,19 @@
             "endDate": "Fin"
         }
     },
+    "sponsorships": {
+        "title": "Patrocinios",
+        "sponsor": {
+            "create": "Crear nuevo patrocinio",
+            "list": "Mis patrocinios"
+        },
+        "attributes": {
+            "tripTicker": "Ticker del viaje",
+            "banner": "Banner",
+            "page": "Más información",
+            "isPayed": "Está pagado"
+        }
+    },
     "applications": {
         "list": "Mis solicitudes",
         "manage": "Gestionar solicitudes"
@@ -69,10 +82,6 @@
         "applications": {
             "list": "Listar solicititudes"
         }
-    },
-    "sponsorships": {
-        "list": "Mis sponsorships",
-        "create": "Crear nuevo sponsorship"
     },
     "denied-access-page": {
         "title": "Acceso denegado",
