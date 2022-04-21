@@ -14,7 +14,7 @@
         "placeholder.password": "Introduzca su contraseña",
         "profile": {
             "title": "Perfil",
-            "edit": "Editar perfil"
+            "edit": "Ver mi perfil"
         }
     },
     "header": {
@@ -56,10 +56,17 @@
         "dashboard": "Mostrar dashboard",
         "user": {
             "list": "Listar los usarios"
+        },
+        "sponsorship": {
+            "list": "Listar sponsorships"
+        },
+        "applications": {
+            "list": "Listar solicititudes"
         }
     },
     "sponsorships": {
-        "list": "Mis sponsorships"
+        "list": "Mis sponsorships",
+        "create": "Crear nuevo sponsorship"
     },
     "denied-access-page": {
         "title": "Acceso denegado",

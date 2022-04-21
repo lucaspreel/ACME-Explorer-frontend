@@ -13,7 +13,7 @@
           {{'trips.title' | translate}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a routerLink="/trips" class="dropdown-item" href="#">{{'trips.list' | translate}}</a>
+          <a routerLink="/trips" class="dropdown-item" href="/trips">{{'trips.list' | translate}}</a>
         </div>
       </li>
       <li class="nav-item dropdown" *ngIf="currentActor">
@@ -21,21 +21,27 @@
         role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">{{'actor.profile.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
           <a class="dropdown-item" href="#">{{'actor.profile.edit' | translate}}</a>
-          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider">
-            <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.list' | translate}}</a>
-          </div>
-          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider">
-            <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.create' | translate}}</a>
-          </div>
-          <div *ngIf="activeRole === 'EXPLORER'" class="dropdown-divider">
-            <a *ngIf="activeRole === 'EXPLORER'" class="dropdown-item" href="#">{{'applications.list' | translate}}</a>
-          </div>
-          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider">
-            <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'applications.manage' | translate}}</a>
-          </div>
+
+          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.list' | translate}}</a>
+
+          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.create' | translate}}</a>
+
+          <div *ngIf="activeRole === 'EXPLORER'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'EXPLORER'" class="dropdown-item" href="#">{{'applications.list' | translate}}</a>
+
+          <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'applications.manage' | translate}}</a>
+
           <div *ngIf="activeRole === 'SPONSOR'" class="dropdown-divider"></div>
           <a *ngIf="activeRole === 'SPONSOR'" class="dropdown-item" href="#">{{'sponsorships.list' | translate}}</a>
+
+          <div *ngIf="activeRole === 'SPONSOR'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'SPONSOR'" class="dropdown-item" href="#">{{'sponsorships.create' | translate}}</a>
+
         </div>
       </li>
       <li class="nav-item dropdown" *ngIf="activeRole === 'ADMINISTRATOR'">
@@ -43,9 +49,18 @@
         role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">{{'administrator.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
           <a class="dropdown-item" href="#">{{'administrator.dashboard' | translate}}</a>
+
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">{{'administrator.user.list' | translate}}</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">{{'administrator.sponsorship.list' | translate}}</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">{{'administrator.applications.list' | translate}}</a>
+
         </div>
       </li>
     </ul>
