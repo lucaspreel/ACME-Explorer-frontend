@@ -14,7 +14,7 @@
         "placeholder.password": "Entrez votre mot de passe",
         "profile": {
             "title": "Profil",
-            "edit": "Editer profil"
+            "edit": "Consulter mon profil"
         }
     },
     "header": {
@@ -62,10 +62,17 @@
         "dashboard": "Afficher le dashboard",
         "user": {
             "list": "Lister les utilisateurs"
+        },
+        "sponsorship": {
+            "list": "Lister les sponsorships"
+        },
+        "applications": {
+            "list": "Lister les demandes d'inscription"
         }
     },
     "sponsorships": {
-        "list": "Mes sponsorships"
+        "list": "Mes sponsorships",
+        "create": "Créer un nouveau sponsorship"
     },
     "denied-access-page": {
         "title": "Accès refusé",

@@ -14,7 +14,7 @@
         "placeholder.password": "Enter password",
         "profile": {
             "title": "Profile",
-            "edit": "Edit profile"
+            "edit": "Show profile"
         }
     },
     "header": {
@@ -62,10 +62,17 @@
         "dashboard": "Display dashboard",
         "user": {
             "list": "List users"
+        },
+        "sponsorship": {
+            "list": "List sponsorship"
+        },
+        "applications": {
+            "list": "List applications"
         }
     },
     "sponsorships": {
-        "list": "My sponsorships"
+        "list": "My sponsorships",
+        "create": "Create a sponsorship"
     },
     "denied-access-page": {
         "title": "Denied access",
