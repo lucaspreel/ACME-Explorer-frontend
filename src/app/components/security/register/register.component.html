@@ -3,7 +3,7 @@
     <legend>{{'actor.register.title' | translate}}</legend>
     <div class="form-group has-danger">
       <label for="role" class="form-control-label">{{'actor.role' | translate}}</label>
-      <select id="role" class="form-control">
+      <select id="role" class="form-control" formControlName="role">
         <option *ngFor="let role of roleList" [value]="role">
           {{role}}
         </option>

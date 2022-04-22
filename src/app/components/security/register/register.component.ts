@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 
@@ -14,11 +14,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent  {
  registrationForm: FormGroup;
  roleList: string[];
+ returnUrl: string;
 
   constructor( private authService: AuthService,
-    private fb: FormBuilder) {
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private router: Router) {
       this.roleList = this.authService.getRoles();
       this.createForm();
+    }
+    
+    ngOnInit() {
+      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login'
     }
 
 
@@ -39,6 +46,7 @@ export class RegisterComponent  {
       this.authService.registerUser(this.registrationForm.value)
       .then(res => {
         console.log(res);
+        this.router.navigateByUrl(this.returnUrl);
       }, err => {
         console.log(err);
       });
