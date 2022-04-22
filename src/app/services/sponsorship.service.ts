@@ -29,4 +29,26 @@ export class SponsorshipService {
     const body = JSON.stringify(sponsorship);
     this.http.post(url, body, httpOptions).toPromise();
   }
+
+  updateSponsorship(sponsorship: Sponsorship, sponsorshipId: string): void {
+    const url = `${environment.json_server_baseURL + '/sponsorships/' + sponsorshipId}`;
+    const body = JSON.stringify(sponsorship);
+    this.http.put(url, body, httpOptions).toPromise();
+  }
+
+  removeSponsorship(sponsorship: Sponsorship, sponsorshipId: string): void {
+    const url = `${environment.json_server_baseURL + '/sponsorships/' + sponsorshipId}`;
+    const body = JSON.stringify(sponsorship);
+    this.http.patch(url, {
+      'isDeleted': true,
+    }).toPromise();
+  }
+
+  paySponsorship(sponsorship: Sponsorship, sponsorshipId: string): void {
+    const url = `${environment.json_server_baseURL + '/sponsorships/' + sponsorshipId}`;
+    const body = JSON.stringify(sponsorship);
+    this.http.patch(url, {
+      'isPayed': true,
+    }).toPromise();
+  }
 }

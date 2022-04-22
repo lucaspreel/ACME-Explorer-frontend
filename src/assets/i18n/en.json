@@ -63,10 +63,13 @@
     },
     "sponsorships": {
         "title": "Sponsorships",
+        "details": "Sponsorship details",
         "sponsor": {
             "actions": "Actions",
             "pay": "Pay sponsorship",
             "create": "Create a sponsorship",
+            "update": "Update sponsorship",
+            "remove": "Delete sponsorship",
             "list": "My sponsorships"
         },
         "attributes": {
@@ -116,5 +119,6 @@
         "auth.weak.password": "Password should be at least 6 characters long",
         "auth.user.not.found": "There is no user corresponding to this identifier",
         "no.trips.found": "There is no trip available for the moment"
-    }
+    },
+    "back": "Return"
 }

@@ -21,6 +21,14 @@ export class SponsorshipListComponent extends TranslatableComponent implements O
     });
   }
 
+  paySponsorship(pos: number) {
+    this.sponsorshipService.paySponsorship(this.sponsorships[pos], this.sponsorships[pos].id);
+  }
+
+  removeSponsorship(pos: number) {
+    this.sponsorshipService.removeSponsorship(this.sponsorships[pos], this.sponsorships[pos].id);
+  }
+
   ngOnInit() {
   }
 

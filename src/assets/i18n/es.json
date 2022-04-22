@@ -63,10 +63,13 @@
     },
     "sponsorships": {
         "title": "Patrocinios",
+        "details": "Detalles de patrocinio",
         "sponsor": {
             "actions": "Acciones",
-            "pay": "Pay sponsorship",
+            "pay": "Pagar patrocinio",
             "create": "Crear nuevo patrocinio",
+            "update": "Actualizar patrocinio",
+            "remove": "Eliminar patrocionio",
             "list": "Mis patrocinios"
         },
         "attributes": {
@@ -116,5 +119,6 @@
         "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
         "auth.user.not.found": "No existe un usario asociado a estos datos",
         "no.trips.found": "No hay viajes disponibles por el momento"
-    }
+    },
+    "back": "Volver"
 }

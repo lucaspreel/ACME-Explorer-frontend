@@ -12,6 +12,7 @@ import { TermsAndConditionsComponent } from './components/master/terms-and-condi
 import { SponsorshipListComponent } from './components/sponsorship/sponsorship-list/sponsorship-list.component';
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
 import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
+import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -23,7 +24,10 @@ const appRoutes: Routes = [
   ]},
   {path: 'sponsorships', children: [
     {path: 'create', component: SponsorshipCreateComponent},
-    {path: ':id', component: SponsorshipDisplayComponent},
+    {path: ':id', children: [
+      {path: '', component: SponsorshipDisplayComponent},
+      {path: 'edit', component: SponsorshipUpdateComponent}
+    ]},
     {path: '', component: SponsorshipListComponent}
   ]},
   {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
