@@ -1,24 +1,31 @@
-<table class="table table-hover">
-  <thead>
-      <tr>
-          <th scope="col">{{'trips.attributes.ticker' | translate}}</th>
-          <th scope="col">{{'trips.attributes.title' | translate}}</th>
-          <th scope="col">{{'trips.attributes.description' | translate}}</th>
-          <th scope="col">{{'trips.attributes.picture' | translate}}</th>
-          <th scope="col">{{'trips.attributes.startDate' | translate}}</th>
-          <th scope="col">{{'trips.attributes.endDate' | translate}}</th>
-          <th scope="col">{{'trips.attributes.price' | translate}}</th>
-      </tr>
-  </thead>
-  <tbody *ngFor="let trip of trips; let i = index">
-      <tr *ngIf="!trip.cancelled">
-          <td>{{trip.ticker}}</td>
-          <td>{{trip.title}}</td>
-          <td>{{trip.description}}</td>
-          <td><img src="{{trip.picture}}" alt = "" class="card-img-top img-fluid"></td>
-          <td>{{trip.startDate}}</td>
-          <td>{{trip.endDate}}</td>   
-          <td>{{trip.price}}</td> 
-      </tr>
-  </tbody>
-</table>
+<div class="breadcrumb">
+    <legend class="text-center">
+        {{ 'trips.title' | translate}}
+    </legend>
+</div>
+
+<div *ngIf="trips == undefined || trips.length == 0">
+    {{ 'errorMessages.no.trips.found' | translate}}
+</div>
+
+<div *ngIf="trips != undefined || trips.length > 0" class="card-deck">
+    <div *ngFor="let trip of trips" class="card mb-3">
+        <div class="card-header">
+           <h4 class="card-title"> {{trip.title}}</h4> 
+        </div>
+       <div class="card-body">
+          <div class="container-fluid text-center">
+              <img class="card-img-top img-fluid mt-3" style="object-fit: contain;"
+              src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+              <span class="badge badge-primary">{{trip.price}} € </span>
+          </div> 
+       </div>
+       <div class="card-footer">
+           <a routerLink="/trips/display/{{trip.id}}" class="btn btn-primary pull-left">
+               <span class="fa fa-search-plus" aria-hidden="true"></span>
+               {{ 'trip.details' | translate}}
+        </a>
+       </div>
+    </div>
+</div>
+

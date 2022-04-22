@@ -47,6 +47,14 @@
             "endDate": "Fin"
         }
     },
+    "trip": {
+        "details": "Détails du voyage",
+        "title": "Titre",
+        "description": "Description",
+        "startDate": "Date de début",
+        "endDate": "Date de fin",
+        "price": "Prix"
+    },
     "applications": {
         "list": "Mes demandes d'inscription",
         "manage": "Gérer les demandes d'inscription"
@@ -89,6 +97,7 @@
         "auth.argument.error": "L'email doit être une chaine de caractères valide",
         "auth.invalid.email" : "Le format de l'adresse mail est incorrect",
         "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
-        "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants"
+        "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants",
+        "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment"
     }
 }

@@ -16,6 +16,7 @@ import { TripListComponent } from './components/trip/trip-list/trip-list.compone
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
 import { MessageComponent } from './components/master/message/message.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -40,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TripListComponent,
     NotFoundPageComponent,
     DeniedAccesPageComponent,
-    MessageComponent
+    MessageComponent,
+    TripDisplayComponent
   ],
   imports: [
     BrowserModule,

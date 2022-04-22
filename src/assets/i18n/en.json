@@ -47,6 +47,14 @@
             "endDate": "End"
         }
     },
+    "trip": {
+        "details": "Trip details",
+        "title": "Title",
+        "description": "Description",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "price": "Price"
+    },
     "applications": {
         "list": "My applications",
         "manage": "Manage applications"
@@ -89,6 +97,7 @@
         "auth.argument.error": "Email must be a valid string",
         "auth.invalid.email" : "Email is badly formatted",
         "auth.weak.password": "Password should be at least 6 characters long",
-        "auth.user.not.found": "There is no user corresponding to this identifier"
+        "auth.user.not.found": "There is no user corresponding to this identifier",
+        "no.trips.found": "There is no trip available for the moment"
     }
 }

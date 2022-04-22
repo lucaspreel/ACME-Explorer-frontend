@@ -55,5 +55,40 @@
       "validated": "true",
       "id": 5
     }
+  ],
+  "trips": [
+    {
+      "id": 1,
+      "ticker": "220422-ABCD",
+      "title": "North of italia",
+      "description": "Trip to famous cities of the north of Italia : Turin, Milan, Venice and Florence",
+      "price": 1400,
+      "picture": "NorthItaly.jpg",
+      "startDate": "18/07/2022",
+      "endDate": "30/07/2022",
+      "cancelled": false
+    },
+    {
+      "id": 2,
+      "ticker": "120422-BCDE",
+      "title": "Germany",
+      "description": "Trip to the 3 biggest cities of Germany : Berlin, Hamburg and munich",
+      "price": 1100,
+      "picture": "Germany.jpg",
+      "startDate": "04/08/2022",
+      "endDate": "12/08/2022",
+      "cancelled": false
+    },
+    {
+      "id": 3,
+      "ticker": "140422-CDEF",
+      "title": "London",
+      "description": "Trip to discover the city of London",
+      "price": 750,
+      "picture": "London.jpg",
+      "startDate": "15/08/2022",
+      "endDate": "21/08/2022",
+      "cancelled": false
+    }
   ]
 }

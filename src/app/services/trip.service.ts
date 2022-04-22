@@ -1,52 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Trip } from '../models/trip.model';
+import { environment } from 'src/environments/environment';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  createTrip(): Trip[] {
-    let trip: Trip;
-    let trips: Trip[];
+  getTrip(id: string) {
+    const url = `${environment.json_server_baseURL + '/trips/' + id}`;
+    return this.http.get<Trip>(url).toPromise();
+  }
 
-    trips = new Array();
-
-    //trip 1
-    trip = new Trip();
-    trip.ticker = "ticker1";
-    trip.title = "title1";
-    trip.description = "description1";
-    trip.price = 10;
-    trip.startDate = "01/01/2023";
-    trip.endDate = "12/01/2023";
-    trip.cancelled = false;
-    trips.push(trip);
-
-    //trip 2
-    trip = new Trip();
-    trip.ticker = "ticker2";
-    trip.title = "title2";
-    trip.description = "description2";
-    trip.price = 10;
-    trip.startDate = "01/01/2023";
-    trip.endDate = "12/01/2023";
-    trip.cancelled = false;
-    trips.push(trip);
-
-    //trip 3
-    trip = new Trip();
-    trip.ticker = "ticker3";
-    trip.title = "title3";
-    trip.description = "description3";
-    trip.price = 10;
-    trip.startDate = "01/01/2023";
-    trip.endDate = "12/01/2023";
-    trip.cancelled = true;
-    trips.push(trip);
-
-    return trips;
+  getTrips() {
+    const url = `${environment.json_server_baseURL + '/trips'}`;
+    return this.http.get<Trip[]>(url).toPromise();
   }
 }
