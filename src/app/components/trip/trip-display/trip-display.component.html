@@ -1,0 +1,28 @@
+<div class="card mb-3">
+    <h3 class="card-header">{{ 'trip.details' | translate }}</h3>
+    <div class="card-body">
+        <h5 class="card-title"> {{ 'trip.title' | translate }} </h5>
+        <h6 class="card-subtitle text-muted"> {{trip.title}} </h6>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"> {{ 'trip.description' | translate }} </h5>
+        <h6 class="card-subtitle text-muted"> {{trip.description}} </h6>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"> {{ 'trip.startDate' | translate }} </h5>
+        <h6 class="card-subtitle text-muted"> {{trip.startDate}} </h6>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"> {{ 'trip.endDate' | translate }} </h5>
+        <h6 class="card-subtitle text-muted"> {{trip.endDate}} </h6>
+    </div>
+    <div class="card-body"> 
+        <h5 class="card-title"> {{ 'trip.price' | translate }} </h5>
+        <h6 class="card-subtitle text-muted"> {{trip.price}} € </h6>
+    </div>
+    <div class="card-body">
+        <img class="card-img-top img-fluid" style="width: 200px; display: block;"
+        src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+    </div>
+
+</div>

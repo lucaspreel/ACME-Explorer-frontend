@@ -16,6 +16,7 @@ import { TripListComponent } from './components/trip/trip-list/trip-list.compone
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
 import { MessageComponent } from './components/master/message/message.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 import { FooterComponent } from './components/master/footer/footer.component';
 import { LocalizedDatePipe } from './components/shared/localized-date.pipe';
 import { LocalizedDecimalPipe } from './components/shared/localized-decimal.pipe';
@@ -56,6 +57,7 @@ registerLocaleData(locales, 'fr');
     NotFoundPageComponent,
     DeniedAccesPageComponent,
     MessageComponent,
+    TripDisplayComponent,
     FooterComponent,
     LocalizedDatePipe,
     LocalizedDecimalPipe,

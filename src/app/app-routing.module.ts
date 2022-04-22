@@ -7,6 +7,7 @@ import { TripListComponent } from './components/trip/trip-list/trip-list.compone
 import { NotFoundPageComponent } from './components/shared/not-found-page/not-found-page.component';
 import { ActorRoleGuard } from './guards/actor-role.guard';
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 import { TermsAndConditionsComponent } from './components/master/terms-and-conditions/terms-and-conditions.component';
 import { SponsorshipListComponent } from './components/sponsorship/sponsorship-list/sponsorship-list.component';
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'trips', children: [
+    {path: 'display/:id', component: TripDisplayComponent},
     {path: '', component: TripListComponent}
   ]},
   {path: 'sponsorships', children: [

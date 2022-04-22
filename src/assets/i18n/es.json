@@ -53,6 +53,14 @@
             "endDate": "Fin"
         }
     },
+    "trip": {
+        "details": "Detalles del viaje",
+        "title": "Título",
+        "description": "Descripción",
+        "startDate": "Fecha de inicio",
+        "endDate": "Fecha de fin",
+        "price": "Precio"
+    },
     "sponsorships": {
         "title": "Patrocinios",
         "details": "Detalles de patrocinio",
@@ -109,7 +117,8 @@
         "auth.argument.error": "El correo electrónico debe ser una cadena válida",
         "auth.invalid.email" : "El correo eletrónico no tiene un formato correcto",
         "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
-        "auth.user.not.found": "No existe un usario asociado a estos datos"
+        "auth.user.not.found": "No existe un usario asociado a estos datos",
+        "no.trips.found": "No hay viajes disponibles por el momento"
     },
     "back": "Volver"
 }
