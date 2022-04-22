@@ -1,75 +1,157 @@
 <h1>Dashboard</h1>
-<!-- Promedio de Precios -->
-<div class="container">
-  <h2>Promedio de Precios</h2>
-  <ul>
-    <li>Minimo : 21</li>
-    <li>Máximo : 85</li>
-  </ul>
-</div>
-<!-- Top 10 palabaras mas buscadas -->
-<div class="container">
-  <h2>Top 10 palabaras mas buscadas</h2>
-  <div class="row" >
+<!-- Promedio de Precios de los fidners-->
+<div class="accordion" id="accordionPricesFinder">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
 
-   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <ol>
-      <li>Julio</li>
-      <li>Carmen</li>
-      <li>Ignacio</li>
-      <li>Elena</li>
-      <li>Elena</li>
-    </ol>
-   </div>
-   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <ol start="6">
-      <li>Julio</li>
-      <li>Carmen</li>
-      <li>Ignacio</li>
-      <li>Ignacio</li>
-      <li>Elena</li>
-    </ol>
-   </div>
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePriceFinder"
+        aria-expanded="true" aria-controls="collapsePriceFinder">
+        <h4>Promedio rango de precio de las busquedas</h4>
+      </button>
+
+    </div>
+    <div id="collapsePriceFinder" class="collapse show" aria-labelledby="headingOne"
+      data-parent="#accordionPricesFinder">
+      <div class="card-body">
+
+        <ul>
+          <li>Minimo : {{finderStats.min}}</li>
+          <li>Máximo : {{finderStats.max}}</li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 </div>
+<!-- Top 10 palabaras mas buscadas -->
+<div class="accordion" id="accordionTop10">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
+
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTop10"
+        aria-expanded="true" aria-controls="collapseTop10">
+        <h4>Top 10 elementos mas buscados</h4>
+      </button>
+
+    </div>
+    <div id="collapseTop10" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTop10">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <ol>
+              <li *ngFor="let item of finderStats.top_10 | slice: 0:5" style="max-width: 20rem;">
+                {{item}}
+              </li>
+            </ol>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <ol start="6">
+              <li *ngFor="let item of finderStats.top_10 | slice: 5" style="max-width: 20rem;">
+                {{item}}
+              </li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!--Viajes por administrador-->
-<div class="container">
-  <h2>Viajes por administrador</h2>
-  <ul>
-    <li>Promedio : 21</li>
-    <li>Máximo : 85</li>
-    <li>Minimo : 8</li>
-    <li>Desviación : 85</li>
-  </ul>
+<div class="accordion" id="accordionTripsAdmin">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
+
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTripsAdmin"
+        aria-expanded="true" aria-controls="collapseTripsAdmin">
+        <h4>Viajes por administrador</h4>
+      </button>
+
+    </div>
+    <div id="collapseTripsAdmin" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTripsAdmin">
+      <div class="card-body">
+        <ul>
+          <li>Promedio : {{dashboardStats.trip_admin.avg}}</li>
+          <li>Máximo : {{dashboardStats.trip_admin.max}}</li>
+          <li>Minimo : {{dashboardStats.trip_admin.min}}</li>
+          <li>Desviación : {{dashboardStats.trip_admin.dev}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 <!--Aplicacion por viajes-->
-<div class="container">
-  <h2>Aplicacion por viajes</h2>
-  <ul>
-    <li>Promedio : 21</li>
-    <li>Máximo : 85</li>
-    <li>Minimo : 8</li>
-    <li>Desviación : 85</li>
-  </ul>
+<div class="accordion" id="accordionAppTrip">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
+
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppTrip"
+        aria-expanded="true" aria-controls="collapseAppTrip">
+        <h4>Applicacion por viajes</h4>
+      </button>
+
+    </div>
+    <div id="collapseAppTrip" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAppTrip">
+      <div class="card-body">
+        <ul>
+          <li>Promedio : {{dashboardStats.app_price.avg}}</li>
+          <li>Máximo : {{dashboardStats.app_price.max}}</li>
+          <li>Minimo : {{dashboardStats.app_price.min}}</li>
+          <li>Desviación : {{dashboardStats.app_price.dev}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 <!--Estadistica de los Precios-->
-<div class="container">
-  <h2>Estadistica de los Precios</h2>
-  <ul>
-    <li>Promedio : 21</li>
-    <li>Máximo : 85</li>
-    <li>Minimo : 8</li>
-    <li>Desviación : 85</li>
-  </ul>
+<div class="accordion" id="accordionPriceStats">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
+
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePriceStats"
+        aria-expanded="true" aria-controls="collapsePriceStats">
+        <h4>Estadistica de los Precios</h4>
+      </button>
+
+    </div>
+    <div id="collapsePriceStats" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionPriceStats">
+      <div class="card-body">
+        <ul>
+          <li>Promedio : {{dashboardStats.price_stats.avg}}</li>
+          <li>Máximo : {{dashboardStats.price_stats.max}}</li>
+          <li>Minimo : {{dashboardStats.price_stats.min}}</li>
+          <li>Desviación : {{dashboardStats.price_stats.dev}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 <!--Porciento aplicación por estado-->
-<div class="container">
-  <h2>Porciento aplicación por estado</h2>
-  <ul>
-    <li>Pending : 21 %</li>
-    <li>Accepted: 85 %</li>
-    <li>Due: 8 %</li>
-    <li>Rejected: 85 %</li>
-  </ul>
+<div class="accordion" id="accordionAppStatus">
+  <div class="card" style="max-width: 50rem;">
+    <div class="card-header">
+
+      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppStatus"
+        aria-expanded="true" aria-controls="collapseAppStatus">
+        <h4>Porciento aplicación por estado</h4>
+      </button>
+
+    </div>
+    <div id="collapseAppStatus" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAppStatus">
+      <div class="card-body">
+        <ul>
+          <li>Pending : {{dashboardStats.app_by_status.pending}} %</li>
+          <li>Accepted: {{dashboardStats.app_by_status.accepted}} %</li>
+          <li>Due: {{dashboardStats.app_by_status.due}} %</li>
+          <li>Rejected: {{dashboardStats.app_by_status.rejected}} %</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>

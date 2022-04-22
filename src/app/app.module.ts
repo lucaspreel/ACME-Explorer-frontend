@@ -63,7 +63,7 @@ registerLocaleData(locales, 'fr');
     TermsAndConditionsComponent,
     SponsorshipListComponent,
     SponsorshipDisplayComponent,
-    SponsorshipCreateComponent
+    SponsorshipCreateComponent,
     DashboardComponent
   ],
   imports: [
