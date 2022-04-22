@@ -55,6 +55,7 @@
     },
     "sponsorships": {
         "title": "Sponsorships",
+        "details": "Sponsorship details",
         "sponsor": {
             "actions": "Actions",
             "pay": "Pay sponsorship",
@@ -109,5 +110,6 @@
         "auth.invalid.email" : "Le format de l'adresse mail est incorrect",
         "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
         "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants"
-    }
+    },
+    "back": "Return"
 }

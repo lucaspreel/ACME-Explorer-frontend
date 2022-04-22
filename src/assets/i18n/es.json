@@ -55,6 +55,7 @@
     },
     "sponsorships": {
         "title": "Patrocinios",
+        "details": "Detalles de patrocinio",
         "sponsor": {
             "actions": "Acciones",
             "pay": "Pagar patrocinio",
@@ -109,5 +110,6 @@
         "auth.invalid.email" : "El correo eletrónico no tiene un formato correcto",
         "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
         "auth.user.not.found": "No existe un usario asociado a estos datos"
-    }
+    },
+    "back": "Volver"
 }

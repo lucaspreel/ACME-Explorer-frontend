@@ -1,30 +1,35 @@
-<form [formGroup]="sponsorshipForm" *ngIf="sponsorshipForm" (ngSubmit)="onCreate()">
-  <fieldset>
-    <legend>{{'sponsorships.title' | translate}}</legend>
+<br/><br/>
+<div class="card mb-3" *ngIf="sponsorship">
+  <h3 class="card-header">{{'sponsorships.details' | translate}}</h3>
 
-    <div class="form-group has-danger">
-      <label for="tripTicker" class="form-control-label">{{'sponsorships.attributes.tripTicker' | translate}}</label>
-      <input id="tripTicker " type="text" formControlName="tripTicker" class="form-control" value="{{sponsorship.tripTicker}}" [attr.disabled]="true">
-    </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'sponsorships.attributes.tripTicker' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{sponsorship.tripTicker}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'sponsorships.attributes.banner' | translate}}</h5>
+    <h6 class="card-subtitle text-muted"><a href="{{sponsorship.banner}}">{{sponsorship.banner}}</a></h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'sponsorships.attributes.page' | translate}}</h5>
+    <h6 class="card-subtitle text-muted"><a href="{{sponsorship.page}}">{{sponsorship.page}}</a></h6>
+  </div>
+</div>
 
+<div class="buttons">
+  <button class="btn btn-primary" (click)="goBack()">
+    <i class="fa fa-arrow-left"></i> {{'back' | translate}}
+  </button>&nbsp;
 
-    <div class="form-group has-danger">
-      <label for="banner" class="form-control-label">{{'sponsorships.attributes.banner' | translate}}</label>
-      <input id="banner" type="text" formControlName="banner" class="form-control" value="{{sponsorship.banner}}" [attr.disabled]="true">
-    </div>
+  <button class="btn btn-primary" (click)="updateSponsorship()">
+    <i class="fa fa-pencil"></i> {{'sponsorships.sponsor.update' | translate}}
+  </button>&nbsp;
 
-    <div class="form-group has-danger">
-      <label for="page" class="form-control-label">{{'sponsorships.attributes.page' | translate}}</label>
-      <input id="page" type="text" formControlName="page" class="form-control" value="{{sponsorship.page}}" [attr.disabled]="true">
-    </div>
+  <button class="btn btn-primary" *ngIf="!sponsorship.isPayed" (click)="paySponsorship()">
+    <i class="fa fa-credit-card"></i> {{'sponsorships.sponsor.pay' | translate}}
+  </button>&nbsp;
 
-    <button class="btn btn-primary" *ngIf="!sponsorship.isPayed" (click)="paySponsorship()">
-      {{'sponsorships.sponsor.pay' | translate}}
-    </button>
-
-    <button class="btn btn-danger" (click)="removeSponsorship()">
-      {{'sponsorships.sponsor.remove' | translate}}
-    </button>
-
-  </fieldset>
-</form>
+  <button class="btn btn-danger" (click)="removeSponsorship()">
+    <i class="fa fa-trash"></i> {{'sponsorships.sponsor.remove' | translate}}
+  </button>
+</div>

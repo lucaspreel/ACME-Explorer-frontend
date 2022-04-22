@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Sponsorship } from 'src/app/models/sponsorship.model';
 import { SponsorshipService } from 'src/app/services/sponsorship.service';
@@ -15,31 +14,12 @@ export class SponsorshipDisplayComponent extends TranslatableComponent implement
 
   private sponsorship: Sponsorship;
   private sponsorshipForm: any;
+  private id: string;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private translateService: TranslateService, private fb: FormBuilder, private sponsorshipService: SponsorshipService, private route: ActivatedRoute) {
+  constructor(private translateService: TranslateService, private sponsorshipService: SponsorshipService, private route: ActivatedRoute, private router: Router) {
     super(translateService);
-    this.sponsorshipService.getSponsorship(this.route.snapshot.params['id'])
-    .then((sponsorship: Sponsorship) => {
-      this.sponsorship = sponsorship;
-    }).then(_ => {
-      this.createForm();
-    });
    }
-
-   createForm() {
-    this.sponsorshipForm = this.fb.group({
-      banner: [''],
-      page: [''],
-      tripTicker: [''],
-      isPayed: ['false']
-    });
-
-    this.sponsorshipForm.controls['tripTicker'].setValue(this.sponsorship.tripTicker);
-    this.sponsorshipForm.controls['banner'].setValue(this.sponsorship.banner);
-    this.sponsorshipForm.controls['page'].setValue(this.sponsorship.page);
-    this.sponsorshipForm.controls['isPayed'].setValue(this.sponsorship.isPayed);
-  }
 
   paySponsorship() {
     this.sponsorshipService.paySponsorship(this.sponsorship, this.sponsorship.id);
@@ -49,7 +29,22 @@ export class SponsorshipDisplayComponent extends TranslatableComponent implement
     this.sponsorshipService.removeSponsorship(this.sponsorship, this.sponsorship.id);
   }
 
+  updateSponsorship(): void {
+    this.router.navigate(['/sponsorships/' + this.id + '/edit']);
+  }
+
+  goBack(): void {
+    this.router.navigate(['/sponsorships']);
+  }
+
   ngOnInit() {
+    this.id = this.route.snapshot.params['id'];
+    this.sponsorshipService.getSponsorship(this.id)
+    .then((sponsorship: Sponsorship) => {
+      this.sponsorship = sponsorship;
+    }).catch((err) => {
+      console.error(err);
+    });
   }
 
 }

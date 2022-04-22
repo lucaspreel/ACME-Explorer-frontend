@@ -55,6 +55,7 @@
     },
     "sponsorships": {
         "title": "Sponsorships",
+        "details": "Sponsorship details",
         "sponsor": {
             "actions": "Actions",
             "pay": "Pay sponsorship",
@@ -109,5 +110,6 @@
         "auth.invalid.email" : "Email is badly formatted",
         "auth.weak.password": "Password should be at least 6 characters long",
         "auth.user.not.found": "There is no user corresponding to this identifier"
-    }
+    },
+    "back": "Return"
 }
