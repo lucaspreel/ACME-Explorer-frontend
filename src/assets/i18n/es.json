@@ -57,8 +57,10 @@
         "title": "Patrocinios",
         "sponsor": {
             "actions": "Acciones",
-            "pay": "Pay sponsorship",
+            "pay": "Pagar patrocinio",
             "create": "Crear nuevo patrocinio",
+            "update": "Actualizar patrocinio",
+            "remove": "Eliminar patrocionio",
             "list": "Mis patrocinios"
         },
         "attributes": {

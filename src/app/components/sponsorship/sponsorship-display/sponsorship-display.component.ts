@@ -13,7 +13,6 @@ import { TranslatableComponent } from '../../shared/translatable/translatable.co
 })
 export class SponsorshipDisplayComponent extends TranslatableComponent implements OnInit {
 
-  private id: string;
   private sponsorship: Sponsorship;
   private sponsorshipForm: any;
 
@@ -40,6 +39,14 @@ export class SponsorshipDisplayComponent extends TranslatableComponent implement
     this.sponsorshipForm.controls['banner'].setValue(this.sponsorship.banner);
     this.sponsorshipForm.controls['page'].setValue(this.sponsorship.page);
     this.sponsorshipForm.controls['isPayed'].setValue(this.sponsorship.isPayed);
+  }
+
+  paySponsorship() {
+    this.sponsorshipService.paySponsorship(this.sponsorship, this.sponsorship.id);
+  }
+
+  removeSponsorship() {
+    this.sponsorshipService.removeSponsorship(this.sponsorship, this.sponsorship.id);
   }
 
   ngOnInit() {

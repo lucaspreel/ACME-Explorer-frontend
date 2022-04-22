@@ -59,7 +59,9 @@
             "actions": "Actions",
             "pay": "Pay sponsorship",
             "list": "Mes sponsorships",
-            "create": "Créer un nouveau sponsorship"
+            "create": "Créer un nouveau sponsorship",
+            "remove": "Delete sponsorship",
+            "update": "Update sponsorship"
         },
         "attributes": {
             "tripTicker": "Trip Ticker",
