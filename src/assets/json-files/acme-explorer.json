@@ -145,5 +145,47 @@
       "isDeleted": false,
       "id": 10
     }
-  ]
+  ],
+  "dashboard_finder_stats": {
+    "min": 84,
+    "max": 184,
+    "top_10": [
+      "uno",
+      "dos",
+      "tres",
+      "cuatro",
+      "cinco",
+      "seis",
+      "siete",
+      "ocho",
+      "nueve",
+      "diez"
+    ]
+  },
+  "dashboard_stats": {
+    "trip_admin": {
+      "min": 84,
+      "max": 184,
+      "avg": 100,
+      "dev": 64
+    },
+    "app_price":  {
+      "min": 73,
+      "max": 120,
+      "avg": 100,
+      "dev": 41
+    },
+    "price_stats": {
+      "min": 14,
+      "max": 84,
+      "avg": 54,
+      "dev": 60
+    },
+    "app_by_status": {
+      "pending": 20,
+      "rejected": 30,
+      "due": 40,
+      "accepted": 10
+    }
+  }
 }
