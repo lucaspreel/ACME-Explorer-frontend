@@ -30,6 +30,7 @@ import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship
 import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
 import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
 import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -75,6 +76,7 @@ registerLocaleData(locales, 'fr');
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DataTablesModule,
     AngularFireModule.initializeApp(firebaseConfig),
     TranslateModule.forRoot({
       loader: {

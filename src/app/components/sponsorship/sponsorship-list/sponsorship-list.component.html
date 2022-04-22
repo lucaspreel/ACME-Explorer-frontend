@@ -1,23 +1,25 @@
-<table class="table table-hover">
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" dt-columns="dt-columns" width="100%">
   <thead>
     <tr>
-      <th scope="col">{{'sponsorships.attributes.tripTicker' | translate}}</th>
-      <th scope="col">{{'sponsorships.attributes.banner' | translate}}</th>
-      <th scope="col">{{'sponsorships.attributes.page' | translate}}</th>
-      <th scope="col">{{'sponsorships.sponsor.actions' | translate}}</th>
+      <th>{{'sponsorships.attributes.tripTicker' | translate}}</th>
+      <th>{{'sponsorships.attributes.banner' | translate}}</th>
+      <th>{{'sponsorships.attributes.page' | translate}}</th>
+      <th>{{'sponsorships.sponsor.actions' | translate}}</th>
     </tr>
   </thead>
-  <tbody *ngFor="let sponsorship of sponsorships; let i = index">
-    <tr *ngIf="!sponsorship.isDeleted">
-      <td>{{sponsorship.tripTicker}}</td>
-      <td><a href="{{sponsorship.banner}}">{{sponsorship.banner}}</a></td>
-      <td><a href="{{sponsorship.page}}">{{sponsorship.page}}</a></td>
-      <td>
-        <a href="/sponsorships/{{sponsorship.id}}"><i class="fa fa-eye"></i></a>&nbsp;
-        <a href="/sponsorships/{{sponsorship.id}}/edit"><i class="fa fa-pencil"></i></a>&nbsp;
-        <a href="/sponsorships/" (click)="removeSponsorship(i)"><i class="fa fa-trash"></i></a>&nbsp;
-        <a href="/sponsorships/" (click)="paySponsorship(i)" *ngIf="!sponsorship.isPayed"><i class="fa fa-credit-card"></i></a>
-      </td>
-    </tr>
+
+  <tbody>
+      <tr *ngFor="let sponsorship of sponsorships; let i = index">
+        <td>{{sponsorship.tripTicker}}</td>
+        <td><a href="{{sponsorship.banner}}">{{sponsorship.banner}}</a></td>
+        <td><a href="{{sponsorship.page}}">{{sponsorship.page}}</a></td>
+        <td>
+          <a href="/sponsorships/{{sponsorship.id}}"><i class="fa fa-eye"></i></a>&nbsp;
+          <a href="/sponsorships/{{sponsorship.id}}/edit"><i class="fa fa-pencil"></i></a>&nbsp;
+          <a href="/sponsorships/" (click)="removeSponsorship(i)"><i class="fa fa-trash"></i></a>&nbsp;
+          <a href="/sponsorships/" (click)="paySponsorship(i)" *ngIf="!sponsorship.isPayed"><i
+              class="fa fa-credit-card"></i></a>
+        </td>
+      </tr>
   </tbody>
 </table>
