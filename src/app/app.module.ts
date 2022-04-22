@@ -27,6 +27,7 @@ import { SponsorshipListComponent } from './components/sponsorship/sponsorship-l
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
 import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
 import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
+import { DataTablesModule } from 'angular-datatables';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -68,6 +69,7 @@ registerLocaleData(locales, 'fr');
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    DataTablesModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     TranslateModule.forRoot({
