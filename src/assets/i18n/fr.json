@@ -59,7 +59,8 @@
         "description": "Description",
         "startDate": "Date de début",
         "endDate": "Date de fin",
-        "price": "Prix"
+        "price": "Prix",
+        "update": "Modifier ce voyage"
     },
     "sponsorships": {
         "title": "Sponsorships",

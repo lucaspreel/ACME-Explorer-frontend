@@ -23,4 +23,9 @@ export class TripService {
     const url = `${environment.json_server_baseURL + '/trips'}`;
     return this.http.get<Trip[]>(url).toPromise();
   }
+
+  getTripsOfAManager(managerId: string) {
+    const url = `${environment.json_server_baseURL + '/trips?managerId=' + managerId}`;
+    return this.http.get<Trip[]>(url).toPromise(); 
+  }
 }

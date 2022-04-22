@@ -28,6 +28,8 @@ import { SponsorshipListComponent } from './components/sponsorship/sponsorship-l
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
 import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
 import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
+import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
+import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -64,7 +66,9 @@ registerLocaleData(locales, 'fr');
     SponsorshipListComponent,
     SponsorshipDisplayComponent,
     SponsorshipCreateComponent,
-    SponsorshipUpdateComponent
+    SponsorshipUpdateComponent,
+    TripCreateComponent,
+    TripUpdateComponent
   ],
   imports: [
     BrowserModule,

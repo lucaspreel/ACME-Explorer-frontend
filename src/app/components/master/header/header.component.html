@@ -25,10 +25,10 @@
           <a class="dropdown-item" href="#">{{'actor.profile.edit' | translate}}</a>
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
-          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.list' | translate}}</a>
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="/trips/{{currentActor.id}}">{{'trips.manager.list' | translate}}</a>
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
-          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="#">{{'trips.manager.create' | translate}}</a>
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" href="/trips/create">{{'trips.manager.create' | translate}}</a>
 
           <div *ngIf="activeRole === 'EXPLORER'" class="dropdown-divider"></div>
           <a *ngIf="activeRole === 'EXPLORER'" class="dropdown-item" href="#">{{'applications.list' | translate}}</a>
