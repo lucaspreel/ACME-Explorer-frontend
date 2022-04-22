@@ -15,7 +15,12 @@ export class SponsorshipService {
   constructor(private http: HttpClient) { }
 
   getSponsorshipsList(): Promise<Sponsorship[]> {
-    let sponsorshipUrl = environment.json_server_baseURL + '/sponsorships';
+    let sponsorshipListUrl = environment.json_server_baseURL + '/sponsorships';
+    return this.http.get(sponsorshipListUrl).toPromise<any>();
+  }
+
+  getSponsorship(sponsorshipId: string): Promise<Sponsorship> {
+    let sponsorshipUrl = environment.json_server_baseURL + '/sponsorships/' + sponsorshipId;
     return this.http.get(sponsorshipUrl).toPromise<any>();
   }
 

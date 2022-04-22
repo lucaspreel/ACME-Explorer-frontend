@@ -56,6 +56,8 @@
     "sponsorships": {
         "title": "Sponsorships",
         "sponsor": {
+            "actions": "Actions",
+            "pay": "Pay sponsorship",
             "list": "Mes sponsorships",
             "create": "Créer un nouveau sponsorship"
         },

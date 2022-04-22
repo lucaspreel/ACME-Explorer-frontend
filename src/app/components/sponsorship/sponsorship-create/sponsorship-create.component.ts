@@ -10,7 +10,7 @@ import { SponsorshipService } from 'src/app/services/sponsorship.service';
 })
 export class SponsorshipCreateComponent implements OnInit {
 
-  sponsorshipForm: FormGroup;
+  private sponsorshipForm: FormGroup;
 
   constructor(private fb: FormBuilder, private translateService: TranslateService, private sponsorshipService: SponsorshipService) {
       this.createForm();
