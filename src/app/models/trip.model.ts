@@ -9,6 +9,7 @@ export class Trip extends Entity {
         startDate: string;
         endDate: string;
         cancelled: boolean;
+        managerId: number;
     
         constructor() {
             super();

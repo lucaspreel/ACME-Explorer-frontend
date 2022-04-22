@@ -54,6 +54,17 @@
       "role": "SPONSOR",
       "validated": "true",
       "id": 5
+    },
+    {
+      "name": "Manager2",
+      "surname": "Manager2",
+      "email": "manager2@gmail.com",
+      "password": "manager2",
+      "phone": "0000000000",
+      "address": "Manager2",
+      "role": "MANAGER",
+      "validated": "true",
+      "id": 6
     }
   ],
   "trips": [
@@ -66,7 +77,8 @@
       "picture": "NorthItaly.jpg",
       "startDate": "18/07/2022",
       "endDate": "30/07/2022",
-      "cancelled": false
+      "cancelled": false,
+      "managerId": 3
     },
     {
       "id": 2,
@@ -77,7 +89,8 @@
       "picture": "Germany.jpg",
       "startDate": "04/08/2022",
       "endDate": "12/08/2022",
-      "cancelled": false
+      "cancelled": false,
+      "managerId": 3
     },
     {
       "id": 3,
@@ -88,7 +101,8 @@
       "picture": "London.jpg",
       "startDate": "15/08/2022",
       "endDate": "21/08/2022",
-      "cancelled": false
+      "cancelled": false,
+      "managerId": 6
     }
   ],
   "sponsorships": [
