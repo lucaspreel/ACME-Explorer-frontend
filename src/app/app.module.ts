@@ -17,6 +17,16 @@ import { NotFoundPageComponent } from './components/shared/not-found-page/not-fo
 import { DeniedAccesPageComponent } from './components/shared/denied-acces-page/denied-acces-page.component';
 import { MessageComponent } from './components/master/message/message.component';
 import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
+import { FooterComponent } from './components/master/footer/footer.component';
+import { LocalizedDatePipe } from './components/shared/localized-date.pipe';
+import { LocalizedDecimalPipe } from './components/shared/localized-decimal.pipe';
+import { registerLocaleData } from '@angular/common';
+import locales from '@angular/common/locales/es';
+import { TermsAndConditionsComponent } from './components/master/terms-and-conditions/terms-and-conditions.component';
+import { HttpModule } from '@angular/http';
+import { SponsorshipListComponent } from './components/sponsorship/sponsorship-list/sponsorship-list.component';
+import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
+import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -31,6 +41,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
+registerLocaleData(locales, 'es');
+registerLocaleData(locales, 'fr');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +55,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     NotFoundPageComponent,
     DeniedAccesPageComponent,
     MessageComponent,
-    TripDisplayComponent
+    TripDisplayComponent,
+    FooterComponent,
+    LocalizedDatePipe,
+    LocalizedDecimalPipe,
+    TermsAndConditionsComponent,
+    SponsorshipListComponent,
+    SponsorshipDisplayComponent,
+    SponsorshipCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +77,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps : [HttpClient]
       }
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   exports: [AppRoutingModule],
   providers: [AngularFireAuth],

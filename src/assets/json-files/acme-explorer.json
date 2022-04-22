@@ -90,5 +90,42 @@
       "endDate": "21/08/2022",
       "cancelled": false
     }
+  ],
+  "sponsorships": [
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "ticker1",
+      "isPayed": "false",
+      "id": 6
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "ticker2",
+      "isPayed": "true",
+      "id": 7
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "ticker3",
+      "isPayed": "false",
+      "id": 8
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "Ticker1",
+      "isPayed": "false",
+      "id": 9
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "Ticker1",
+      "isPayed": "false",
+      "id": 10
+    }
   ]
 }

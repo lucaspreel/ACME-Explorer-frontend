@@ -20,7 +20,7 @@ export class AuthService {
   private currentActor: Actor;
   userLoggedIn = new Subject();
 
-  constructor(private fireAuth: AngularFireAuth ,private http: HttpClient, private messageService: MessageService) {
+  constructor(private fireAuth: AngularFireAuth, private http: HttpClient, private messageService: MessageService) {
 
   }
 

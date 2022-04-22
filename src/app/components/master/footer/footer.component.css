@@ -1,0 +1,35 @@
+.footer-distributed {
+    background-color: #373A3C;
+    color: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+
+    padding: 55px 50px;
+    margin-top: 350px;
+
+    display: flex;             
+    align-items: flex-start;         
+    justify-content: space-between;
+}
+
+
+.footer-left {
+    display: inline-block;
+    width: 33%;
+}
+
+.footer-center {
+    display: inline-block;
+    width: 33%;
+}
+
+.footer-right {
+    display: inline-block;
+    width: 33%;
+}
+
+.footer-company-about {
+    word-break: break-all;
+}

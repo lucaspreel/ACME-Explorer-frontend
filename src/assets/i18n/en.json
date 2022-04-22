@@ -21,6 +21,12 @@
         "search": "Search",
         "placeholder.search": "Search"
     },
+    "footer": {
+        "terms": "Terms and Conditions",
+        "visitors": "Visitors",
+        "about": "About us",
+        "about.content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id turpis dui. In at aliquet neque, interdum mattis orci. Nullam blandit pharetra arcu, nec rhoncus mi egestas in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent cursus at nisl id ultrices. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla magna nunc, fermentum eu malesuada at, lacinia eu neque. In hac habitasse platea dictumst. Cras eget faucibus nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas lectus lorem, ultrices a dui a, ornare aliquam purus. Ut porta sagittis mollis. In iaculis eget augue eu vestibulum. Ut a laoreet lorem, a aliquet nisl. Nunc volutpat porttitor urna sed hendrerit. Fusce ornare arcu et congue maximus. Pellentesque a ligula at elit vestibulum pulvinar pulvinar quis justo."
+    },
     "security": {
         "login": "Login",
         "logout": "Logout",
@@ -55,6 +61,21 @@
         "endDate": "End date",
         "price": "Price"
     },
+    "sponsorships": {
+        "title": "Sponsorships",
+        "sponsor": {
+            "actions": "Actions",
+            "pay": "Pay sponsorship",
+            "create": "Create a sponsorship",
+            "list": "My sponsorships"
+        },
+        "attributes": {
+            "tripTicker": "Trip Ticker",
+            "banner": "Banner",
+            "page": "More information",
+            "isPayed": "Is payed"
+        }
+    },
     "applications": {
         "list": "My applications",
         "manage": "Manage applications"
@@ -71,10 +92,6 @@
         "applications": {
             "list": "List applications"
         }
-    },
-    "sponsorships": {
-        "list": "My sponsorships",
-        "create": "Create a sponsorship"
     },
     "denied-access-page": {
         "title": "Denied access",
