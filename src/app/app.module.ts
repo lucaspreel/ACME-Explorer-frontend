@@ -32,6 +32,7 @@ import { TripCreateComponent } from './components/trip/trip-create/trip-create.c
 import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
 import { DataTablesModule } from 'angular-datatables';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -72,7 +73,9 @@ registerLocaleData(locales, 'fr');
     TripCreateComponent,
     TripUpdateComponent,
     SponsorshipCreateComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardComponent,
+    ApplicationListComponent
   ],
   imports: [
     BrowserModule,
