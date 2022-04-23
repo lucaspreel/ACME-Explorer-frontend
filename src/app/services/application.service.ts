@@ -16,7 +16,7 @@ export class ApplicationService {
 
   constructor(private http: HttpClient) { }
 
-  getRuta(){
+  getRuta() {
     return `${environment.json_server_baseURL}/${route}`;
   }
 
@@ -31,14 +31,14 @@ export class ApplicationService {
     return this.http.get<Application[]>(url).toPromise();
   }
 
-  getApplicationByManager(managerId: string):Promise<Application[]>  {
+  getApplicationByManager(managerId: string): Promise<Application[]> {
     const url = `${this.getRuta()}?manager_Id=${managerId}`;
-    return this.http.get<Application[]>(url).toPromise(); 
+    return this.http.get<Application[]>(url).toPromise();
   }
 
-  getApplicationByExplorer(explorerId: string):Promise<Application[]>  {
+  getApplicationByExplorer(explorerId: string): Promise<Application[]> {
     const url = `${this.getRuta()}?explorer_Id=${explorerId}`;
-    return this.http.get<Application[]>(url).toPromise(); 
+    return this.http.get<Application[]>(url).toPromise();
   }
 
   removeApplication(applicationId: string): void {
@@ -54,6 +54,12 @@ export class ApplicationService {
     this.http.patch(url, {
       'status': 'ACCEPTED',
     }).toPromise();
+  }
+
+  updateApplication(applicationId: string, data: any): void {
+    const url = `${this.getRuta()}/${applicationId}`;
+    const body = JSON.stringify(data);
+    this.http.patch(url,body).toPromise();
   }
 }
 

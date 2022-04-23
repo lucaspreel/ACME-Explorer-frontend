@@ -96,7 +96,11 @@
             "status": "Status"
         },
         "actions":{
-            "actions": "Actions"
+            "actions": "Actions",
+            "pay": "Pay sponsorship",
+            "create": "Create a sponsorship",
+            "update": "Update sponsorship",
+            "remove": "Delete sponsorship"
         }
     },
     "administrator": {

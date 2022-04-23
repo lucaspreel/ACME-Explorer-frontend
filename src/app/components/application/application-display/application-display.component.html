@@ -38,14 +38,14 @@
   </button>&nbsp;
 
   <button class="btn btn-primary" >
-    <i class="fa fa-pencil"></i> {{'sponsorships.sponsor.update' | translate}}
+    <i class="fa fa-pencil"></i> {{'applications.actions.update' | translate}}
   </button>&nbsp;
 
   <button class="btn btn-primary"  *ngIf="application.status === 'DUE' && role === 'EXPLORER'" (click)="payApplication()">
-    <i class="fa fa-credit-card"></i> {{'sponsorships.sponsor.pay' | translate}}
+    <i class="fa fa-credit-card"></i> {{'applications.actions.pay' | translate}}
   </button>&nbsp;
 
   <button class="btn btn-danger" *ngIf="application.status === 'PENDING' && role === 'EXPLORER'" (click)="removeApplication()">
-    <i class="fa fa-trash"></i> {{'sponsorships.sponsor.remove' | translate}}
+    <i class="fa fa-trash"></i> {{'applications.actions.remove' | translate}}
   </button>
 </div>

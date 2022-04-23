@@ -23,7 +23,7 @@ export class ApplicationDisplayComponent extends TranslatableComponent implement
     private applicationService: ApplicationService, 
     private route: ActivatedRoute, 
     private router: Router,
-    // private authService: AuthService,
+    private authService: AuthService,
     ) { super(translateService); }
 
   payApplication() {
@@ -32,6 +32,7 @@ export class ApplicationDisplayComponent extends TranslatableComponent implement
 
   removeApplication() {
     this.applicationService.removeApplication(this.id);
+    this.router.navigate(['/applications']);
   }
 
   updateApplication(): void {
@@ -44,8 +45,7 @@ export class ApplicationDisplayComponent extends TranslatableComponent implement
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    // this.role = this.authService.getRole();
-    this.role =  'EXPLORER';
+    this.role = this.authService.getRole();
     this.applicationService.getApplication(this.id)
     .then((application: Application) => {
       this.application = application;

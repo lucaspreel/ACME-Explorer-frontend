@@ -96,7 +96,11 @@
             "status": "Estado"
         },
         "actions":{
-            "actions": "Acciones"
+            "actions": "Acciones",
+            "pay": "Pagar patrocinio",
+            "create": "Crear nuevo patrocinio",
+            "update": "Actualizar patrocinio",
+            "remove": "Eliminar patrocionio"
         }
     },
     "administrator": {
