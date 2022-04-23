@@ -5,6 +5,7 @@ export class Sponsorship extends Entity {
     page: string;
     tripTicker: string;
     isPayed: boolean;
+    isDeleted: boolean;
 
     constructor() {
         super();

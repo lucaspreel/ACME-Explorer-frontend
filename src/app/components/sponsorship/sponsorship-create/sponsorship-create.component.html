@@ -1,8 +1,13 @@
-<form [formGroup]="sponsorshipForm" (ngSubmit)="onCreate()">
+<form [formGroup]="sponsorshipForm" (ngSubmit)="onCreate()" *ngIf="sponsorshipForm">
   <fieldset>
     <legend>{{'sponsorships.title' | translate}}</legend>
 
-    <div class="form-group has-danger">
+    <div class="form-group has-danger" *ngIf="tripTicker">
+      <label for="tripTicker" class="form-control-label">{{'sponsorships.attributes.tripTicker' | translate}}</label>
+      <input id="tripTicker " type="text" formControlName="tripTicker" class="form-control" disabled>
+    </div>
+
+    <div class="form-group has-danger" *ngIf="!tripTicker">
       <label for="tripTicker" class="form-control-label">{{'sponsorships.attributes.tripTicker' | translate}}</label>
       <input id="tripTicker " type="text" formControlName="tripTicker" class="form-control">
     </div>

@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'trips', children: [
+    {path: ':id/sponsorship', component: SponsorshipCreateComponent},
     {path: 'display/:id', component: TripDisplayComponent},
     {path: 'create', component: TripCreateComponent},
     {path: '', component: TripListComponent},
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
       {path: '', component: SponsorshipDisplayComponent},
       {path: 'edit', component: SponsorshipUpdateComponent}
     ]},
+    {path: ':sponsorId', component: SponsorshipListComponent},
     {path: '', component: SponsorshipListComponent}
   ]},
   {path: 'terms-and-conditions', component: TermsAndConditionsComponent},

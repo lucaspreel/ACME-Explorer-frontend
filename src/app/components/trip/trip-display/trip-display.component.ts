@@ -14,13 +14,13 @@ import { Trip } from 'src/app/models/trip.model';
 export class TripDisplayComponent extends TranslatableComponent implements OnInit {
 
   trip = new Trip();
-  id : string;
+  id: string;
 
   constructor(private tripService: TripService,
     private router: Router,
     private route: ActivatedRoute,
     private translateService: TranslateService) {
-    super(translateService)
+    super(translateService);
    }
 
   ngOnInit() {
@@ -31,10 +31,14 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
     })
     .catch((err) => {
       console.log(err);
-    })
+    });
   }
 
   goBack(): void {
     this.router.navigate(['/']);
+  }
+
+  createSponsorship(): void {
+    this.router.navigate(['/trips/' + this.id + '/sponsorship']);
   }
 }

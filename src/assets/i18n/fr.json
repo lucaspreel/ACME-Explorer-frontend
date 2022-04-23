@@ -69,6 +69,7 @@
             "actions": "Actions",
             "pay": "Pay sponsorship",
             "list": "Mes sponsorships",
+            "create.trip": "Sponsor",
             "create": "Créer un nouveau sponsorship",
             "remove": "Delete sponsorship",
             "update": "Update sponsorship"
@@ -108,7 +109,11 @@
     "messages": {
         "auth.registration.correct": "L'utilisateur a été enregistré avec succès",
         "auth.logout.correct": "L'utilisateur s'est déconnecté avec succès",
-        "auth.login.correct": "L'utilisateur s'est connecté avec succès"
+        "auth.login.correct": "L'utilisateur s'est connecté avec succès",
+        "sponsor.sponsorhip.created": "The sponsorhip has been created correctly",
+        "sponsor.sponsorhip.updated": "The sponsorhip has been updated correctly",
+        "sponsor.sponsorhip.deleted": "The sponsorhip has been deleted correctly",
+        "sponsor.sponsorhip.payed": "The sponsorhip has been payed correctly"
     },
     "errorMessages": {
         "auth.registration.failed": "Erreur lors de l'inscription",
@@ -119,6 +124,7 @@
         "auth.invalid.email" : "Le format de l'adresse mail est incorrect",
         "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
         "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants",
+        "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment"
     },
     "back": "Return"

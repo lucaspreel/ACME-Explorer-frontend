@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Sponsorship } from 'src/app/models/sponsorship.model';
+import { MessageService } from 'src/app/services/message.service';
 import { SponsorshipService } from 'src/app/services/sponsorship.service';
 import { TranslatableComponent } from '../../shared/translatable/translatable.component';
 
@@ -17,16 +18,21 @@ export class SponsorshipDisplayComponent extends TranslatableComponent implement
   private id: string;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private translateService: TranslateService, private sponsorshipService: SponsorshipService, private route: ActivatedRoute, private router: Router) {
+  constructor(private translateService: TranslateService, private sponsorshipService: SponsorshipService,
+    private route: ActivatedRoute, private router: Router,
+    private messageService: MessageService) {
     super(translateService);
    }
 
   paySponsorship() {
     this.sponsorshipService.paySponsorship(this.sponsorship, this.sponsorship.id);
+    this.messageService.notifyMessage('messages.sponsor.sponsorhip.payed', 'alert alert-primary');
   }
 
   removeSponsorship() {
     this.sponsorshipService.removeSponsorship(this.sponsorship, this.sponsorship.id);
+    this.router.navigate(['/sponsorships']);
+    this.messageService.notifyMessage('messages.sponsor.sponsorhip.deleted', 'alert alert-primary');
   }
 
   updateSponsorship(): void {
