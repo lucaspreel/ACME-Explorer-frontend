@@ -22,7 +22,7 @@ export class ApplicationService {
 
 
   getApplication(id: string): Promise<Application> {
-    const url = `${this.getRuta()}/ + id`;
+    const url = `${this.getRuta()}/${id}`;
     return this.http.get<Application>(url).toPromise();
   }
 

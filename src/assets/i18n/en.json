@@ -83,6 +83,7 @@
     "applications": {
         "title": "Applications",
         "list": "My applications",
+        "details": "Application details",
         "manage": "Manage applications",
         "attributes": {
             "applicationMoment": "Application date",

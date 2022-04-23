@@ -23,7 +23,7 @@
         <td>{{application.tripPrice}}</td>
         <td>{{application.status}}</td>
         <td>
-          <a href="applications"><i class="fa fa-eye"></i></a>&nbsp;
+          <a href="applications/{{application.id}}"><i class="fa fa-eye"></i></a>&nbsp;
           <a href="applications"><i class="fa fa-pencil"></i></a>&nbsp;
           <a href="applications" *ngIf="application.status === 'PENDING' && role === 'EXPLORER'" (click)="removeApplication(i)" ><i class="fa fa-trash"></i></a>&nbsp;
           <a href="applications" *ngIf="application.status === 'DUE' && role === 'EXPLORER'" (click)="payApplication(i)" ><i class="fa fa-credit-card"></i></a>

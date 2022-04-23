@@ -83,6 +83,7 @@
     "applications": {
         "title": "Solicitudes",
         "list": "Mis solicitudes",
+        "details": "Detalles de solicitud",
         "manage": "Gestionar solicitudes",
         "attributes": {
             "applicationMoment": "Fecha de aplicación",

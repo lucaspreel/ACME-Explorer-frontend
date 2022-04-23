@@ -18,32 +18,50 @@ import { TripUpdateComponent } from './components/trip/trip-update/trip-update.c
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 import RolesEnum from './utils/roles_enum';
+import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
+import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/trips', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
-  {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
-  {path: 'trips', children: [
-    {path: 'display/:id', component: TripDisplayComponent},
-    {path: 'create', component: TripCreateComponent},
-    {path: '', component: TripListComponent},
-    {path: ':managerId', component: TripListComponent},
-    {path: 'update/:id', component: TripUpdateComponent}
-  ]},
-  {path: 'applications', component: ApplicationListComponent, canActivate: [ActorRoleGuard],data: {expectedRole: RolesEnum.signedIn}},
-  {path: 'sponsorships', children: [
-    {path: 'create', component: SponsorshipCreateComponent},
-    {path: ':id', children: [
-      {path: '', component: SponsorshipDisplayComponent},
-      {path: 'edit', component: SponsorshipUpdateComponent}
-    ]},
-    {path: '', component: SponsorshipListComponent}
-  ]},
-  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
-  {path: 'not-found', component: NotFoundPageComponent},
-  {path: 'denied-access', component: DeniedAccesPageComponent},
-  {path: '**', redirectTo: '/not-found'}
+  { path: '', redirectTo: '/trips', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
+  { path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
+  {
+    path: 'trips', children: [
+      { path: 'display/:id', component: TripDisplayComponent },
+      { path: 'create', component: TripCreateComponent },
+      { path: '', component: TripListComponent },
+      { path: ':managerId', component: TripListComponent },
+      { path: 'update/:id', component: TripUpdateComponent }
+    ]
+  },
+  {
+    path: 'applications', children: [
+      {
+        path: ':id', children: [
+          { path: '', component: ApplicationDisplayComponent },
+          { path: 'edit', component: ApplicationEditComponent }
+        ]
+      },
+      { path: '', component: ApplicationListComponent }
+    ],
+  },
+  {
+    path: 'sponsorships', children: [
+      { path: 'create', component: SponsorshipCreateComponent },
+      {
+        path: ':id', children: [
+          { path: '', component: SponsorshipDisplayComponent },
+          { path: 'edit', component: SponsorshipUpdateComponent }
+        ]
+      },
+      { path: '', component: SponsorshipListComponent }
+    ]
+  },
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
+  { path: 'not-found', component: NotFoundPageComponent },
+  { path: 'denied-access', component: DeniedAccesPageComponent },
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({

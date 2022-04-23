@@ -83,6 +83,7 @@
     "applications": {
         "title": "Demandes d'inscription",
         "list": "Mes demandes d'inscription",
+        "details": "Application details",
         "manage": "Gérer les demandes d'inscription",
         "attributes": {
             "applicationMoment": "Moment d'application",
