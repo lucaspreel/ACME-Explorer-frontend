@@ -19,8 +19,8 @@ export class ActorRoleGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return new Promise((resolve, reject) => {
       const expectedRole = next.data.expectedRole.toUpperCase();
-      const role = this.authService.getRole().toUpperCase();
-      const roleExp = new RegExp(role.toString(), 'i');
+      const role = this.authService.getRole();
+      const roleExp = new RegExp(role, 'i');
       let result = false;
       if (role) {
         if (expectedRole.indexOf(RolesEnum.anonymous) !== -1) {

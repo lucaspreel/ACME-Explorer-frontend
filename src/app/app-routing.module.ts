@@ -21,9 +21,9 @@ import RolesEnum from './utils/roles_enum';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
-  {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
-  {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
+  {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: {expectedRole: RolesEnum.anonymous}},
   {path: 'trips', children: [
     {path: 'display/:id', component: TripDisplayComponent},
     {path: 'create', component: TripCreateComponent},

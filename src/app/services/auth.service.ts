@@ -22,11 +22,9 @@ export class AuthService {
   userLoggedIn = new Subject();
 
   constructor(private fireAuth: AngularFireAuth, private http: HttpClient, private messageService: MessageService) {
-
-    if (this.getUserId != undefined) {
+    if (this.getUserId !== undefined) {
       this.userLoggedIn.next(true);
     }
-
   }
 
   login(email: string, password: string) {
@@ -39,6 +37,7 @@ export class AuthService {
               this.currentActor = actor[0];
               localStorage.setItem('ACTOR_ID', this.currentActor.id);
               localStorage.setItem('ROLE', this.currentActor.role);
+              localStorage.setItem('STATUS', 'LOGGED_IN');
               this.userLoggedIn.next(true);
               this.messageService.notifyMessage('messages.auth.login.correct', 'alert alert-primary');
               resolve(this.currentActor);
@@ -58,8 +57,10 @@ export class AuthService {
       this.fireAuth.auth.signOut()
         .then(res => {
           this.messageService.notifyMessage('messages.auth.logout.correct', 'alert alert-primary');
-          resolve(res);
           localStorage.clear();
+          localStorage.setItem('STATUS', 'LOGGED_OUT');
+          this.userLoggedIn.next(false);
+          resolve(res);
         }).catch(error => {
           this.messageService.notifyMessage('errorMessages.auth.logout.failed', 'alert alert-danger');
           reject(error);
@@ -131,6 +132,10 @@ export class AuthService {
       }
     }
     return result;
+  }
+
+  isLoggedIn():boolean{
+    return localStorage.getItem('STATUS') === "LOGGED_IN";
   }
 
   getRole() {

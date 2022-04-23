@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { TranslatableComponent } from 'src/app/components/shared/translatable/translatable.component';
-import { Actor } from 'src/app/models/actor.model';
 import { Application } from 'src/app/models/application.model';
 import { ApplicationService } from 'src/app/services/application.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -16,21 +14,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ApplicationListComponent extends TranslatableComponent implements OnInit {
 
-  actorId: String;
-  role: string;
-
   @ViewChild(DataTableDirective)
   dtElement: DataTableDirective;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
 
   private applications: Application[];
+  actorId: String;
+  role: string;
 
   constructor(
     private translateService: TranslateService,
     private applicationService: ApplicationService,
-    private route: ActivatedRoute,
-    private router: Router,
     private authService: AuthService,
   ) {
     super(translateService);
@@ -49,18 +44,17 @@ export class ApplicationListComponent extends TranslatableComponent implements O
   loadData() {
     let actorId = this.authService.getUserId();
     this.actorId = actorId;
-    let role = this.authService.getRole();
-    console.log(this.role);
+    let userRole = this.authService.getRole();
 
     if (actorId != undefined) {
-      if (role === 'MANAGER') {
+      if (userRole === 'MANAGER') {
         this.role = 'MANAGER';
         this.applicationService.getApplicationByManager(actorId)
           .then((applicationsList: Application[]) => {
             this.applications = applicationsList;
             this.dtTrigger.next();
           });
-      } else if (role === 'EXPLORER') {
+      } else if (userRole === 'EXPLORER') {
         this.role = 'EXPLORER';
 
         this.applicationService.getApplicationByExplorer(actorId)
@@ -68,7 +62,7 @@ export class ApplicationListComponent extends TranslatableComponent implements O
             this.applications = applicationsList;
             this.dtTrigger.next();
           });
-      } else if (role === 'ADMINISTRATOR') {
+      } else if (userRole === 'ADMINISTRATOR') {
         this.role = 'ADMINISTRATOR';
         this.applicationService.getApplications()
           .then((applicationsList: Application[]) => {
@@ -88,4 +82,13 @@ export class ApplicationListComponent extends TranslatableComponent implements O
     }
   }
 
+  removeApplication(pos: number) {
+    console.log('remove');
+    this.applicationService.removeApplication(this.applications[pos].id);
+  }
+  payApplication(pos: number) {
+    console.log('pay');
+    this.applicationService.payApplication(this.applications[pos], this.applications[pos].id);
+  }
+  
 }

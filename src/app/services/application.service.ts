@@ -32,13 +32,28 @@ export class ApplicationService {
   }
 
   getApplicationByManager(managerId: string):Promise<Application[]>  {
-    const url = `${this.getRuta}?manager_Id=${managerId}`;
+    const url = `${this.getRuta()}?manager_Id=${managerId}`;
     return this.http.get<Application[]>(url).toPromise(); 
   }
 
   getApplicationByExplorer(explorerId: string):Promise<Application[]>  {
-    const url = `${this.getRuta}?explorer_Id=${explorerId}`;
+    const url = `${this.getRuta()}?explorer_Id=${explorerId}`;
     return this.http.get<Application[]>(url).toPromise(); 
+  }
+
+  removeApplication(applicationId: string): void {
+    const url = `${this.getRuta()}/${applicationId}`;
+    this.http.patch(url, {
+      'isDeleted': true,
+    }).toPromise();
+  }
+
+  payApplication(application: Application, applicationId: string): void {
+    const url = `${this.getRuta()}/${applicationId}`;
+    const body = JSON.stringify(application);
+    this.http.patch(url, {
+      'status': 'ACCEPTED',
+    }).toPromise();
   }
 }
 

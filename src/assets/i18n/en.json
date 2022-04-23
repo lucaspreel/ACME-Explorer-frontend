@@ -81,6 +81,7 @@
         }
     },
     "applications": {
+        "title": "Applications",
         "list": "My applications",
         "manage": "Manage applications",
         "attributes": {
