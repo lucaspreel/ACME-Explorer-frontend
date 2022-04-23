@@ -49,4 +49,8 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
       });
   }
 
+  navigateTo(ruta: string) {
+    this.router.navigateByUrl(ruta);
+  }
+
 }
