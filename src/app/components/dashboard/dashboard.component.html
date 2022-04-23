@@ -1,6 +1,6 @@
 <h1>Dashboard</h1>
 <!-- Promedio de Precios de los fidners-->
-<div class="accordion" id="accordionPricesFinder">
+<div class="accordion" id="accordionPricesFinder" *ngIf="finderStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
@@ -24,7 +24,7 @@
   </div>
 </div>
 <!-- Top 10 palabaras mas buscadas -->
-<div class="accordion" id="accordionTop10">
+<div class="accordion" id="accordionTop10" *ngIf="finderStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
@@ -60,7 +60,7 @@
 </div>
 
 <!--Viajes por administrador-->
-<div class="accordion" id="accordionTripsAdmin">
+<div class="accordion" id="accordionTripsAdmin" *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
@@ -84,7 +84,7 @@
   </div>
 </div>
 <!--Aplicacion por viajes-->
-<div class="accordion" id="accordionAppTrip">
+<div class="accordion" id="accordionAppTrip"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
@@ -108,7 +108,7 @@
   </div>
 </div>
 <!--Estadistica de los Precios-->
-<div class="accordion" id="accordionPriceStats">
+<div class="accordion" id="accordionPriceStats"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
@@ -132,7 +132,7 @@
   </div>
 </div>
 <!--Porciento aplicación por estado-->
-<div class="accordion" id="accordionAppStatus">
+<div class="accordion" id="accordionAppStatus"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 

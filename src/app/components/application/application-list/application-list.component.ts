@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
@@ -27,6 +28,7 @@ export class ApplicationListComponent extends TranslatableComponent implements O
     private translateService: TranslateService,
     private applicationService: ApplicationService,
     private authService: AuthService,
+    private router: Router,
   ) {
     super(translateService);
   }
@@ -85,10 +87,23 @@ export class ApplicationListComponent extends TranslatableComponent implements O
   removeApplication(pos: number) {
     console.log('remove');
     this.applicationService.removeApplication(this.applications[pos].id);
+    this.navigateTo('applications');
   }
   payApplication(pos: number) {
     console.log('pay');
     this.applicationService.payApplication(this.applications[pos], this.applications[pos].id);
+    this.navigateTo('applications');
   }
-  
+ 
+  navigateTo(ruta: string) {
+    this.router.navigateByUrl(ruta);
+  }
+  navigateToEdit(id: string){
+    this.navigateTo(`applications/${id}/edit`);
+  }
+
+  navigateToDisplay(id: string){
+    this.navigateTo(`applications/${id}`);
+  }
+
 }
