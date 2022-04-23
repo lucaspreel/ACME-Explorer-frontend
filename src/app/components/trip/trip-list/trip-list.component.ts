@@ -32,23 +32,23 @@ export class TripListComponent extends TranslatableComponent implements OnInit {
     this.managerId = this.route.snapshot.params['managerId'];
     if (this.managerId == undefined) {
       this.tripService.getTrips()
-      .then((val) => {
-        this.trips = val;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((val) => {
+          this.trips = val;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       this.tripService.getTripsOfAManager(this.managerId)
-      .then((val) => {
-        this.trips = val;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((val) => {
+          this.trips = val;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
 
-    this.actor = this.authService.getCurrentActor();
+    this.authService.getCurrentActor().then((actor: Actor) => { this.actor = actor; });
   }
 
   createTrip() {

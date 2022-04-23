@@ -27,10 +27,10 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.userLoggedIn.subscribe((loggedIn: boolean) => {
+    this.authService.userLoggedIn.subscribe(async (loggedIn: boolean) => {
       if (loggedIn) {
-        this.currentActor = this.authService.getCurrentActor();
-        this.activeRole = this.currentActor.role.toString();
+        this.currentActor = await this.authService.getCurrentActor();
+        this.activeRole = this.authService.getRole();
       } else {
         this.activeRole = 'anonymous';
         this.currentActor = null;
