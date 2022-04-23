@@ -28,6 +28,7 @@ import { SponsorshipListComponent } from './components/sponsorship/sponsorship-l
 import { SponsorshipDisplayComponent } from './components/sponsorship/sponsorship-display/sponsorship-display.component';
 import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship-create/sponsorship-create.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -64,7 +65,8 @@ registerLocaleData(locales, 'fr');
     SponsorshipListComponent,
     SponsorshipDisplayComponent,
     SponsorshipCreateComponent,
-    DashboardComponent
+    DashboardComponent,
+    ApplicationListComponent
   ],
   imports: [
     BrowserModule,
