@@ -74,7 +74,6 @@ registerLocaleData(locales, 'fr');
     TripUpdateComponent,
     SponsorshipCreateComponent,
     DashboardComponent,
-    DashboardComponent,
     ApplicationListComponent
   ],
   imports: [
