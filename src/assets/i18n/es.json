@@ -82,7 +82,20 @@
     },
     "applications": {
         "list": "Mis solicitudes",
-        "manage": "Gestionar solicitudes"
+        "manage": "Gestionar solicitudes",
+        "attributes": {
+            "applicationMoment": "Fecha de aplicación",
+            "comments": "Comentarios",
+            "explorer_Id": "Id explorador",
+            "trip_Id": "Id viaje",
+            "manager_Id": "Id administrador",
+            "rejected_reason": "Razon de rechazo",
+            "tripPrice": "Precio viaje",
+            "status": "Estado"
+        },
+        "actions":{
+            "actions": "Acciones"
+        }
     },
     "administrator": {
         "title": "Administración",

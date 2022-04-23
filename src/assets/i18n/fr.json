@@ -49,7 +49,7 @@
             "title": "Titre",
             "description": "Description",
             "price": "Prix",
-            "startDate" : "Début",
+            "startDate": "Début",
             "endDate": "Fin"
         }
     },
@@ -82,7 +82,20 @@
     },
     "applications": {
         "list": "Mes demandes d'inscription",
-        "manage": "Gérer les demandes d'inscription"
+        "manage": "Gérer les demandes d'inscription",
+        "attributes": {
+            "applicationMoment": "Moment d'application",
+            "comments": "Commentaires",
+            "explorer_Id": "ID de l'explorateur",
+            "trip_Id": "ID du voyage",
+            "manager_Id": "ID du gestionnaire",
+            "rejected_reason": "Motif du refus",
+            "tripPrice": "Prix du voyage",
+            "status": "Statut"
+        },
+        "actions": {
+            "actions": "Actions"
+        }
     },
     "administrator": {
         "title": "Administration",
@@ -116,7 +129,7 @@
         "auth.login.failed": "Erreur lors de la connexion",
         "auth.wrong.password": "Mot de passe non valide",
         "auth.argument.error": "L'email doit être une chaine de caractères valide",
-        "auth.invalid.email" : "Le format de l'adresse mail est incorrect",
+        "auth.invalid.email": "Le format de l'adresse mail est incorrect",
         "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
         "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants",
         "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment"

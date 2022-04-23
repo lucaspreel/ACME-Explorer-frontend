@@ -4,6 +4,7 @@ import { Actor } from 'src/app/models/actor.model';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TranslatableComponent } from '../../shared/translatable/translatable.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
   private activeRole: string;
 
   constructor(private authService: AuthService,
-    private translateService: TranslateService) {
+    private translateService: TranslateService,
+    private router: Router) {
     super(translateService);
   }
 
@@ -45,6 +47,5 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
         console.log(error);
       });
   }
-
 
 }

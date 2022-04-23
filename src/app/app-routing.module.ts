@@ -16,6 +16,7 @@ import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship
 import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
 import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
     {path: ':managerId', component: TripListComponent},
     {path: 'update/:id', component: TripUpdateComponent}
   ]},
+  {path: 'applications', component: ApplicationListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'sponsorships', children: [
     {path: 'create', component: SponsorshipCreateComponent},
     {path: ':id', children: [

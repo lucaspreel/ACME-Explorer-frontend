@@ -7,6 +7,8 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+const route = "applications";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +16,29 @@ export class ApplicationService {
 
   constructor(private http: HttpClient) { }
 
-  getApplication(id: string) {
-    const url = `${environment.json_server_baseURL + '/applications/' + id}`;
+  getRuta(){
+    return `${environment.json_server_baseURL}/${route}`;
+  }
+
+
+  getApplication(id: string): Promise<Application> {
+    const url = `${this.getRuta()}/ + id`;
     return this.http.get<Application>(url).toPromise();
   }
 
-  getApplications() {
-    const url = `${environment.json_server_baseURL + '/applications'}`;
+  getApplications(): Promise<Application[]> {
+    const url = this.getRuta();
     return this.http.get<Application[]>(url).toPromise();
+  }
+
+  getApplicationByManager(managerId: string):Promise<Application[]>  {
+    const url = `${this.getRuta}?manager_Id=${managerId}`;
+    return this.http.get<Application[]>(url).toPromise(); 
+  }
+
+  getApplicationByExplorer(explorerId: string):Promise<Application[]>  {
+    const url = `${this.getRuta}?explorer_Id=${explorerId}`;
+    return this.http.get<Application[]>(url).toPromise(); 
   }
 }
 

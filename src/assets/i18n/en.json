@@ -82,7 +82,20 @@
     },
     "applications": {
         "list": "My applications",
-        "manage": "Manage applications"
+        "manage": "Manage applications",
+        "attributes": {
+            "applicationMoment": "Application date",
+            "comments": "Comments",
+            "explorer_Id": "Explorer id",
+            "trip_Id": "Trip id",
+            "manager_Id": "Manager id",
+            "rejected_reason": "Rejected Reason",
+            "tripPrice": "Trip price",
+            "status": "Status"
+        },
+        "actions":{
+            "actions": "Actions"
+        }
     },
     "administrator": {
         "title": "Administration",
