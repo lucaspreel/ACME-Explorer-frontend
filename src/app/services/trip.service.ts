@@ -28,4 +28,16 @@ export class TripService {
     const url = `${environment.json_server_baseURL + '/trips?managerId=' + managerId}`;
     return this.http.get<Trip[]>(url).toPromise(); 
   }
+
+  createTrip(trip: Trip): void {
+    const url = `${environment.json_server_baseURL + '/trips'}`;
+    const body = JSON.stringify(trip);
+    this.http.post(url, body, httpOptions).toPromise();
+  }
+
+  updateTrip(trip: Trip, tripId: string): void {
+    const url = `${environment.json_server_baseURL + '/trips/' + tripId}`;
+    const body = JSON.stringify(trip);
+    this.http.put(url, body, httpOptions).toPromise();
+  }
 }

@@ -47,7 +47,6 @@ export class TripListComponent extends TranslatableComponent implements OnInit {
         console.log(err);
       });
     }
-
     this.actor = this.authService.getCurrentActor();
   }
 

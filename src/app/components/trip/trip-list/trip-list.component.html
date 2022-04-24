@@ -21,10 +21,14 @@
           </div> 
        </div>
        <div class="card-footer">
-           <a routerLink="/trips/display/{{trip.id}}" class="btn btn-primary pull-left">
+           <a *ngIf="actor == undefined || trip.managerId != actor.id" routerLink="/trips/display/{{trip.id}}" class="btn btn-primary pull-left">
                <span class="fa fa-search-plus" aria-hidden="true"></span>
                {{ 'trip.details' | translate}}
             </a>
+            <a *ngIf="actor != undefined && trip.managerId == actor.id" routerLink="/trips/update/{{trip.id}}" class="btn btn-primary pull-left">
+                <span class="fa fa-pencil" aria-hidden="true"></span>
+                {{ 'trip.update' | translate}}
+             </a>
        </div>
     </div>
 </div>
