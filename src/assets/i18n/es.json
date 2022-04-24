@@ -68,6 +68,7 @@
         "sponsor": {
             "actions": "Acciones",
             "pay": "Pagar patrocinio",
+            "create.trip": "Patrocinar",
             "create": "Crear nuevo patrocinio",
             "update": "Actualizar patrocinio",
             "remove": "Eliminar patrocionio",
@@ -127,7 +128,11 @@
     "messages": {
         "auth.registration.correct": "El usario ha sido registrado correctamente",
         "auth.logout.correct": "El usario se ha desconectado correctamente",
-        "auth.login.correct": "El usario se ha conectado correctamente"
+        "auth.login.correct": "El usario se ha conectado correctamente",
+        "sponsor.sponsorhip.created": "El patrocinio se ha creado correctamente",
+        "sponsor.sponsorhip.updated": "El patrocinio se ha actualizado correctamente",
+        "sponsor.sponsorhip.deleted": "El patrocinio se ha borrado correctamente",
+        "sponsor.sponsorhip.payed": "El patrocinio se ha pagado correctamente"
     },
     "errorMessages": {
         "auth.registration.failed": "Fallo en el registro",
@@ -138,6 +143,7 @@
         "auth.invalid.email" : "El correo eletrónico no tiene un formato correcto",
         "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
         "auth.user.not.found": "No existe un usario asociado a estos datos",
+        "sponsor.trip.not.found": "No existe un viaje asociado a este ticker de viaje",
         "no.trips.found": "No hay viajes disponibles por el momento"
     },
     "back": "Volver"

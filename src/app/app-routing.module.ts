@@ -22,19 +22,19 @@ import { ApplicationDisplayComponent } from './components/application/applicatio
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/trips', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
-  { path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
+  {path: '', redirectTo: '/trips', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
-  {
-    path: 'trips', children: [
-      { path: 'display/:id', component: TripDisplayComponent },
-      { path: 'create', component: TripCreateComponent },
-      { path: '', component: TripListComponent },
-      { path: ':managerId', component: TripListComponent },
-      { path: 'update/:id', component: TripUpdateComponent }
-    ]
-  },
+  {path: 'trips', children: [
+    {path: ':id/sponsorship', component: SponsorshipCreateComponent,
+    canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: 'display/:id', component: TripDisplayComponent},
+    {path: 'create', component: TripCreateComponent},
+    {path: '', component: TripListComponent},
+    {path: ':managerId', component: TripListComponent},
+    {path: 'update/:id', component: TripUpdateComponent}
+  ]},
   {
     path: 'applications', children: [
       {
@@ -46,22 +46,19 @@ const appRoutes: Routes = [
       { path: '', component: ApplicationListComponent }
     ],
   },
-  {
-    path: 'sponsorships', children: [
-      { path: 'create', component: SponsorshipCreateComponent },
-      {
-        path: ':id', children: [
-          { path: '', component: SponsorshipDisplayComponent },
-          { path: 'edit', component: SponsorshipUpdateComponent }
-        ]
-      },
-      { path: '', component: SponsorshipListComponent }
-    ]
-  },
-  { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
-  { path: 'not-found', component: NotFoundPageComponent },
-  { path: 'denied-access', component: DeniedAccesPageComponent },
-  { path: '**', redirectTo: '/not-found' }
+  {path: 'sponsorships', children: [
+    {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: ':id', children: [
+      {path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+      {path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
+    ]},
+    {path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: '', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
+  ]},
+  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+  {path: 'not-found', component: NotFoundPageComponent},
+  {path: 'denied-access', component: DeniedAccesPageComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({

@@ -111,6 +111,7 @@
       "page": "https://www.youtube.com",
       "tripTicker": "ticker128",
       "isPayed": true,
+      "isDeleted": false,
       "id": 6
     },
     {
@@ -141,9 +142,73 @@
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "Ticker1",
-      "isPayed": false,
+      "isPayed": true,
       "isDeleted": false,
       "id": 10
+    },
+    {
+      "banner": "",
+      "page": "https://www.youtube.com",
+      "tripTicker": "220422-ABCD",
+      "isPayed": true,
+      "isDeleted": false,
+      "id": 11
+    },
+    {
+      "banner": "",
+      "page": "https://www.youtube.com",
+      "tripTicker": "220422-ABCD",
+      "isPayed": false,
+      "isDeleted": false,
+      "id": 12
+    },
+    {
+      "banner": "",
+      "page": "https://www.youtube.com",
+      "tripTicker": "220422-ABCD",
+      "isPayed": false,
+      "isDeleted": false,
+      "id": 13
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "220422-ABCD",
+      "isPayed": false,
+      "isDeleted": false,
+      "id": 14
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "220422-ABCD",
+      "isPayed": false,
+      "isDeleted": false,
+      "id": 15
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "120422-BCDE",
+      "isPayed": true,
+      "isDeleted": false,
+      "id": 16
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "140422-CDEF",
+      "isPayed": false,
+      "isDeleted": false,
+      "id": 17
+    },
+    {
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
+      "page": "https://www.youtube.com",
+      "tripTicker": "140422-CDEF",
+      "isPayed": false,
+      "isDeleted": true,
+      "id": 18
     }
   ],
   "dashboard_finder_stats": {

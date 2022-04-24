@@ -3,7 +3,9 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Sponsorship } from 'src/app/models/sponsorship.model';
+import { MessageService } from 'src/app/services/message.service';
 import { SponsorshipService } from 'src/app/services/sponsorship.service';
+import { TripService } from 'src/app/services/trip.service';
 import { TranslatableComponent } from '../../shared/translatable/translatable.component';
 
 @Component({
@@ -18,7 +20,9 @@ export class SponsorshipUpdateComponent extends TranslatableComponent implements
   private sponsorshipForm: any;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private translateService: TranslateService, private fb: FormBuilder, private sponsorshipService: SponsorshipService, private route: ActivatedRoute) {
+  constructor(private translateService: TranslateService, private fb: FormBuilder,
+    private sponsorshipService: SponsorshipService, private route: ActivatedRoute,
+    private messageService: MessageService, private tripService: TripService) {
     super(translateService);
     this.id = this.route.snapshot.params['id'];
     this.sponsorshipService.getSponsorship(this.id)
@@ -39,7 +43,20 @@ export class SponsorshipUpdateComponent extends TranslatableComponent implements
   }
 
   onUpdate() {
-    this.sponsorshipService.updateSponsorship(this.sponsorshipForm.value, this.id);
+    this.tripService.getTrips()
+      .then((val) => {
+        const trips = val;
+        const res = trips.find(t => t.ticker === this.sponsorshipForm.value.tripTicker);
+        if (!res) {
+          this.messageService.notifyMessage('errorMessages.sponsor.trip.not.found', 'alert alert-danger');
+        } else {
+          this.sponsorshipService.updateSponsorship(this.sponsorshipForm.value, this.id);
+          this.messageService.notifyMessage('messages.sponsor.sponsorhip.updated', 'alert alert-primary');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   ngOnInit() {
