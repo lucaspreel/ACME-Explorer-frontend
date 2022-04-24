@@ -60,7 +60,7 @@ export class SponsorshipListComponent extends TranslatableComponent implements O
     if (this.role === 'SPONSOR') {
       console.log(this.actorId);
       // tslint:disable-next-line: triple-equals
-      const res = this.sponsorships.filter(s => (s.isDeleted === false && s.sponsorId == this.actorId));
+      const res = this.sponsorships.filter(s => (s.isDeleted === false && s.sponsorId == Number(this.actorId)));
       this.sponsorships = res;
     } else {
       this.sponsorships = [];
