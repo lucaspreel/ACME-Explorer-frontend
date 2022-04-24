@@ -28,7 +28,7 @@
 </div>
 
 <div class="buttons">
-    <button class="btn btn-primary" (click)="createSponsorship()">
+    <button *ngIf="this.authService.checkRole('SPONSOR')" class="btn btn-primary" (click)="createSponsorship()">
         <i class="fa fa-file"></i> {{'sponsorships.sponsor.create.trip' | translate}}
     </button>
 </div>

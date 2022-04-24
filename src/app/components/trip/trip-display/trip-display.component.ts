@@ -4,6 +4,7 @@ import { TripService } from 'src/app/services/trip.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Trip } from 'src/app/models/trip.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-trip-display',
@@ -19,7 +20,8 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
   constructor(private tripService: TripService,
     private router: Router,
     private route: ActivatedRoute,
-    private translateService: TranslateService) {
+    private translateService: TranslateService,
+    private authService: AuthService) {
     super(translateService);
    }
 
