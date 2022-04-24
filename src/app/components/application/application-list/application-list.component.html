@@ -1,0 +1,32 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" dt-columns="dt-columns" width="100%">
+  <thead>
+    <tr>
+      <th>{{'applications.attributes.applicationMoment' | translate}}</th>
+      <th>{{'applications.attributes.comments' | translate}}</th>
+      <th>{{'applications.attributes.explorer_Id' | translate}}</th>
+      <th>{{'applications.attributes.trip_Id' | translate}}</th>
+      <th>{{'applications.attributes.manager_Id' | translate}}</th>
+      <th>{{'applications.attributes.tripPrice' | translate}}</th>
+      <th>{{'applications.attributes.status' | translate}}</th>
+      <th>{{'applications.actions.actions' | translate}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let application of applications; let i = index">
+        <td>{{application.applicationMoment}}</td>
+        <td>{{application.comments}}</td>
+        <td>{{application.explorer_Id}}</td>
+        <td><a href="trips/display/{{application.trip_Id}}">{{application.trip_Id}}</a></td>
+        <td>{{application.manager_Id}}</td>
+        <td>{{application.tripPrice}}</td>
+        <td>{{application.status}}</td>
+        <td>
+          <a  (click)="navigateToDisplay(application.id)"><i class="fa fa-eye"></i></a>&nbsp;
+          <a  (click)="navigateToEdit(application.id)" ><i class="fa fa-pencil"></i></a>&nbsp;
+          <a  *ngIf="application.status === 'PENDING' && role === 'EXPLORER'" (click)="removeApplication(i)" ><i class="fa fa-trash"></i></a>&nbsp;
+          <a  *ngIf="application.status === 'DUE' && role === 'EXPLORER'" (click)="payApplication(i)" ><i class="fa fa-credit-card"></i></a>
+        </td>
+      </tr>
+  </tbody>
+</table>

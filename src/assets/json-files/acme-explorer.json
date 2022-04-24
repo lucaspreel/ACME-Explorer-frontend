@@ -210,5 +210,341 @@
       "isDeleted": true,
       "id": 18
     }
+  ],
+  "dashboard_finder_stats": {
+    "min": 84,
+    "max": 184,
+    "top_10": [
+      "uno",
+      "dos",
+      "tres",
+      "cuatro",
+      "cinco",
+      "seis",
+      "siete",
+      "ocho",
+      "nueve",
+      "diez"
+    ]
+  },
+  "dashboard_stats": {
+    "trip_admin": {
+      "min": 84,
+      "max": 184,
+      "avg": 100,
+      "dev": 64
+    },
+    "app_price": {
+      "min": 73,
+      "max": 120,
+      "avg": 100,
+      "dev": 41
+    },
+    "price_stats": {
+      "min": 14,
+      "max": 84,
+      "avg": 54,
+      "dev": 60
+    },
+    "app_by_status": {
+      "pending": 20,
+      "rejected": 30,
+      "due": 40,
+      "accepted": 10
+    }
+  },
+  "applications": [
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 1,
+      "isDeleted": true
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 2
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 3
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "REJECTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 4
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 5,
+      "isDeleted": true
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 6
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 7,
+      "isDeleted": true
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "DUE",
+      "explorer_Id": 1,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 8
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 9
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "REJECTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 10
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 11
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 12
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 13
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "DUE",
+      "explorer_Id": 1,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 14
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 15
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "REJECTED",
+      "explorer_Id": 1,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 16
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 17
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 18
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 19
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 20
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 21
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "REJECTED",
+      "explorer_Id": 2,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 22
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "PENDING",
+      "explorer_Id": 2,
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 3,
+      "deleted": false,
+      "id": 23,
+      "isDeleted": true
+    },
+    {
+      "applicationMoment": "22/04/2022",
+      "comments": "Lorem ipsum",
+      "status": "ACCEPTED",
+      "explorer_Id": 1,
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 24
+    }
   ]
 }

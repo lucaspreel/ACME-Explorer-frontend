@@ -4,11 +4,11 @@
     </legend>
 </div>
 
-<div *ngIf="trips == undefined || trips.length == 0">
+<div *ngIf="trips === undefined">
     {{ 'errorMessages.no.trips.found' | translate}}
 </div>
 
-<div *ngIf="trips != undefined || trips.length > 0" class="card-deck">
+<div *ngIf="trips !== undefined " class="card-deck">
     <div *ngFor="let trip of trips" class="card mb-3">
         <div class="card-header">
            <h4 class="card-title"> {{trip.title}}</h4> 

@@ -30,7 +30,7 @@ export class LoginComponent extends TranslatableComponent implements OnInit {
   onLogin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.login(email, password).then(_ => {
+    this.authService.login(email, password).then(async _ => {
       form.reset();
       this.email = email;
       this.router.navigateByUrl(this.returnUrl);

@@ -82,8 +82,27 @@
         }
     },
     "applications": {
+        "title": "Solicitudes",
         "list": "Mis solicitudes",
-        "manage": "Gestionar solicitudes"
+        "details": "Detalles de solicitud",
+        "manage": "Gestionar solicitudes",
+        "attributes": {
+            "applicationMoment": "Fecha de aplicación",
+            "comments": "Comentarios",
+            "explorer_Id": "Id explorador",
+            "trip_Id": "Id viaje",
+            "manager_Id": "Id administrador",
+            "rejected_reason": "Razon de rechazo",
+            "tripPrice": "Precio viaje",
+            "status": "Estado"
+        },
+        "actions":{
+            "actions": "Acciones",
+            "pay": "Pagar patrocinio",
+            "create": "Crear nuevo patrocinio",
+            "update": "Actualizar patrocinio",
+            "remove": "Eliminar patrocionio"
+        }
     },
     "administrator": {
         "title": "Administración",

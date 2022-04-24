@@ -4,6 +4,8 @@ import { Actor } from 'src/app/models/actor.model';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TranslatableComponent } from '../../shared/translatable/translatable.component';
+import { Router } from '@angular/router';
+import RolesEnum from 'src/app/utils/roles_enum';
 
 @Component({
   selector: 'app-header',
@@ -12,11 +14,12 @@ import { TranslatableComponent } from '../../shared/translatable/translatable.co
 })
 export class HeaderComponent extends TranslatableComponent implements OnInit {
 
-  private currentActor: Actor;
+  private currentActorId: string;
   private activeRole: string;
 
   constructor(private authService: AuthService,
-    private translateService: TranslateService) {
+    private translateService: TranslateService,
+    private router: Router) {
     super(translateService);
   }
 
@@ -27,11 +30,11 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
   ngOnInit() {
     this.authService.userLoggedIn.subscribe((loggedIn: boolean) => {
       if (loggedIn) {
-        this.currentActor = this.authService.getCurrentActor();
-        this.activeRole = this.currentActor.role.toString();
+        this.currentActorId = this.authService.getUserId();
+        this.activeRole = this.authService.getRole();
       } else {
-        this.activeRole = 'anonymous';
-        this.currentActor = null;
+        this.activeRole = RolesEnum.anonymous;
+        this.currentActorId = null;
       }
     });
   }
@@ -39,12 +42,15 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
   logout() {
     this.authService.logout()
       .then(_ => {
-        this.activeRole = 'anonymous';
-        this.currentActor = null;
+        this.activeRole = RolesEnum.anonymous;
+        this.currentActorId = null;
       }).catch(error => {
         console.log(error);
       });
   }
 
+  navigateTo(ruta: string) {
+    this.router.navigateByUrl(ruta);
+  }
 
 }

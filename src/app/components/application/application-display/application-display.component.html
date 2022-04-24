@@ -1,0 +1,51 @@
+<br /><br />
+<div class="card mb-3" *ngIf="application">
+  <h3 class="card-header">{{'applications.details' | translate}}</h3>
+
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.comments' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.comments}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.applicationMoment' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.applicationMoment}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.explorer_Id' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.explorer_Id}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.trip_Id' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.trip_Id}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.status' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.status}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.tripPrice' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.tripPrice}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'applications.attributes.manager_Id' | translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{application.manager_Id}}</h6>
+  </div>
+</div>
+
+<div class="buttons" *ngIf="application">
+  <button class="btn btn-primary" (click)="goBack()">
+    <i class="fa fa-arrow-left"></i> {{'back' | translate}}
+  </button>&nbsp;
+
+  <button class="btn btn-primary" >
+    <i class="fa fa-pencil"></i> {{'applications.actions.update' | translate}}
+  </button>&nbsp;
+
+  <button class="btn btn-primary"  *ngIf="application.status === 'DUE' && role === 'EXPLORER'" (click)="payApplication()">
+    <i class="fa fa-credit-card"></i> {{'applications.actions.pay' | translate}}
+  </button>&nbsp;
+
+  <button class="btn btn-danger" *ngIf="application.status === 'PENDING' && role === 'EXPLORER'" (click)="removeApplication()">
+    <i class="fa fa-trash"></i> {{'applications.actions.remove' | translate}}
+  </button>
+</div>

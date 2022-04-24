@@ -15,11 +15,17 @@ import { SponsorshipCreateComponent } from './components/sponsorship/sponsorship
 import { SponsorshipUpdateComponent } from './components/sponsorship/sponsorship-update/sponsorship-update.component';
 import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
 import { TripUpdateComponent } from './components/trip/trip-update/trip-update.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
+import RolesEnum from './utils/roles_enum';
+import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
+import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
   {path: 'trips', children: [
     {path: ':id/sponsorship', component: SponsorshipCreateComponent,
     canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
@@ -29,6 +35,17 @@ const appRoutes: Routes = [
     {path: ':managerId', component: TripListComponent},
     {path: 'update/:id', component: TripUpdateComponent}
   ]},
+  {
+    path: 'applications', children: [
+      {
+        path: ':id', children: [
+          { path: '', component: ApplicationDisplayComponent },
+          { path: 'edit', component: ApplicationEditComponent }
+        ]
+      },
+      { path: '', component: ApplicationListComponent }
+    ],
+  },
   {path: 'sponsorships', children: [
     {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
     {path: ':id', children: [
