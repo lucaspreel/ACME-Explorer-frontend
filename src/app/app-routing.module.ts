@@ -30,10 +30,10 @@ const appRoutes: Routes = [
     {path: ':id/sponsorship', component: SponsorshipCreateComponent,
     canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
     {path: 'display/:id', component: TripDisplayComponent},
-    {path: 'create', component: TripCreateComponent},
+    {path: 'create', component: TripCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR'}},
     {path: '', component: TripListComponent},
     {path: ':managerId', component: TripListComponent},
-    {path: 'update/:id', component: TripUpdateComponent}
+    {path: 'update/:id', component: TripUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR'}}
   ]},
   {
     path: 'applications', children: [
