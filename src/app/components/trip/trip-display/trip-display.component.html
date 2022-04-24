@@ -16,13 +16,19 @@
         <h5 class="card-title"> {{ 'trip.endDate' | translate }} </h5>
         <h6 class="card-subtitle text-muted"> {{trip.endDate}} </h6>
     </div>
-    <div class="card-body"> 
+    <div class="card-body">
         <h5 class="card-title"> {{ 'trip.price' | translate }} </h5>
         <h6 class="card-subtitle text-muted"> {{trip.price}} € </h6>
     </div>
     <div class="card-body">
         <img class="card-img-top img-fluid" style="width: 200px; display: block;"
-        src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+            src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
     </div>
 
+</div>
+
+<div class="buttons">
+    <button class="btn btn-primary" (click)="createSponsorship()">
+        <i class="fa fa-file"></i> {{'sponsorships.sponsor.create.trip' | translate}}
+    </button>
 </div>

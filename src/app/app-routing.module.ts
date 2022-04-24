@@ -21,6 +21,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'trips', children: [
+    {path: ':id/sponsorship', component: SponsorshipCreateComponent,
+    canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
     {path: 'display/:id', component: TripDisplayComponent},
     {path: 'create', component: TripCreateComponent},
     {path: '', component: TripListComponent},
@@ -28,12 +30,13 @@ const appRoutes: Routes = [
     {path: 'update/:id', component: TripUpdateComponent}
   ]},
   {path: 'sponsorships', children: [
-    {path: 'create', component: SponsorshipCreateComponent},
+    {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
     {path: ':id', children: [
-      {path: '', component: SponsorshipDisplayComponent},
-      {path: 'edit', component: SponsorshipUpdateComponent}
+      {path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+      {path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
     ]},
-    {path: '', component: SponsorshipListComponent}
+    {path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: '', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
   ]},
   {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   {path: 'not-found', component: NotFoundPageComponent},

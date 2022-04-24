@@ -14,7 +14,7 @@
         <td><a href="{{sponsorship.banner}}">{{sponsorship.banner}}</a></td>
         <td><a href="{{sponsorship.page}}">{{sponsorship.page}}</a></td>
         <td>
-          <a href="/sponsorships/{{sponsorship.id}}"><i class="fa fa-eye"></i></a>&nbsp;
+          <a href="/sponsorships/{{sponsorship.id}}"><i class="fa fa-search-plus" aria-hidden="true"></i></a>&nbsp;
           <a href="/sponsorships/{{sponsorship.id}}/edit"><i class="fa fa-pencil"></i></a>&nbsp;
           <a href="/sponsorships/" (click)="removeSponsorship(i)"><i class="fa fa-trash"></i></a>&nbsp;
           <a href="/sponsorships/" (click)="paySponsorship(i)" *ngIf="!sponsorship.isPayed"><i
