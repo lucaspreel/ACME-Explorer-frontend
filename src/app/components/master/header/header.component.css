@@ -1,0 +1,9 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: #CCCCCC;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #004085;
+    border-color: #004085;
+}

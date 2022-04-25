@@ -33,3 +33,13 @@
 .footer-company-about {
     word-break: break-all;
 }
+
+.text-muted {
+    color: #CBCFD2!important;
+}
+
+a {
+    color: #B8D9FF;
+    text-decoration: none;
+    background-color: transparent;
+}

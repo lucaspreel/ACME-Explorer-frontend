@@ -6,8 +6,8 @@ export class Trip extends Entity {
         description: string;
         price: number;
         picture: string;
-        startDate: string;
-        endDate: string;
+        startDate: Date;
+        endDate: Date;
         cancelled: boolean;
         managerId: number;
     

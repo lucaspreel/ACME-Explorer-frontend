@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { SponsorshipService } from 'src/app/services/sponsorship.service';
 import { TripService } from 'src/app/services/trip.service';
@@ -16,11 +17,13 @@ export class SponsorshipCreateComponent implements OnInit {
   private sponsorshipForm: FormGroup;
   private id: string;
   private tripTicker: string;
+  private actorId: any;
+  private role: any;
 
-  // tslint:disable-next-line: max-line-length
   constructor(private tripService: TripService, private route: ActivatedRoute,
     private fb: FormBuilder, private translateService: TranslateService,
-    private sponsorshipService: SponsorshipService, private messageService: MessageService) {
+    private sponsorshipService: SponsorshipService, private messageService: MessageService,
+    private authService: AuthService, private router: Router) {
 
   }
 
@@ -31,6 +34,7 @@ export class SponsorshipCreateComponent implements OnInit {
         banner: [''],
         page: [''],
         tripTicker: [this.tripTicker],
+        sponsorId: [this.actorId],
         isPayed: [false],
         isDeleted: [false]
       });
@@ -39,6 +43,7 @@ export class SponsorshipCreateComponent implements OnInit {
         banner: [''],
         page: [''],
         tripTicker: [''],
+        sponsorId: [this.actorId],
         isPayed: [false],
         isDeleted: [false]
       });
@@ -58,6 +63,7 @@ export class SponsorshipCreateComponent implements OnInit {
           this.messageService.notifyMessage('errorMessages.sponsor.trip.not.found', 'alert alert-danger');
         } else {
           this.sponsorshipService.createSponsorship(this.sponsorshipForm.value);
+          this.router.navigateByUrl(`sponsorships`);
           this.messageService.notifyMessage('messages.sponsor.sponsorhip.created', 'alert alert-primary');
         }
       })
@@ -68,6 +74,8 @@ export class SponsorshipCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.actorId = this.authService.getUserId();
+    this.role = this.authService.getRole();
     this.id = this.route.snapshot.params['id'];
     this.tripService.getTrip(this.id)
       .then((val) => {

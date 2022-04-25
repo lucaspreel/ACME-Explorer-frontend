@@ -63,22 +63,22 @@
         "update": "Modifier ce voyage"
     },
     "sponsorships": {
-        "title": "Sponsorships",
-        "details": "Sponsorship details",
+        "title": "Parrainages",
+        "details": "Parrainages des détails",
         "sponsor": {
             "actions": "Actions",
-            "pay": "Pay sponsorship",
-            "list": "Mes sponsorships",
-            "create.trip": "Sponsor",
+            "pay": "Payer le parrainage",
+            "list": "Mes parrainages",
+            "create.trip": "Parrainer",
             "create": "Créer un nouveau sponsorship",
-            "remove": "Delete sponsorship",
-            "update": "Update sponsorship"
+            "remove": "Éliminer sponsorship",
+            "update": "Actualiser sponsorship"
         },
         "attributes": {
-            "tripTicker": "Trip Ticker",
-            "banner": "Banner",
-            "page": "More information",
-            "isPayed": "Is payed"
+            "tripTicker": "Voyage Ticker",
+            "banner": "Bannière",
+            "page": "Plus de information",
+            "isPayed": "C'est payé"
         }
     },
     "applications": {
@@ -130,10 +130,10 @@
         "auth.registration.correct": "L'utilisateur a été enregistré avec succès",
         "auth.logout.correct": "L'utilisateur s'est déconnecté avec succès",
         "auth.login.correct": "L'utilisateur s'est connecté avec succès",
-        "sponsor.sponsorhip.created": "The sponsorhip has been created correctly",
-        "sponsor.sponsorhip.updated": "The sponsorhip has been updated correctly",
-        "sponsor.sponsorhip.deleted": "The sponsorhip has been deleted correctly",
-        "sponsor.sponsorhip.payed": "The sponsorhip has been payed correctly"
+        "sponsor.sponsorhip.created": "Le parrainage a été créé avec succès",
+        "sponsor.sponsorhip.updated": "Le parrainage a été mis à jour avec succès",
+        "sponsor.sponsorhip.deleted": "Le parrainage a été supprimé avec succès",
+        "sponsor.sponsorhip.payed": "Le parrainage a été payé correctement"
     },
     "errorMessages": {
         "auth.registration.failed": "Erreur lors de l'inscription",
@@ -147,5 +147,5 @@
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment"
     },
-    "back": "Return"
+    "back": "Revenir"
 }
