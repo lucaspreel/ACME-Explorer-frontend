@@ -1,6 +1,7 @@
+<main>
 <div class="breadcrumb">
     <legend class="text-center">
-        {{ 'trips.title' | translate}}
+        <h1>{{ 'trips.title' | translate}}</h1>
     </legend>
 </div>
 
@@ -11,7 +12,7 @@
 <div *ngIf="trips !== undefined " class="card-deck">
     <div *ngFor="let trip of trips" class="card mb-3">
         <div class="card-header">
-           <h4 class="card-title"> {{trip.title}}</h4> 
+           <h2 class="card-title"> {{trip.title}}</h2> 
         </div>
        <div class="card-body">
           <div class="container-fluid text-center">
@@ -38,3 +39,4 @@ class="btn btn-primary" (click)="createTrip();">
 {{ 'trips.manager.create' | translate }}
 </button>
 
+</main>

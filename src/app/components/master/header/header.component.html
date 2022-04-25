@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" id="navbarDropdownTrips" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           {{'trips.title' | translate}}
         </a>
@@ -19,7 +19,7 @@
         </div>
       </li>
       <li class="nav-item dropdown" *ngIf="currentActorId">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" id="navbarDropdownProfile" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">{{'actor.profile.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -47,7 +47,7 @@
         </div>
       </li>
       <li class="nav-item dropdown" *ngIf="activeRole === 'ADMINISTRATOR'">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" id="navbarDropdownAdmin" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">{{'administrator.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" (click)="navigateTo('dashboard')">{{'administrator.dashboard' | translate}}</a>
@@ -62,7 +62,7 @@
 
       <li class="nav-item dropdown"
         *ngIf="activeRole == 'ADMINISTRATOR' || activeRole == 'EXPLORER' || activeRole == 'MANAGER'">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" id="navbarDropdownApplications" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           {{'applications.title' | translate}}
         </a>

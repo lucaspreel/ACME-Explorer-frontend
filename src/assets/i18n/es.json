@@ -126,9 +126,9 @@
         "message": "No hemos encontrado la url que busca."
     },
     "messages": {
-        "auth.registration.correct": "El usario ha sido registrado correctamente",
-        "auth.logout.correct": "El usario se ha desconectado correctamente",
-        "auth.login.correct": "El usario se ha conectado correctamente",
+        "auth.registration.correct": "El usuario ha sido registrado correctamente",
+        "auth.logout.correct": "El usuario se ha desconectado correctamente",
+        "auth.login.correct": "El usuario se ha conectado correctamente",
         "sponsor.sponsorhip.created": "El patrocinio se ha creado correctamente",
         "sponsor.sponsorhip.updated": "El patrocinio se ha actualizado correctamente",
         "sponsor.sponsorhip.deleted": "El patrocinio se ha borrado correctamente",

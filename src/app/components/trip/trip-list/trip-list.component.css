@@ -3,3 +3,14 @@
     height: 15vw;
     object-fit: cover;
 }
+
+.badge-primary {
+    color: #fff;
+    background-color: #004085;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #004085;
+    border-color: #004085;
+}
