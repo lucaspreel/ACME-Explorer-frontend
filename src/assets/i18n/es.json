@@ -60,7 +60,8 @@
         "startDate": "Fecha de inicio",
         "endDate": "Fecha de fin",
         "price": "Precio",
-        "update": "Modificar este viaje"
+        "update": "Modificar este viaje",
+        "apply": "Aplicar"
     },
     "sponsorships": {
         "title": "Patrocinios",
@@ -86,6 +87,7 @@
         "list": "Mis solicitudes",
         "details": "Detalles de solicitud",
         "manage": "Gestionar solicitudes",
+        "create": "Create application",
         "attributes": {
             "applicationMoment": "Fecha de aplicación",
             "comments": "Comentarios",

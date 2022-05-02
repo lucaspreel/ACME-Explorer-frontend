@@ -61,5 +61,11 @@ export class ApplicationService {
     const body = JSON.stringify(data);
     this.http.patch(url,body).toPromise();
   }
+
+  createApplication(application):void {
+    const url = this.getRuta();
+    const body = JSON.stringify(application);
+    this.http.post(url,body).toPromise();
+  }
 }
 

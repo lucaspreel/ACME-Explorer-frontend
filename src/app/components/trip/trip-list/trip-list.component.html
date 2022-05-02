@@ -1,42 +1,52 @@
 <main>
-<div class="breadcrumb">
-    <legend class="text-center">
-        <h1>{{ 'trips.title' | translate}}</h1>
-    </legend>
-</div>
-
-<div *ngIf="trips === undefined">
-    {{ 'errorMessages.no.trips.found' | translate}}
-</div>
-
-<div *ngIf="trips !== undefined " class="card-deck">
-    <div *ngFor="let trip of trips" class="card mb-3">
-        <div class="card-header">
-           <h2 class="card-title"> {{trip.title}}</h2> 
-        </div>
-       <div class="card-body">
-          <div class="container-fluid text-center">
-              <img class="card-img-top img-fluid mt-3" style="object-fit: contain;"
-              src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
-              <span class="badge badge-primary">{{trip.price}} € </span>
-          </div> 
-       </div>
-       <div class="card-footer">
-           <a *ngIf="actor == undefined || trip.managerId != actor.id" routerLink="/trips/display/{{trip.id}}" class="btn btn-primary pull-left">
-               <span class="fa fa-search-plus" aria-hidden="true"></span>
-               {{ 'trip.details' | translate}}
-            </a>
-            <a *ngIf="actor != undefined && trip.managerId == actor.id" routerLink="/trips/update/{{trip.id}}" class="btn btn-primary pull-left">
-                <span class="fa fa-pencil" aria-hidden="true"></span>
-                {{ 'trip.update' | translate}}
-             </a>
-       </div>
+    <div class="breadcrumb">
+        <legend class="text-center">
+            <h1>{{ 'trips.title' | translate}}</h1>
+        </legend>
     </div>
-</div>
 
-<button *ngIf="this.authService.checkRole('MANAGER')" type="button"
-class="btn btn-primary" (click)="createTrip();">
-{{ 'trips.manager.create' | translate }}
-</button>
+    <div *ngIf="trips === undefined">
+        {{ 'errorMessages.no.trips.found' | translate}}
+    </div>
+
+    <div *ngIf="trips !== undefined " class="card-deck">
+        <div *ngFor="let trip of trips" class="card mb-3">
+            <div class="card-header">
+                <h2 class="card-title"> {{trip.title}}</h2>
+            </div>
+            <div class="card-body">
+                <div class="container-fluid text-center">
+                    <img class="card-img-top img-fluid mt-3" style="object-fit: contain;"
+                        src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+                    <span class="badge badge-primary">{{trip.price}} € </span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <a *ngIf="actor == undefined || trip.managerId != actor.id" routerLink="/trips/display/{{trip.id}}"
+                        class="btn btn-primary pull-left col-5 mr-1">
+                        <span class="fa fa-search-plus" aria-hidden="true"></span>
+                        {{ 'trip.details' | translate}}
+                    </a>
+                    <a *ngIf="actor != undefined && trip.managerId == actor.id" routerLink="/trips/update/{{trip.id}}"
+                        class="btn btn-primary pull-left col-5 mr-1">
+                        <span class="fa fa-pencil" aria-hidden="true"></span>
+                        {{ 'trip.update' | translate}}
+                    </a>
+                    <a *ngIf="this.authService.checkRole('EXPLORER') && isAvailable(trip)" (click)="createApplication(trip.id);" routerLink=""
+                        class="btn btn-primary pull-left col-5 ml-1">
+                        <span class="fa fa-check" aria-hidden="true"></span>
+                        {{ 'trip.apply' | translate}}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+
+    <button *ngIf="this.authService.checkRole('MANAGER')" type="button" class="btn btn-primary" (click)="createTrip();">
+        {{ 'trips.manager.create' | translate }}
+    </button>
 
 </main>

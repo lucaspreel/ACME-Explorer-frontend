@@ -1,0 +1,51 @@
+<div class="card mb-3" *ngIf="trip">
+  <h3 class="card-header">{{ 'applications.create' | translate }}</h3>
+  <div class="card-body">
+    <div class="row" >
+      <div class="col-4">
+        <h4 class="card-title"> {{ 'trip.title' | translate }} </h4>
+        <h5 class="card-subtitle text-muted"> {{trip.title}} </h5>
+      </div>
+      <div class="col-4">
+        <h4 class="card-title"> {{ 'trip.startDate' | translate }} </h4>
+        <h5 class="card-subtitle text-muted"> {{trip.startDate}} </h5>
+      </div>
+      <div class="col-4">
+        <h4 class="card-title"> {{ 'trip.endDate' | translate }} </h4>
+        <h5 class="card-subtitle text-muted"> {{trip.endDate}} </h5>
+      </div>
+    </div>
+   
+  </div>
+  <div class="card-body">
+    <div class="row" >
+      <div class="col-8">
+        <h4 class="card-title"> {{ 'trip.description' | translate }} </h4>
+        <h5 class="card-subtitle text-muted"> {{trip.description}} </h5>
+      </div>
+      <div class="col-4">
+        <h4 class="card-title"> {{ 'trip.price' | translate }} </h4>
+        <h5 class="card-subtitle text-muted"> {{trip.price}} € </h5>
+      </div>
+    </div>
+
+  </div>
+  <form [formGroup]="applicationForm" *ngIf="applicationForm && trip" (ngSubmit)="onCreate()" class="m-4">
+    <fieldset>
+      <div class="form-group has-danger">
+        <label for="comments" class="form-control-label">{{'applications.attributes.comments' | translate}}</label>
+        <input id="comments" type="text" formControlName="comments" class="form-control">
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-primary" (click)="goBack()">
+          <i class="fa fa-arrow-left"></i> {{'back' | translate}}
+        </button>&nbsp;
+        <button type="submit" class="btn btn-primary">
+          {{'applications.actions.create' | translate}}
+        </button>
+      </div>
+  
+    </fieldset>
+  </form>
+</div>
