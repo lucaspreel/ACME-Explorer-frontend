@@ -8,6 +8,7 @@ export class Actor extends Entity {
   password: string;
   address: string;
   validated: string;
+  preferredLanguage: ['en', 'es', 'fr'];
   constructor() {
     super();
   }
