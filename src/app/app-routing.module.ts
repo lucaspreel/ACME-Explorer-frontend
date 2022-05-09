@@ -20,6 +20,7 @@ import { ApplicationListComponent } from './components/application/application-l
 import RolesEnum from './utils/roles_enum';
 import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
+import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
           { path: 'edit', component: ApplicationEditComponent }
         ]
       },
-      { path: '', component: ApplicationListComponent }
+      { path: '', component: ApplicationListComponent },
+      { path: 'create/:tripId', component: ApplicationCreateComponent }
     ],
   },
   {path: 'sponsorships', children: [
