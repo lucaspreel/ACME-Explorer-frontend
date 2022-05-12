@@ -36,6 +36,7 @@ import { ApplicationListComponent } from './components/application/application-l
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
+import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -80,7 +81,8 @@ registerLocaleData(locales, 'fr');
     ApplicationListComponent,
     ApplicationEditComponent,
     ApplicationDisplayComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ApplicationCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -62,7 +62,8 @@
         "startDate": "Date de début",
         "endDate": "Date de fin",
         "price": "Prix",
-        "update": "Modifier ce voyage"
+        "update": "Modifier ce voyage",
+        "apply": "Apply"
     },
     "sponsorships": {
         "title": "Parrainages",
@@ -88,6 +89,7 @@
         "list": "Mes demandes d'inscription",
         "details": "Application details",
         "manage": "Gérer les demandes d'inscription",
+        "create": "Create application",
         "attributes": {
             "applicationMoment": "Moment d'application",
             "comments": "Commentaires",
