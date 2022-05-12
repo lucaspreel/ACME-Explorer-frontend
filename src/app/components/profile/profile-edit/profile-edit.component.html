@@ -1,3 +1,65 @@
-<p>
-  profile-edit works!
-</p>
+<legend>{{'actor.profile.edit' | translate}}</legend>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="form-group has-danger">
+    <input class="form-control" formControlName="id" type="hidden">
+    <input class="form-control" formControlName="role" type="hidden">
+    <input class="form-control" formControlName="email" type="hidden">
+    <input class="form-control" formControlName="password" type="hidden">
+
+    <label class="center-block"> {{ 'actor.name' | translate }}:
+      <input class="form-control" formControlName="name" placeholder="{{ 'actor.name' | translate}}">
+    </label>
+    <div *ngIf="profileForm.get('name').errors && profileForm.get('name').touched && profileForm.get('name').errors.required"
+    class="text-danger">
+    {{ 'errorMessages.validation.required' | translate }}
+    </div>
+    <br/>
+
+    <label class="center-block"> {{ 'actor.surname' | translate }}:
+      <input class="form-control" formControlName="surname" placeholder="{{ 'actor.surname' | translate}}">
+    </label>
+    <div *ngIf="profileForm.get('surname').errors && profileForm.get('surname').touched && profileForm.get('surname').errors.required"
+    class="text-danger">
+    {{ 'errorMessages.validation.required' | translate }}
+    </div>
+    <br/>
+
+    <label class="center-block"> {{ 'actor.phone' | translate }}:
+      <input class="form-control" formControlName="phone" placeholder="{{ 'actor.phone' | translate}}">
+    </label>
+    <div *ngIf="profileForm.get('phone').errors && profileForm.get('phone').touched && profileForm.get('phone').errors.pattern"
+    class="text-danger">
+    {{ 'errorMessages.validation.pattern.tel' | translate }}
+    </div>
+    <br/>
+
+    <label class="center-block"> {{ 'actor.photo' | translate }}:
+      <input class="form-control" formControlName="photo" (change)="onFileChange($event)" type="file">
+    </label>
+    <img *ngIf="picture != null" class="card-img-top img-fluid" style="display:block; object-fit:contain;" src="{{picture}}">
+    <img *ngIf="picture === null" class="card-img-top img-fluid" style="width:50%; display:block; object-fit:contain;"src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png">
+    <textarea id="showResult" hidden="true"></textarea>
+    <br/>
+
+    <label class="center-block"> {{ 'actor.address' | translate }}:
+      <input class="form-control" formControlName="address" placeholder="{{ 'actor.address' | translate}}">
+    </label>
+    <br/>
+
+    <label class="center-block">{{ 'actor.preferredLanguage' | translate }}:
+      <select class="form-control" formControlName="preferredLanguage">
+        <option *ngFor="let lang of langs">{{lang}}</option>
+      </select>
+    </label>
+    <br/>
+    
+    <button type="submit" class="btn btn-success" [disabled]="profileForm.invalid">
+      {{ 'save' | translate }}
+    </button>&nbsp;
+
+    <button click="goBack()" class="btn btn-primary">
+      {{ 'cancel' | translate }}
+    </button>
+  </div>
+</form>

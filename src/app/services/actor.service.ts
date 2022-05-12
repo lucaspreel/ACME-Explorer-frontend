@@ -36,7 +36,7 @@ export class ActorService {
     return new Promise<any>((resolve, reject) => {
       this.http.put(url, body, httpOptions).toPromise()
       .then(res => {
-        //this.authService.setCurrentActor(actor);
+        this.authService.setCurrentActor(actor);
         resolve(res);
       }, err => {
         console.log(err);
