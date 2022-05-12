@@ -9,12 +9,14 @@
         "role": "Role",
         "register": "Register",
         "update": "Update",
+        "photo": "Picture",
+        "preferredLanguage": "Default language",
         "register.title": "Register new actor",
         "placeholder.email": "Enter email",
         "placeholder.password": "Enter password",
         "profile": {
             "title": "Profile",
-            "edit": "Show profile"
+            "edit": "Edit profile"
         }
     },
     "header": {
@@ -146,7 +148,11 @@
         "auth.weak.password": "Password should be at least 6 characters long",
         "auth.user.not.found": "There is no user corresponding to this identifier",
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
-        "no.trips.found": "There is no trip available for the moment"
+        "no.trips.found": "There is no trip available for the moment",
+        "validation.required": "This field cannot be empty",
+        "validation.pattern.tel": "This field can only contain numeric characters"
     },
-    "back": "Return"
+    "back": "Return",
+    "save": "Save",
+    "cancel": "Cancel"
 }

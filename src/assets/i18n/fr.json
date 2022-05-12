@@ -9,12 +9,14 @@
         "role": "Rôle",
         "register": "S'inscrire",
         "update": "Mettre à jour",
+        "photo": "Photo",
+        "preferredLanguage": "Langue par défaut",
         "register.title": "Inscription d'un acteur",
         "placeholder.email": "Entrez votre email",
         "placeholder.password": "Entrez votre mot de passe",
         "profile": {
             "title": "Profil",
-            "edit": "Consulter mon profil"
+            "edit": "Modifier mon profil"
         }
     },
     "header": {
@@ -147,7 +149,11 @@
         "auth.weak.password": "Le mot de passe doit contenir au moins 6 caractères",
         "auth.user.not.found": "Il n'y a pas d'utilisateur correspondant à ces identifiants",
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
-        "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment"
+        "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment",
+        "validation.required": "Ce champ ne peut pas être vide",
+        "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques"
     },
-    "back": "Revenir"
+    "back": "Revenir",
+    "save": "Sauvegarder",
+    "cancel": "Annuler"
 }
