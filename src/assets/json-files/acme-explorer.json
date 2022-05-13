@@ -134,13 +134,13 @@
       "id": 8
     },
     {
+      "id": 9,
+      "sponsorId": 5,
+      "isDeleted": false,
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "Ticker1",
-      "isPayed": true,
-      "isDeleted": false,
-      "sponsorId": 5,
-      "id": 9
+      "isPayed": true
     },
     {
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
@@ -152,7 +152,7 @@
       "id": 10
     },
     {
-      "banner": "",
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "220422-ABCD",
       "isPayed": true,
@@ -161,7 +161,7 @@
       "id": 11
     },
     {
-      "banner": "",
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "220422-ABCD",
       "isPayed": false,
@@ -170,7 +170,7 @@
       "id": 12
     },
     {
-      "banner": "",
+      "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "220422-ABCD",
       "isPayed": false,
@@ -201,16 +201,17 @@
       "page": "https://www.youtube.com",
       "tripTicker": "120422-BCDE",
       "isPayed": true,
+      "isDeleted": false,
       "id": 16
     },
     {
+      "id": 17,
+      "sponsorId": 5,
+      "isDeleted": false,
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "140422-CDEF",
-      "isPayed": true,
-      "isDeleted": false,
-      "sponsorId": 5,
-      "id": 17
+      "isPayed": true
     },
     {
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
@@ -222,20 +223,20 @@
       "id": 18
     },
     {
+      "id": 19,
+      "sponsorId": 5,
+      "isDeleted": false,
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "140422-CDEF",
-      "sponsorId": 5,
-      "isPayed": false,
-      "isDeleted": false,
-      "id": 19
+      "isPayed": "false"
     },
     {
       "banner": "https://s3.amazonaws.com/thumbnails.venngage.com/template/5ed7291a-ec52-4075-9d88-d96b4d44b1ae.png",
       "page": "https://www.youtube.com",
       "tripTicker": "140422-CDEF",
       "sponsorId": 5,
-      "isPayed": false,
+      "isPayed": true,
       "isDeleted": false,
       "id": 20
     },

@@ -150,6 +150,8 @@
         "sponsor.trip.not.found": "No existe un viaje asociado a este ticker de viaje",
         "no.trips.found": "No hay viajes disponibles por el momento",
         "validation.required": "Este campo no puede estar vacio",
+        "validation.url": "Este campo contiene una url errónea",
+        "validation.tripTicker.exists": "Este campo contiene un ticker de viaje inexistente",
         "validation.pattern.tel": "Este campo sólo puede contener números"
     },
     "back": "Volver",

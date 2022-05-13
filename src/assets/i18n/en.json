@@ -150,6 +150,8 @@
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "There is no trip available for the moment",
         "validation.required": "This field cannot be empty",
+        "validation.url": "This field contains an incorrect url",
+        "validation.tripTicker.exists": "This field contains an unexisting trip ticker",
         "validation.pattern.tel": "This field can only contain numeric characters"
     },
     "back": "Return",

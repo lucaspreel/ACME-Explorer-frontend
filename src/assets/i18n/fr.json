@@ -151,6 +151,8 @@
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment",
         "validation.required": "Ce champ ne peut pas être vide",
+        "validation.url": "Ce champ contient une url incorrecte",
+        "validation.tripTicker.exists": "Ce champ contient un ticker de voyage inexistant",
         "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques"
     },
     "back": "Revenir",
