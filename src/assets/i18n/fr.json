@@ -153,7 +153,8 @@
         "validation.required": "Ce champ ne peut pas être vide",
         "validation.url": "Ce champ contient une url incorrecte",
         "validation.tripTicker.exists": "Ce champ contient un ticker de voyage inexistant",
-        "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques"
+        "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques",
+        "validation.string.minLength": "Vous devez introduire au moins 6 caractères"
     },
     "back": "Revenir",
     "save": "Sauvegarder",

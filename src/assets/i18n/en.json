@@ -152,7 +152,8 @@
         "validation.required": "This field cannot be empty",
         "validation.url": "This field contains an incorrect url",
         "validation.tripTicker.exists": "This field contains an unexisting trip ticker",
-        "validation.pattern.tel": "This field can only contain numeric characters"
+        "validation.pattern.tel": "This field can only contain numeric characters",
+        "validation.string.minLength": "You must introduce at least 6 characters"
     },
     "back": "Return",
     "save": "Save",

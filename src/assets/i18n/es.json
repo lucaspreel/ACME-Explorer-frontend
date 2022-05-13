@@ -152,7 +152,8 @@
         "validation.required": "Este campo no puede estar vacio",
         "validation.url": "Este campo contiene una url errónea",
         "validation.tripTicker.exists": "Este campo contiene un ticker de viaje inexistente",
-        "validation.pattern.tel": "Este campo sólo puede contener números"
+        "validation.pattern.tel": "Este campo sólo puede contener números",
+        "validation.string.minLength": "Debes introducir al menos 6 carateres"
     },
     "back": "Volver",
     "save": "Guardar",
