@@ -22,6 +22,7 @@ import { ApplicationDisplayComponent } from './components/application/applicatio
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -50,6 +51,11 @@ const appRoutes: Routes = [
       },
       { path: '', component: ApplicationListComponent },
       { path: 'create/:tripId', component: ApplicationCreateComponent }
+    ],
+  },
+  {
+    path: 'users', children: [
+      { path: '', component: UserListComponent }
     ],
   },
   {path: 'sponsorships', children: [

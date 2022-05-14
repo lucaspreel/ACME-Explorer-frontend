@@ -52,7 +52,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" (click)="navigateTo('dashboard')">{{'administrator.dashboard.menuLink' | translate}}</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/">{{'administrator.user.list' | translate}}</a>
+          <a class="dropdown-item" (click)="navigateTo('users')">{{'administrator.user.list' | translate}}</a>
 
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="navigateTo('sponsorships')">{{'administrator.sponsorship.list' | translate}}</a>
