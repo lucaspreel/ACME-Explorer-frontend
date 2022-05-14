@@ -1,12 +1,11 @@
-<h1>Dashboard</h1>
-<!-- Promedio de Precios de los fidners-->
+<h1>{{'administrator.dashboard.tittle' | translate}}</h1>
 <div class="accordion" id="accordionPricesFinder" *ngIf="finderStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePriceFinder"
         aria-expanded="true" aria-controls="collapsePriceFinder">
-        <h4>Promedio rango de precio de las busquedas</h4>
+        <h4>{{'administrator.dashboard.finder.price' | translate}}</h4>
       </button>
 
     </div>
@@ -15,22 +14,21 @@
       <div class="card-body">
 
         <ul>
-          <li>Minimo : {{finderStats.min}}</li>
-          <li>Máximo : {{finderStats.max}}</li>
+          <li>{{'administrator.dashboard.min' | translate}} : {{finderStats.min}}</li>
+          <li>{{'administrator.dashboard.max' | translate}} : {{finderStats.max}}</li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
-<!-- Top 10 palabaras mas buscadas -->
 <div class="accordion" id="accordionTop10" *ngIf="finderStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTop10"
         aria-expanded="true" aria-controls="collapseTop10">
-        <h4>Top 10 elementos mas buscados</h4>
+        <h4>{{'administrator.dashboard.finder.keywords' | translate}}</h4>
       </button>
 
     </div>
@@ -59,96 +57,92 @@
   </div>
 </div>
 
-<!--Viajes por administrador-->
 <div class="accordion" id="accordionTripsAdmin" *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTripsAdmin"
         aria-expanded="true" aria-controls="collapseTripsAdmin">
-        <h4>Viajes por administrador</h4>
+        <h4>{{'administrator.dashboard.byManager' | translate}}</h4>
       </button>
 
     </div>
     <div id="collapseTripsAdmin" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTripsAdmin">
       <div class="card-body">
         <ul>
-          <li>Promedio : {{dashboardStats.trip_admin.avg}}</li>
-          <li>Máximo : {{dashboardStats.trip_admin.max}}</li>
-          <li>Minimo : {{dashboardStats.trip_admin.min}}</li>
-          <li>Desviación : {{dashboardStats.trip_admin.dev}}</li>
+          <li>{{'administrator.dashboard.avg' | translate}} : {{dashboardStats.trip_admin.avg}}</li>
+          <li>{{'administrator.dashboard.max' | translate}} : {{dashboardStats.trip_admin.max}}</li>
+          <li>{{'administrator.dashboard.min' | translate}} : {{dashboardStats.trip_admin.min}}</li>
+          <li>{{'administrator.dashboard.dev' | translate}} : {{dashboardStats.trip_admin.dev}}</li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
-<!--Aplicacion por viajes-->
 <div class="accordion" id="accordionAppTrip"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppTrip"
         aria-expanded="true" aria-controls="collapseAppTrip">
-        <h4>Applicacion por viajes</h4>
+        <h4>{{'administrator.dashboard.byApplication' | translate}}</h4>
       </button>
 
     </div>
     <div id="collapseAppTrip" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAppTrip">
       <div class="card-body">
         <ul>
-          <li>Promedio : {{dashboardStats.app_price.avg}}</li>
-          <li>Máximo : {{dashboardStats.app_price.max}}</li>
-          <li>Minimo : {{dashboardStats.app_price.min}}</li>
-          <li>Desviación : {{dashboardStats.app_price.dev}}</li>
+          <li>{{'administrator.dashboard.avg' | translate}} : {{dashboardStats.app_price.avg}}</li>
+          <li>{{'administrator.dashboard.max' | translate}} : {{dashboardStats.app_price.max}}</li>
+          <li>{{'administrator.dashboard.min' | translate}} : {{dashboardStats.app_price.min}}</li>
+          <li>{{'administrator.dashboard.dev' | translate}} : {{dashboardStats.app_price.dev}}</li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
-<!--Estadistica de los Precios-->
 <div class="accordion" id="accordionPriceStats"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePriceStats"
         aria-expanded="true" aria-controls="collapsePriceStats">
-        <h4>Estadistica de los Precios</h4>
+        <h4>{{'administrator.dashboard.byPrice' | translate}}</h4>
       </button>
 
     </div>
     <div id="collapsePriceStats" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionPriceStats">
       <div class="card-body">
         <ul>
-          <li>Promedio : {{dashboardStats.price_stats.avg}}</li>
-          <li>Máximo : {{dashboardStats.price_stats.max}}</li>
-          <li>Minimo : {{dashboardStats.price_stats.min}}</li>
-          <li>Desviación : {{dashboardStats.price_stats.dev}}</li>
+          <li>{{'administrator.dashboard.avg' | translate}} : {{dashboardStats.price_stats.avg}}</li>
+          <li>{{'administrator.dashboard.max' | translate}} : {{dashboardStats.price_stats.max}}</li>
+          <li>{{'administrator.dashboard.min' | translate}} : {{dashboardStats.price_stats.min}}</li>
+          <li>{{'administrator.dashboard.dev' | translate}} : {{dashboardStats.price_stats.dev}}</li>
         </ul>
       </div>
     </div>
 
   </div>
 </div>
-<!--Porciento aplicación por estado-->
 <div class="accordion" id="accordionAppStatus"  *ngIf="dashboardStats">
   <div class="card" style="max-width: 50rem;">
     <div class="card-header">
 
       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseAppStatus"
         aria-expanded="true" aria-controls="collapseAppStatus">
-        <h4>Porciento aplicación por estado</h4>
+        <h4>{{'administrator.dashboard.byStatus' | translate}}</h4>
       </button>
 
     </div>
     <div id="collapseAppStatus" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionAppStatus">
       <div class="card-body">
         <ul>
-          <li>Pending : {{dashboardStats.app_by_status.pending}} %</li>
-          <li>Accepted: {{dashboardStats.app_by_status.accepted}} %</li>
-          <li>Due: {{dashboardStats.app_by_status.due}} %</li>
-          <li>Rejected: {{dashboardStats.app_by_status.rejected}} %</li>
+          <li>{{'applications.status.pending' | translate}} : {{dashboardStats.app_by_status.pending}} %</li>
+          <li>{{'applications.status.accepted' | translate}}: {{dashboardStats.app_by_status.accepted}} %</li>
+          <li>{{'applications.status.due' | translate}}: {{dashboardStats.app_by_status.due}} %</li>
+          <li>{{'applications.status.rejected' | translate}}: {{dashboardStats.app_by_status.rejected}} %</li>
         </ul>
       </div>
     </div>

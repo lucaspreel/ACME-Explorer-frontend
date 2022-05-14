@@ -107,11 +107,30 @@
             "create": "Créer un nouveau sponsorship",
             "remove": "Delete sponsorship",
             "update": "Update sponsorship"
+        },
+        "status":{
+            "pending": "Non résolu",
+            "accepted": "Accepter",
+            "due": "Due",
+            "rejected": "Rejeter"
         }
     },
     "administrator": {
         "title": "Administration",
-        "dashboard": "Afficher le dashboard",
+        "dashboard": {
+            "menuLink": "Afficher le dashboard",
+            "tittle": "Dashboard",
+            "finder.tittle": "Fourchette de prix moyenne du finder",
+            "finder.keywords": "Top 10 des mots clés dans les finders",
+            "byManager": "Voyages par gestionnaire",
+            "byApplication": "Demandes par voyage",
+            "byPrice": "Prix des voyages",
+            "byStatus": "Demandes par statut",
+            "max": "Maximum",
+            "min": "Minimum",
+            "avg": "Moyenne",
+            "dev": "Déviation"
+        },
         "user": {
             "list": "Lister les utilisateurs"
         },

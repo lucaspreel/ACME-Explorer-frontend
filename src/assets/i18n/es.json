@@ -106,11 +106,30 @@
             "create": "Crear nuevo patrocinio",
             "update": "Actualizar patrocinio",
             "remove": "Eliminar patrocionio"
+        },
+        "status":{
+            "pending": "Pendiente",
+            "accepted": "Aceptada",
+            "due": "Esperando pago",
+            "rejected": "Rechazada"
         }
     },
     "administrator": {
         "title": "Administración",
-        "dashboard": "Mostrar dashboard",
+        "dashboard": {
+            "menuLink": "Mostrar dashboard",
+            "tittle": "Dashboard",
+            "finder.tittle": "Promedio rango de precio del finder",
+            "finder.keywords": "Top 10 palabras claves en finders",
+            "byManager": "Viajes por manager",
+            "byApplication": "Solicitudes por viaje",
+            "byPrice": "Precio de los viajes",
+            "byStatus": "Solicitudes según estado",
+            "max": "Máximo",
+            "min": "Mínimo",
+            "avg": "Promedio",
+            "dev": "Desviación"
+        },
         "user": {
             "list": "Listar los usarios"
         },
