@@ -8,6 +8,7 @@ import { Application } from 'src/app/models/application.model';
 import { Trip } from 'src/app/models/trip.model';
 import { ApplicationService } from 'src/app/services/application.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 
 @Component({
   selector: 'app-application-list',
@@ -25,6 +26,8 @@ export class ApplicationListComponent extends TranslatableComponent implements O
   private tripsNames: Trip[];
   actorId: String;
   role: string;
+
+  private payPalConfig: PayPalConfig;
 
   constructor(
     private translateService: TranslateService,
@@ -88,6 +91,34 @@ export class ApplicationListComponent extends TranslatableComponent implements O
           this.dtTrigger.next();
         });
     }
+
+
+    const total =  12;
+
+    this.payPalConfig = new PayPalConfig(PayPalIntegrationType.ClientSideREST, PayPalEnvironment.Sandbox, {
+      commit: true,
+      client: {
+        sandbox: 'AU1prJXkUtsY_sFn_nrhw38VAYPl2B9tiHHr08LKod2Fkdaa8FXY3T9zbf1jbvMYuVJdsOVUcTPfr_rY'
+      },
+      button: {
+        label: 'paypal',
+      },
+      onPaymentComplete: (data, actions) => {
+        console.log('OnPaymentComplete');
+      },
+      onCancel: (data, actions) => {
+        console.log('OnCancel');
+      },
+      onError: (err) => {
+        console.log('OnError');
+      },
+      transactions: [{
+        amount: {
+          currency: 'EUR',
+          total: total
+        }
+      }]
+    });
   }
 
   removeApplication(pos: number) {
@@ -95,12 +126,7 @@ export class ApplicationListComponent extends TranslatableComponent implements O
     this.applicationService.removeApplication(this.applications[pos].id);
     this.navigateTo('applications');
   }
-  payApplication(pos: number) {
-    console.log('pay');
-    this.applicationService.payApplication(this.applications[pos], this.applications[pos].id);
-    this.navigateTo('applications');
-  }
-
+  
   navigateTo(ruta: string) {
     this.router.navigateByUrl(ruta);
   }
@@ -112,4 +138,7 @@ export class ApplicationListComponent extends TranslatableComponent implements O
     this.navigateTo(`applications/${id}`);
   }
 
+  navigateToCheckout(id: string) {
+    this.navigateTo(`checkout/${id}`);
+  }
 }

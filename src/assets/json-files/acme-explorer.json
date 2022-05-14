@@ -494,6 +494,18 @@
       "manager_Id": 6,
       "deleted": false,
       "id": 27
+    },
+    {
+      "comments": "Viaje a londres",
+      "applicationMoment": "2022-05-14T11:43:02.448Z",
+      "status": "ACCEPTED",
+      "explorer_Id": "2",
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 28
     }
   ]
 }
