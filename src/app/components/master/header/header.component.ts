@@ -37,6 +37,12 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
         this.currentActorId = null;
       }
     });
+    if(this.currentActorId == null){
+      if(this.authService.isLoggedIn){
+        this.currentActorId = this.authService.getUserId();
+        this.activeRole = this.authService.getRole();
+      }
+    }
   }
 
   logout() {
