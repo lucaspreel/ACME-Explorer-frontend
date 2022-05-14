@@ -106,11 +106,30 @@
             "create": "Create",
             "update": "Update sponsorship",
             "remove": "Delete sponsorship"
+        },
+        "status":{
+            "pending": "Pending",
+            "accepted": "Accepted",
+            "due": "Due",
+            "rejected": "Rejected"
         }
     },
     "administrator": {
         "title": "Administration",
-        "dashboard": "Display dashboard",
+        "dashboard": {
+            "menuLink": "Display dashboard",
+            "tittle": "Dashboard",
+            "finder.price": "Average finder price range",
+            "finder.keywords": "Top 10 key words in finders",
+            "byManager": "Trips by manager",
+            "byApplication": "Applications per trip",
+            "byPrice": "Price of trips",
+            "byStatus": "Applications by status",
+            "max": "Maximum",
+            "min": "Minimum",
+            "avg": "Average",
+            "dev": "Deviation"
+        },
         "user": {
             "list": "List users"
         },
@@ -150,7 +169,10 @@
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "There is no trip available for the moment",
         "validation.required": "This field cannot be empty",
-        "validation.pattern.tel": "This field can only contain numeric characters"
+        "validation.url": "This field contains an incorrect url",
+        "validation.tripTicker.exists": "This field contains an unexisting trip ticker",
+        "validation.pattern.tel": "This field can only contain numeric characters",
+        "validation.string.minLength": "You must introduce at least 6 characters"
     },
     "back": "Return",
     "save": "Save",

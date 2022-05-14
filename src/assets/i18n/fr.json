@@ -107,11 +107,30 @@
             "create": "Créer un nouveau sponsorship",
             "remove": "Delete sponsorship",
             "update": "Update sponsorship"
+        },
+        "status":{
+            "pending": "Non résolu",
+            "accepted": "Accepter",
+            "due": "Due",
+            "rejected": "Rejeter"
         }
     },
     "administrator": {
         "title": "Administration",
-        "dashboard": "Afficher le dashboard",
+        "dashboard": {
+            "menuLink": "Afficher le dashboard",
+            "tittle": "Dashboard",
+            "finder.tittle": "Fourchette de prix moyenne du finder",
+            "finder.keywords": "Top 10 des mots clés dans les finders",
+            "byManager": "Voyages par gestionnaire",
+            "byApplication": "Demandes par voyage",
+            "byPrice": "Prix des voyages",
+            "byStatus": "Demandes par statut",
+            "max": "Maximum",
+            "min": "Minimum",
+            "avg": "Moyenne",
+            "dev": "Déviation"
+        },
         "user": {
             "list": "Lister les utilisateurs"
         },
@@ -151,7 +170,10 @@
         "sponsor.trip.not.found": "There is no trip corresponding to this trip ticker",
         "no.trips.found": "Il n'y a pas de voyages disponibles pour le moment",
         "validation.required": "Ce champ ne peut pas être vide",
-        "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques"
+        "validation.url": "Ce champ contient une url incorrecte",
+        "validation.tripTicker.exists": "Ce champ contient un ticker de voyage inexistant",
+        "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques",
+        "validation.string.minLength": "Vous devez introduire au moins 6 caractères"
     },
     "back": "Revenir",
     "save": "Sauvegarder",
