@@ -29,7 +29,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'profile', children: [
-    {path: ':id', component: ProfileEditComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}}
+    {path: ':id', component: ProfileEditComponent, 
+    canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}}
   ]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
   {path: 'trips', children: [
@@ -55,16 +56,16 @@ const appRoutes: Routes = [
   },
   {
     path: 'users', children: [
-      { path: '', component: UserListComponent }
+      { path: '', component: UserListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} }
     ],
   },
   {path: 'sponsorships', children: [
-    {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
     {path: ':id', children: [
-      {path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
-      {path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
+      {path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
+      {path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}}
     ]},
-    {path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}},
+    {path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
     {path: '', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
   ]},
   {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
