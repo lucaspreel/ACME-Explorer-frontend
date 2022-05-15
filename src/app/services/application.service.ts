@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Application } from '../models/application.model';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { TripService } from './trip.service';
+import { Trip } from '../models/trip.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,7 +16,7 @@ const route = "applications";
 })
 export class ApplicationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private tripService: TripService,) { }
 
   getRuta() {
     return `${environment.json_server_baseURL}/${route}`;
@@ -43,29 +45,33 @@ export class ApplicationService {
 
   removeApplication(applicationId: string): void {
     const url = `${this.getRuta()}/${applicationId}`;
-    this.http.patch(url, {
-      'isDeleted': true,
-    }).toPromise();
+    this.http.delete(url).toPromise();
   }
 
   payApplication(application: Application, applicationId: string): void {
     const url = `${this.getRuta()}/${applicationId}`;
-    const body = JSON.stringify(application);
-    this.http.patch(url, {
-      'status': 'ACCEPTED',
-    }).toPromise();
+    application.status = "ACCEPTED";
+    this.http.put(url, application).toPromise();
   }
 
   updateApplication(applicationId: string, data: any): void {
     const url = `${this.getRuta()}/${applicationId}`;
-    const body = JSON.stringify(data);
-    this.http.patch(url,body).toPromise();
+    this.http.put(url, data).toPromise();
   }
 
-  createApplication(application):void {
+  createApplication(application): void {
     const url = this.getRuta();
-    const body = JSON.stringify(application);
-    this.http.post(url,body).toPromise();
+    this.http.post(url, application).toPromise();
+  }
+
+  async getTripsNames(applications: Application[]) {
+    const trips = await this.tripService.getTrips();
+    let filterTrips = [];
+    for (var val of applications) {
+      let trip = trips.find(element => element.id == `${val.trip_Id}`);
+      filterTrips.push(trip.title);
+    }
+    return filterTrips;
   }
 }
 

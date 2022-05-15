@@ -5,8 +5,10 @@ import { DataTableDirective } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import { TranslatableComponent } from 'src/app/components/shared/translatable/translatable.component';
 import { Application } from 'src/app/models/application.model';
+import { Trip } from 'src/app/models/trip.model';
 import { ApplicationService } from 'src/app/services/application.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 
 @Component({
   selector: 'app-application-list',
@@ -21,8 +23,11 @@ export class ApplicationListComponent extends TranslatableComponent implements O
   dtTrigger: Subject<any> = new Subject();
 
   private applications: Application[];
+  private tripsNames: Trip[];
   actorId: String;
   role: string;
+
+  private payPalConfig: PayPalConfig;
 
   constructor(
     private translateService: TranslateService,
@@ -52,7 +57,8 @@ export class ApplicationListComponent extends TranslatableComponent implements O
       if (userRole === 'MANAGER') {
         this.role = 'MANAGER';
         this.applicationService.getApplicationByManager(actorId)
-          .then((applicationsList: Application[]) => {
+          .then(async (applicationsList: Application[]) => {
+            this.tripsNames = await this.applicationService.getTripsNames(applicationsList)
             this.applications = applicationsList;
             this.dtTrigger.next();
           });
@@ -60,14 +66,16 @@ export class ApplicationListComponent extends TranslatableComponent implements O
         this.role = 'EXPLORER';
 
         this.applicationService.getApplicationByExplorer(actorId)
-          .then((applicationsList: Application[]) => {
+          .then(async (applicationsList: Application[]) => {
+            this.tripsNames = await this.applicationService.getTripsNames(applicationsList)
             this.applications = applicationsList;
             this.dtTrigger.next();
           });
       } else if (userRole === 'ADMINISTRATOR') {
         this.role = 'ADMINISTRATOR';
         this.applicationService.getApplications()
-          .then((applicationsList: Application[]) => {
+          .then(async (applicationsList: Application[]) => {
+            this.tripsNames = await this.applicationService.getTripsNames(applicationsList)
             this.applications = applicationsList;
             this.dtTrigger.next();
           });
@@ -77,11 +85,40 @@ export class ApplicationListComponent extends TranslatableComponent implements O
       }
     } else {
       this.applicationService.getApplications()
-        .then((applicationsList: Application[]) => {
+        .then(async (applicationsList: Application[]) => {
+          this.tripsNames = await this.applicationService.getTripsNames(applicationsList)
           this.applications = applicationsList;
           this.dtTrigger.next();
         });
     }
+
+
+    const total =  12;
+
+    this.payPalConfig = new PayPalConfig(PayPalIntegrationType.ClientSideREST, PayPalEnvironment.Sandbox, {
+      commit: true,
+      client: {
+        sandbox: 'AU1prJXkUtsY_sFn_nrhw38VAYPl2B9tiHHr08LKod2Fkdaa8FXY3T9zbf1jbvMYuVJdsOVUcTPfr_rY'
+      },
+      button: {
+        label: 'paypal',
+      },
+      onPaymentComplete: (data, actions) => {
+        console.log('OnPaymentComplete');
+      },
+      onCancel: (data, actions) => {
+        console.log('OnCancel');
+      },
+      onError: (err) => {
+        console.log('OnError');
+      },
+      transactions: [{
+        amount: {
+          currency: 'EUR',
+          total: total
+        }
+      }]
+    });
   }
 
   removeApplication(pos: number) {
@@ -89,21 +126,19 @@ export class ApplicationListComponent extends TranslatableComponent implements O
     this.applicationService.removeApplication(this.applications[pos].id);
     this.navigateTo('applications');
   }
-  payApplication(pos: number) {
-    console.log('pay');
-    this.applicationService.payApplication(this.applications[pos], this.applications[pos].id);
-    this.navigateTo('applications');
-  }
- 
+  
   navigateTo(ruta: string) {
     this.router.navigateByUrl(ruta);
   }
-  navigateToEdit(id: string){
+  navigateToEdit(id: string) {
     this.navigateTo(`applications/${id}/edit`);
   }
 
-  navigateToDisplay(id: string){
+  navigateToDisplay(id: string) {
     this.navigateTo(`applications/${id}`);
   }
 
+  navigateToCheckout(id: string) {
+    this.navigateTo(`checkout/${id}`);
+  }
 }
