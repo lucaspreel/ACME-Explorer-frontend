@@ -3,13 +3,12 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
-
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-user-create',
+  templateUrl: './user-create.component.html',
+  styleUrls: ['./user-create.component.css']
 })
-export class RegisterComponent {
+export class UserCreateComponent implements OnInit {
   registrationForm: FormGroup;
   roleList: string[];
   returnUrl: string;
@@ -18,14 +17,12 @@ export class RegisterComponent {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router) {
-    this.roleList = this.authService.getRoles();
-    this.createForm();
-  }
+      this.roleList = this.authService.getRoles();
+      this.createForm();
+     }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/login';
   }
-
 
   createForm() {
     this.registrationForm = this.fb.group({
@@ -38,9 +35,13 @@ export class RegisterComponent {
       role: [''],
       validated: ['true']
     });
+
+    this.registrationForm.controls['role'].setValue('MANAGER');
+    this.registrationForm.controls['role'].disable();
   }
 
   onRegister() {
+    this.registrationForm.controls['role'].enable();
     this.authService.registerUser(this.registrationForm.value)
       .then(res => {
         console.log(res);
@@ -49,5 +50,5 @@ export class RegisterComponent {
         console.log(err);
       });
   }
-}
 
+}

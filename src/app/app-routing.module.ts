@@ -23,6 +23,7 @@ import { ApplicationEditComponent } from './components/application/application-e
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'users', children: [
-      { path: '', component: UserListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} }
+      { path: '', component: UserListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} },
+      { path: 'create', component: UserCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} }
     ],
   },
   {path: 'sponsorships', children: [

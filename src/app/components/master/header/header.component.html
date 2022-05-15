@@ -27,22 +27,25 @@
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
           <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item"
-          routerLink="/trips/{{currentActorId}}">{{'trips.manager.list' | translate}}</a>
+            routerLink="/trips/{{currentActorId}}">{{'trips.manager.list' | translate}}</a>
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
-          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" routerLink="/trips/create">{{'trips.manager.create' |
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" routerLink="/trips/create">{{'trips.manager.create'
+            |
             translate}}</a>
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
-          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" routerLink="/">{{'applications.manage' | translate}}</a>
-
-          <div *ngIf="activeRole === 'SPONSOR'" class="dropdown-divider"></div>
-          <a *ngIf="activeRole === 'SPONSOR'" class="dropdown-item" routerLink="/sponsorships">{{'sponsorships.sponsor.list' |
+          <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item" routerLink="/">{{'applications.manage' |
             translate}}</a>
 
           <div *ngIf="activeRole === 'SPONSOR'" class="dropdown-divider"></div>
           <a *ngIf="activeRole === 'SPONSOR'" class="dropdown-item"
-          routerLink="/sponsorships/create">{{'sponsorships.sponsor.create' | translate}}</a>
+            routerLink="/sponsorships">{{'sponsorships.sponsor.list' |
+            translate}}</a>
+
+          <div *ngIf="activeRole === 'SPONSOR'" class="dropdown-divider"></div>
+          <a *ngIf="activeRole === 'SPONSOR'" class="dropdown-item"
+            routerLink="/sponsorships/create">{{'sponsorships.sponsor.create' | translate}}</a>
 
         </div>
       </li>
@@ -50,12 +53,18 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdownAdmin" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">{{'administrator.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="navigateTo('dashboard')">{{'administrator.dashboard.menuLink' | translate}}</a>
+          <a class="dropdown-item" (click)="navigateTo('dashboard')">{{'administrator.dashboard.menuLink' |
+            translate}}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="navigateTo('users')">{{'administrator.user.list' | translate}}</a>
 
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="navigateTo('sponsorships')">{{'administrator.sponsorship.list' | translate}}</a>
+          <a class="dropdown-item" (click)="navigateTo('sponsorships')">{{'administrator.sponsorship.list' |
+            translate}}</a>
+
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="navigateTo('users/create')">{{'administrator.user.create.manager' |
+            translate}}</a>
 
         </div>
       </li>

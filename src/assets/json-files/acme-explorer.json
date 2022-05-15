@@ -65,6 +65,17 @@
       "role": "MANAGER",
       "validated": "true",
       "id": 6
+    },
+    {
+      "name": "Angel",
+      "surname": "Caballero",
+      "email": "angeladmin@gmail.com",
+      "password": "adminadmin",
+      "phone": "666333222",
+      "address": "Calle imaginaria",
+      "role": "ADMINISTRATOR",
+      "validated": "true",
+      "id": 7
     }
   ],
   "trips": [
