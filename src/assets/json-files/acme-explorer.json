@@ -322,56 +322,7 @@
   "applications": [
     {
       "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "PENDING",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 6,
-      "deleted": false,
-      "id": 1,
-      "isDeleted": true
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "ACCEPTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 2
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "ACCEPTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 3
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "REJECTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 4
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
+      "comments": "LOOONDRESSS",
       "status": "PENDING",
       "explorer_Id": 2,
       "trip_Id": 3,
@@ -421,7 +372,7 @@
     },
     {
       "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
+      "comments": "Editado por el administrador",
       "status": "ACCEPTED",
       "explorer_Id": 2,
       "trip_Id": 1,
@@ -432,28 +383,7 @@
       "id": 9
     },
     {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "REJECTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
       "id": 10
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "PENDING",
-      "explorer_Id": 2,
-      "trip_Id": 3,
-      "rejected_reason": "",
-      "tripPrice": 750,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 11
     },
     {
       "applicationMoment": "22/04/2022",
@@ -516,15 +446,6 @@
       "id": 16
     },
     {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "PENDING",
-      "explorer_Id": 2,
-      "trip_Id": 3,
-      "rejected_reason": "",
-      "tripPrice": 750,
-      "manager_Id": 6,
-      "deleted": false,
       "id": 17
     },
     {
@@ -567,43 +488,6 @@
       "applicationMoment": "22/04/2022",
       "comments": "Lorem ipsum",
       "status": "ACCEPTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 21
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "REJECTED",
-      "explorer_Id": 2,
-      "trip_Id": 1,
-      "rejected_reason": "",
-      "tripPrice": 1400,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 22
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "PENDING",
-      "explorer_Id": 2,
-      "trip_Id": 3,
-      "rejected_reason": "",
-      "tripPrice": 750,
-      "manager_Id": 3,
-      "deleted": false,
-      "id": 23,
-      "isDeleted": true
-    },
-    {
-      "applicationMoment": "22/04/2022",
-      "comments": "Lorem ipsum",
-      "status": "ACCEPTED",
       "explorer_Id": 1,
       "trip_Id": 1,
       "rejected_reason": "",
@@ -616,10 +500,40 @@
       "id": 25
     },
     {
+      "comments": "Viaje al norte de italia. Espero buena experincia",
+      "applicationMoment": "2022-05-14T10:13:32.999Z",
+      "status": "PENDING",
+      "explorer_Id": "2",
+      "trip_Id": 1,
+      "rejected_reason": "",
+      "tripPrice": 1400,
+      "manager_Id": 3,
+      "deleted": false,
       "id": 26
     },
     {
+      "comments": "Viaje rico. Aceptado, lo disfrutaras",
+      "applicationMoment": "2022-05-14T10:17:59.641Z",
+      "status": "ACCEPTED",
+      "explorer_Id": "2",
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 6,
+      "deleted": false,
       "id": 27
+    },
+    {
+      "comments": "Viaje a londres",
+      "applicationMoment": "2022-05-14T11:43:02.448Z",
+      "status": "ACCEPTED",
+      "explorer_Id": "2",
+      "trip_Id": 3,
+      "rejected_reason": "",
+      "tripPrice": 750,
+      "manager_Id": 6,
+      "deleted": false,
+      "id": 28
     }
   ]
 }

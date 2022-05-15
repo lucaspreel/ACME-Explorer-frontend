@@ -50,9 +50,15 @@ export class ApplicationEditComponent implements OnInit {
     });
   }
 
-  onUpdate() {
-    console.log(this.applicationForm.value);
-    this.applicationService.updateApplication(this.id, this.applicationForm.value);
+ async onUpdate() {
+    let object =  JSON.stringify(this.application);
+    if(this.applicationForm.status =="VALID"){
+      this.application.status = this.applicationForm.value.status;
+      this.application.comments = this.applicationForm.value.comments;
+      this.applicationService.updateApplication(this.id, this.application);
+    // this.goBack();
+    }
+    
   }
 
   goBack(): void {
