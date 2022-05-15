@@ -51,7 +51,7 @@ export class ProfileEditComponent extends TranslatableComponent implements OnIni
     this.actorService.getActor(idActor).then((actor) => {
       this.actor = actor;
       console.log(JSON.stringify(actor));
-      if(actor) {
+      if (actor) {
         this.profileForm.controls['id'].setValue(actor.id);
         this.profileForm.controls['name'].setValue(actor.name);
         this.profileForm.controls['surname'].setValue(actor.surname);
