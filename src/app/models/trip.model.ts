@@ -1,4 +1,5 @@
 import { Entity } from "./entity.model";
+import { Picture } from "./picture.model";
 
 export class Trip extends Entity {
         ticker: string;
@@ -6,6 +7,7 @@ export class Trip extends Entity {
         description: string;
         price: number;
         picture: string;
+        photoObject: Picture;
         startDate: Date;
         endDate: Date;
         cancelled: boolean;
@@ -17,7 +19,7 @@ export class Trip extends Entity {
         }
 }
 
-class Stage extends Entity {
+export class Stage extends Entity {
     title: string;
     description: string;
     price: number;

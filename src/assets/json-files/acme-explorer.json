@@ -23,15 +23,17 @@
       "id": 2
     },
     {
+      "id": 3,
       "name": "Manager",
       "surname": "Manager",
       "email": "manager@gmail.com",
       "password": "manager",
-      "phone": "0000000000",
+      "phone": "0000000004",
       "address": "Manager",
-      "role": "MANAGER",
-      "validated": "true",
-      "id": 3
+      "preferredLanguage": "es",
+      "photo": "",
+      "picture": "",
+      "role": "MANAGER"
     },
     {
       "name": "Admin",
@@ -71,7 +73,7 @@
     {
       "id": 1,
       "ticker": "220422-ABCD",
-      "title": "North of italia",
+      "title": "North of italy",
       "description": "Trip to famous cities of the north of Italia : Turin, Milan, Venice and Florence",
       "price": 1400,
       "picture": "NorthItaly.jpg",
