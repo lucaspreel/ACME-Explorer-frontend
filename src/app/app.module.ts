@@ -84,7 +84,7 @@ registerLocaleData(locales, 'fr');
     ApplicationEditComponent,
     ApplicationDisplayComponent,
     ApplicationCreateComponent,
-    CheckoutComponent
+    CheckoutComponent,
     ProfileEditComponent,
   ],
   imports: [

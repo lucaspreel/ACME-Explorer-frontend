@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 import { AuthService } from 'src/app/services/auth.service';
@@ -31,25 +31,28 @@ export class RegisterComponent  {
 
     createForm() {
       this.registrationForm = this.fb.group({
-        name: [''],
+        name: ['',Validators.required],
         surname: [''],
-        email: [''],
-        password: [''],
-        phone: [''],
+        email: ['',[Validators.required, Validators.email]],
+        password: ['',[Validators.required, Validators.minLength(6)]],
+        phone: ['', Validators.required],
         address: [''],
-        role: [''],
+        role: ['', Validators.required],
         validated: ['true']
       });
     }
 
     onRegister() {
-      this.authService.registerUser(this.registrationForm.value)
-      .then(res => {
-        console.log(res);
-        this.router.navigateByUrl(this.returnUrl);
-      }, err => {
-        console.log(err);
-      });
+      if(this.registrationForm.valid){
+        this.authService.registerUser(this.registrationForm.value)
+        .then(res => {
+          console.log(res);
+          this.router.navigateByUrl(this.returnUrl);
+        }, err => {
+          console.log(err);
+        });
+      }
+      
     }
 }
 
