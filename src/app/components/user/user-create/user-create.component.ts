@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -26,29 +26,31 @@ export class UserCreateComponent implements OnInit {
 
   createForm() {
     this.registrationForm = this.fb.group({
-      name: [''],
-      surname: [''],
-      email: [''],
-      password: [''],
-      phone: [''],
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      phone: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       address: [''],
-      role: [''],
-      validated: ['true']
+      role: ['', Validators.required],
+      validated: ['']
     });
 
+    this.registrationForm.controls['validated'].setValue('true');
     this.registrationForm.controls['role'].setValue('MANAGER');
     this.registrationForm.controls['role'].disable();
   }
 
   onRegister() {
-    this.registrationForm.controls['role'].enable();
-    this.authService.registerUser(this.registrationForm.value)
-      .then(res => {
-        console.log(res);
-        this.router.navigateByUrl(this.returnUrl);
-      }, err => {
-        console.log(err);
-      });
+    if (this.registrationForm.valid) {
+      this.registrationForm.controls['role'].enable();
+      this.authService.registerUser(this.registrationForm.value)
+        .then(res => {
+          console.log(res);
+          this.router.navigateByUrl(this.returnUrl);
+        }, err => {
+          console.log(err);
+        });
+    }
   }
-
 }
