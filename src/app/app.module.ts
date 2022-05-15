@@ -84,8 +84,8 @@ registerLocaleData(locales, 'fr');
     ApplicationEditComponent,
     ApplicationDisplayComponent,
     ApplicationCreateComponent,
-    CheckoutComponent
-    ProfileEditComponent,
+    CheckoutComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
