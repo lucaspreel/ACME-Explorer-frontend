@@ -1,8 +1,12 @@
 <main>
 <div class="card mb-3">
-    <h2 class="card-header">{{ 'trip.details' | translate }}</h2>
+    <h2 class="card-header text-center">{{ 'trip.details' | translate }}</h2>
     <div class="card-body">
-        <h4 class="card-title"> {{ 'trip.title' | translate }} </h4>
+        <img class="card-img-top img-fluid" style="width: 200px; display: block;"
+            src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title "> {{ 'trip.title' | translate }} </h4>
         <h6 class="card-subtitle text-muted"> {{trip.title}} </h6>
     </div>
     <div class="card-body">
@@ -22,8 +26,14 @@
         <h6 class="card-subtitle text-muted"> {{trip.price}} € </h6>
     </div>
     <div class="card-body">
-        <img class="card-img-top img-fluid" style="width: 200px; display: block;"
-            src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+        <h4 class="card-title"> {{ 'trip.stages' | translate }} </h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let stage of getStages(); let i = index">
+                <h5 class="card-text ml-2 m2-1">{{i+1}}) {{stage.title}}</h5>
+                <h6 class="card-text ml-2 m2-1 text-muted">{{stage.description}}</h6>
+                <h6 class="card-text ml-2 m2-1 text-muted">{{stage.price}} €</h6>
+            </li>
+        </ul>
     </div>
 
 </div>

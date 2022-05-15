@@ -10,8 +10,19 @@ export class Trip extends Entity {
         endDate: Date;
         cancelled: boolean;
         managerId: number;
+        stages: Stage[];
     
         constructor() {
             super();
         }
+}
+
+class Stage extends Entity {
+    title: string;
+    description: string;
+    price: number;
+
+    constructor() {
+        super();
+    }
 }

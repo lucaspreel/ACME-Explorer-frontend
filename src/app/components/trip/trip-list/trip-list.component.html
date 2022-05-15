@@ -1,7 +1,7 @@
 <main>
     <div class="breadcrumb">
         <legend class="text-center">
-            <h1>{{ 'trips.title' | translate}}</h1>
+            <h2>{{ 'trips.title' | translate}}</h2>
         </legend>
     </div>
 
@@ -12,7 +12,7 @@
     <div *ngIf="trips !== undefined " class="card-deck">
         <div *ngFor="let trip of trips" class="card mb-3">
             <div class="card-header">
-                <h2 class="card-title"> {{trip.title}}</h2>
+                <h3 class="card-title text-center"> {{trip.title}}</h3>
             </div>
             <div class="card-body">
                 <div class="container-fluid text-center">

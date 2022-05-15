@@ -67,6 +67,7 @@
         "startDate": "Start date",
         "endDate": "End date",
         "price": "Price",
+        "stages": "Stage(s)",
         "update": "Update this trip",
         "apply": "Apply"
     },
