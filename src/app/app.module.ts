@@ -39,6 +39,7 @@ import { ProfileEditComponent } from './components/profile/profile-edit/profile-
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { ProfileDisplayComponent } from './components/profile/profile-display/profile-display.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCDfw_5qjfLJgdEsjz-AB2-NrZ5UhXz7BQ",
@@ -85,7 +86,8 @@ registerLocaleData(locales, 'fr');
     ApplicationDisplayComponent,
     ApplicationCreateComponent,
     CheckoutComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ProfileDisplayComponent
   ],
   imports: [
     BrowserModule,

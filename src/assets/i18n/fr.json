@@ -14,8 +14,13 @@
         "register.title": "Inscription d'un acteur",
         "placeholder.email": "Entrez votre email",
         "placeholder.password": "Entrez votre mot de passe",
+        "photo.empty": "Vous n'avez pas encore de photo",
+        "address.empty" : "Vous n'avez pas encore indiqué d'adresse",
+        "phone.empty": "Vous n'avez pas encore indiqué de numéro de téléphone",
+        "preferredLanguage.empty": "Vous n'avez pas encore indiqué de langue par défaut",
         "profile": {
             "title": "Profil",
+            "display": "Montrer mon profil",
             "edit": "Modifier mon profil"
         }
     },

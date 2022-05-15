@@ -23,7 +23,8 @@
           aria-haspopup="true" aria-expanded="false">{{'actor.profile.title' | translate}}</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <a class="dropdown-item" routerLink="/profile/{{currentActorId}}">{{'actor.profile.edit' | translate}}</a>
+          <a class="dropdown-item" routerLink="/profile/display/{{currentActorId}}">{{'actor.profile.display' | translate}}</a>
+          <a class="dropdown-item" routerLink="/profile/edit/{{currentActorId}}">{{'actor.profile.edit' | translate}}</a>
 
           <div *ngIf="activeRole === 'MANAGER'" class="dropdown-divider"></div>
           <a *ngIf="activeRole === 'MANAGER'" class="dropdown-item"
