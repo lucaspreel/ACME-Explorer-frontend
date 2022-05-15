@@ -9,12 +9,14 @@
         "role": "Rol",
         "register": "Registrar",
         "update": "Actualizar",
+        "photo": "Foto",
+        "preferredLanguage": "Idioma por defecto",
         "register.title": "Registro de actor",
         "placeholder.email": "Introduzca su email",
         "placeholder.password": "Introduzca su contraseña",
         "profile": {
             "title": "Perfil",
-            "edit": "Ver mi perfil"
+            "edit": "Editar mi perfil"
         }
     },
     "header": {
@@ -104,11 +106,30 @@
             "create": "Crear nuevo patrocinio",
             "update": "Actualizar patrocinio",
             "remove": "Eliminar patrocionio"
+        },
+        "status":{
+            "pending": "Pendiente",
+            "accepted": "Aceptada",
+            "due": "Esperando pago",
+            "rejected": "Rechazada"
         }
     },
     "administrator": {
         "title": "Administración",
-        "dashboard": "Mostrar dashboard",
+        "dashboard": {
+            "menuLink": "Mostrar dashboard",
+            "tittle": "Dashboard",
+            "finder.tittle": "Promedio rango de precio del finder",
+            "finder.keywords": "Top 10 palabras claves en finders",
+            "byManager": "Viajes por manager",
+            "byApplication": "Solicitudes por viaje",
+            "byPrice": "Precio de los viajes",
+            "byStatus": "Solicitudes según estado",
+            "max": "Máximo",
+            "min": "Mínimo",
+            "avg": "Promedio",
+            "dev": "Desviación"
+        },
         "user": {
             "list": "Listar los usarios"
         },
@@ -146,7 +167,14 @@
         "auth.weak.password": "La contraseña debe tener al menos 6 caracteres",
         "auth.user.not.found": "No existe un usario asociado a estos datos",
         "sponsor.trip.not.found": "No existe un viaje asociado a este ticker de viaje",
-        "no.trips.found": "No hay viajes disponibles por el momento"
+        "no.trips.found": "No hay viajes disponibles por el momento",
+        "validation.required": "Este campo no puede estar vacio",
+        "validation.url": "Este campo contiene una url errónea",
+        "validation.tripTicker.exists": "Este campo contiene un ticker de viaje inexistente",
+        "validation.pattern.tel": "Este campo sólo puede contener números",
+        "validation.string.minLength": "Debes introducir al menos 6 carateres"
     },
-    "back": "Volver"
+    "back": "Volver",
+    "save": "Guardar",
+    "cancel": "Cancelar"
 }

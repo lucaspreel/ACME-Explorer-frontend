@@ -88,6 +88,13 @@ export class AuthService {
     return this.currentActor;
   }
 
+  setCurrentActor(actor: Actor): void {
+    console.log('Set current actor');
+    const url = `${environment.json_server_baseURL + '/actors/' + this.currentActor.id}`;
+    const body = JSON.stringify(actor);
+    this.http.put(url, body, httpOptions).toPromise();
+  }
+
   registerUser(actor: Actor) {
     return new Promise<any>((resolve, reject) => {
       this.fireAuth.auth.createUserWithEmailAndPassword(actor.email, actor.password)

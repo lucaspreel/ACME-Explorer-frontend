@@ -4,7 +4,7 @@ import { Actor } from 'src/app/models/actor.model';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TranslatableComponent } from '../../shared/translatable/translatable.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import RolesEnum from 'src/app/utils/roles_enum';
 
 @Component({
@@ -16,9 +16,11 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
 
   private currentActorId: string;
   private activeRole: string;
+  private returnUrl: string;
 
   constructor(private authService: AuthService,
     private translateService: TranslateService,
+    private route: ActivatedRoute,
     private router: Router) {
     super(translateService);
   }
@@ -50,6 +52,8 @@ export class HeaderComponent extends TranslatableComponent implements OnInit {
       .then(_ => {
         this.activeRole = RolesEnum.anonymous;
         this.currentActorId = null;
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.router.navigateByUrl(this.returnUrl);
       }).catch(error => {
         console.log(error);
       });

@@ -21,7 +21,7 @@ export class SponsorshipService {
 
   getSponsorship(sponsorshipId: string): Promise<Sponsorship> {
     let sponsorshipUrl = environment.json_server_baseURL + '/sponsorships/' + sponsorshipId;
-    return this.http.get(sponsorshipUrl).toPromise<any>();
+    return this.http.get<Sponsorship>(sponsorshipUrl).toPromise();
   }
 
   createSponsorship(sponsorship: Sponsorship): void {

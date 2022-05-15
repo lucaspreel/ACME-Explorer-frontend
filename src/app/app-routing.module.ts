@@ -20,13 +20,17 @@ import { ApplicationListComponent } from './components/application/application-l
 import RolesEnum from './utils/roles_enum';
 import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/trips', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
-  { path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
+  {path: '', redirectTo: '/trips', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
+  {path: 'profile', children: [
+    {path: ':id', component: ProfileEditComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}}
+  ]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
   {
     path: 'trips', children: [

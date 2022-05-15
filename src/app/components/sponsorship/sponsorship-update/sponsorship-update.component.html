@@ -1,26 +1,61 @@
+<legend>{{'sponsorships.title' | translate}}</legend>
 <form [formGroup]="sponsorshipForm" *ngIf="sponsorshipForm" (ngSubmit)="onUpdate()">
-  <fieldset>
-    <legend>{{'sponsorships.title' | translate}}</legend>
+  <input id="isPayed" type="hidden" formControlName="isPayed" class="form-control">
+  <input id="id" type="hidden" formControlName="id" class="form-control">
+  <input id="sponsorId" type="hidden" formControlName="sponsorId" class="form-control">
+  <input id="isDeleted" type="hidden" formControlName="isDeleted" class="form-control">
 
-    <div class="form-group has-danger">
-      <label for="tripTicker" class="form-control-label">{{'sponsorships.attributes.tripTicker' | translate}}</label>
-      <input id="tripTicker" type="text" formControlName="tripTicker" class="form-control">
-    </div>
+  <label class="center-block">{{'sponsorships.attributes.tripTicker' | translate}}
+    <input id="tripTicker" type="text" formControlName="tripTicker" class="form-control">
+  </label>
+  <div *ngIf="sponsorshipForm.get('tripTicker').errors &&
+    sponsorshipForm.get('tripTicker').touched && 
+    sponsorshipForm.get('tripTicker').errors.required" class="text-danger">
+    {{'errorMessages.validation.required' | translate}}
+  </div>
+  <div *ngIf="sponsorshipForm.get('tripTicker').errors &&
+  sponsorshipForm.get('tripTicker').touched && 
+  !sponsorshipForm.get('tripTicker').errors.tripTickerExists" class="text-danger">
+    {{'errorMessages.validation.tripTicker.exists' | translate}}
+  </div>
+  <br />
 
+  <label class="center-block">{{'sponsorships.attributes.banner' | translate}}
+    <input id="banner" type="text" formControlName="banner" class="form-control">
+  </label>
+  <div *ngIf="sponsorshipForm.get('banner').errors &&
+    sponsorshipForm.get('banner').touched && 
+    sponsorshipForm.get('banner').errors.required" class="text-danger">
+    {{'errorMessages.validation.required' | translate}}
+  </div>
+  <div *ngIf="sponsorshipForm.get('banner').errors &&
+    sponsorshipForm.get('banner').touched && 
+    !sponsorshipForm.get('banner').errors.validUrl" class="text-danger">
+    {{'errorMessages.validation.url' | translate}}
+  </div>
+  <br />
 
-    <div class="form-group has-danger">
-      <label for="banner" class="form-control-label">{{'sponsorships.attributes.banner' | translate}}</label>
-      <input id="banner" type="text" formControlName="banner" class="form-control">
-    </div>
+  <label class="center-block">{{'sponsorships.attributes.page' | translate}}
+    <input id="page" type="text" formControlName="page" class="form-control">
+  </label>
+  <div *ngIf="sponsorshipForm.get('page').errors &&
+    sponsorshipForm.get('page').touched && 
+    sponsorshipForm.get('page').errors.required" class="text-danger">
+    {{'errorMessages.validation.required' | translate}}
+  </div>
+  <div *ngIf="sponsorshipForm.get('page').errors &&
+  sponsorshipForm.get('page').touched && 
+  !sponsorshipForm.get('page').errors.validUrl" class="text-danger">
+    {{'errorMessages.validation.url' | translate}}
+  </div>
+  <br />
 
-    <div class="form-group has-danger">
-      <label for="page" class="form-control-label">{{'sponsorships.attributes.page' | translate}}</label>
-      <input id="page" type="text" formControlName="page" class="form-control">
-    </div>
+  <button type="submit" class="btn btn-success" [disabled]="sponsorshipForm.invalid">
+    {{'sponsorships.sponsor.update' | translate}}
+  </button> &nbsp;
 
-    <button type="submit" class="btn btn-primary">
-      {{'sponsorships.sponsor.update' | translate}}
-    </button>
+  <button (click)="goBack()" class="btn btn-primary">
+    {{'cancel' | translate}}
+  </button>
 
-  </fieldset>
 </form>

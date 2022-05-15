@@ -19,12 +19,12 @@ export class LoginComponent extends TranslatableComponent implements OnInit {
   constructor(private authService: AuthService,
     private translateService: TranslateService,
     private route: ActivatedRoute,
-    private router: Router) { 
+    private router: Router) {
       super(translateService);
     }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   onLogin(form: NgForm) {
