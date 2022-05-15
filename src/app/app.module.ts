@@ -35,6 +35,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ApplicationListComponent } from './components/application/application-list/application-list.component';
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
+import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NgxPayPalModule } from 'ngx-paypal';
@@ -84,6 +85,7 @@ registerLocaleData(locales, 'fr');
     ApplicationDisplayComponent,
     ApplicationCreateComponent,
     CheckoutComponent
+    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,
