@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Actor } from 'src/app/models/actor.model';
 import { Picture } from 'src/app/models/picture.model';
@@ -24,13 +24,18 @@ export class ProfileEditComponent extends TranslatableComponent implements OnIni
   constructor(private fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
+    private route: ActivatedRoute,
     private actorService: ActorService,
     private translateService: TranslateService) {
       super(translateService);
     }
 
   ngOnInit() {
-    this.createForm();
+    if (this.authService.getRole() != "ADMINISTRATOR" && this.authService.getUserId() != this.route.snapshot.params['id']) {
+      this.router.navigate(['/denied-access']);
+    } else {
+      this.createForm();
+    }
   }
 
   createForm() {
@@ -47,7 +52,7 @@ export class ProfileEditComponent extends TranslatableComponent implements OnIni
       picture: [''],
       role: [''],
     });
-    const idActor = this.authService.getUserId();
+    const idActor = this.route.snapshot.params['id'];
     this.actorService.getActor(idActor).then((actor) => {
       this.actor = actor;
       console.log(JSON.stringify(actor));
