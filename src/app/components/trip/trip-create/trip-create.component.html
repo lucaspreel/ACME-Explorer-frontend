@@ -1,3 +1,86 @@
-<p>
-  trip-create works!
-</p>
+<legend>{{'trips.manager.create' | translate}}</legend>
+
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+  <div class="form-group has-danger">
+
+    <div class="form-group has-danger">
+      <label for="title" class="form-control-label">{{'trip.title' | translate}}</label>
+      <input id="title" type="text" formControlName="title" class="form-control">
+      <div *ngIf="tripForm.get('title').errors &&
+        tripForm.get('title').touched &&
+        tripForm.get('title').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    </div>
+
+    <div class="form-group has-danger">
+      <label for="description" class="form-control-label">{{'trip.description' | translate}}</label>
+      <input id="description" type="text" formControlName="description" class="form-control">
+      <div *ngIf="tripForm.get('description').errors &&
+        tripForm.get('description').touched &&
+        tripForm.get('description').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    </div>
+
+    <div class="form-group has-danger">
+      <label for="picture" class="form-control-label">{{'trip.photo' | translate}}</label>
+      <input id="picture" type="file" formControlName="picture" (change)="onFileChange($event)" class="form-control">
+      <textarea id="showResult" hidden="true"></textarea>
+    </div>
+
+    <div class="form-group has-danger">
+      <label for="startDate" class="form-control-label">{{'trip.startDate' | translate}}</label>
+      <input id="startDate" type="date" formControlName="startDate" class="form-control">
+      <div *ngIf="tripForm.get('startDate').errors &&
+        tripForm.get('startDate').touched &&
+        tripForm.get('startDate').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    </div>
+
+    <div class="form-group has-danger">
+      <label for="endDate" class="form-control-label">{{'trip.endDate' | translate}}</label>
+      <input id="endDate" type="date" formControlName="endDate" class="form-control">
+      <div *ngIf="tripForm.get('endDate').errors &&
+        tripForm.get('endDate').touched &&
+        tripForm.get('endDate').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    </div>
+
+    <ng-container formArrayName="stages">
+      <h4> {{'trip.stages' | translate}} </h4> 
+      
+      <div *ngFor="let stage of stages.controls; let i=index">
+        <h6>{{i+1}})</h6>
+
+        <ng-container [formGroupName]="i">
+          <div class="form-group has-danger">
+            <label for="titleStage-{{ i }}" class="form-control-label">{{'trip.stage.title' | translate}}</label>
+            <input id="titleStage-{{ i }}" type="text" formControlName="title" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="descriptionStage-{{ i }}" class="form-control-label">{{'trip.stage.description' | translate}}</label>
+            <input id="descriptionStage-{{ i }}" type="text" formControlName="description" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="priceStage-{{ i }}" class="form-control-label">{{'trip.stage.price' | translate}}</label>
+            <input id="priceStage-{{ i }}" type="number" formControlName="price" class="form-control">
+          </div>
+        </ng-container>
+
+      </div>
+      
+      <button type="button" class="btn btn-primary" (click)="addStage()">{{'trip.stage.add' | translate}}</button>
+    </ng-container>
+    <br/>
+    <br/>
+    
+    <button type="submit" class="btn btn-success" [disabled]="tripForm.invalid">
+      {{ 'create' | translate }}
+    </button>
+  </div>
+</form>

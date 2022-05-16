@@ -1,0 +1,44 @@
+<main>
+  <div class="card mb-3">
+    <h2 class="card-header">{{ 'actor.profile.display' | translate }}</h2>
+
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.name' | translate }} </h4>
+      <h6 class="card-subtitle text-muted"> {{actor.name}} </h6>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.surname' | translate }} </h4>
+      <h6 class="card-subtitle text-muted"> {{actor.surname}} </h6>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.phone' | translate }} </h4>
+      <h6 *ngIf="actor.phone != null" class="card-subtitle text-muted"> {{actor.phone}} </h6>
+      <h6 *ngIf="actor.phone == null" class="card-subtitle text-muted"> {{ 'actor.phone.empty' | translate }} </h6>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.photo' | translate }} </h4>
+      <img *ngIf="actor.picture != null" class="card-img-top img-fluid" style="display:block; object-fit:contain;" src="{{actor.picture}}">
+      <h6 *ngIf="actor.picture == null" class="card-subtitle text-muted"> {{ 'actor.photo.empty' | translate }} </h6>
+  </div>
+    
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.address' | translate }} </h4>
+      <h6 *ngIf="actor.address != null" class="card-subtitle text-muted"> {{actor.address}} </h6>
+      <h6 *ngIf="actor.address == null" class="card-subtitle text-muted"> {{ 'actor.address.empty' | translate }} </h6>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title"> {{ 'actor.preferredLanguage' | translate }} </h4>
+      <h6 *ngIf="actor.preferredLanguage != null" class="card-subtitle text-muted"> {{actor.preferredLanguage}} </h6>
+      <h6 *ngIf="actor.preferredLanguage == null" class="card-subtitle text-muted"> {{ 'actor.preferredLanguage.empty' | translate }} </h6>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button routerLink="/profile/edit/{{actor.id}}" class="btn btn-primary">
+      {{ 'actor.profile.edit' | translate }}
+    </button>
+</div>

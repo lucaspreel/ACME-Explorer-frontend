@@ -14,8 +14,13 @@
         "register.title": "Inscription d'un acteur",
         "placeholder.email": "Entrez votre email",
         "placeholder.password": "Entrez votre mot de passe",
+        "photo.empty": "Vous n'avez pas encore de photo",
+        "address.empty" : "Vous n'avez pas encore indiqué d'adresse",
+        "phone.empty": "Vous n'avez pas encore indiqué de numéro de téléphone",
+        "preferredLanguage.empty": "Vous n'avez pas encore indiqué de langue par défaut",
         "profile": {
             "title": "Profil",
+            "display": "Montrer mon profil",
             "edit": "Modifier mon profil"
         }
     },
@@ -62,8 +67,15 @@
         "startDate": "Date de début",
         "endDate": "Date de fin",
         "price": "Prix",
+        "stages": "Etape(s)",
+        "stage.add": "Ajouter une étape",
+        "stage.title": "Titre de l'étape",
+        "stage.description": "Ajouter cette étape",
+        "stage.price": "Prix de l'étape",
         "update": "Modifier ce voyage",
-        "apply": "Apply"
+        "delete": "Supprimer ce voyage",
+        "apply": "Apply",
+        "photo": "Photo"
     },
     "sponsorships": {
         "title": "Parrainages",
@@ -120,7 +132,7 @@
         "dashboard": {
             "menuLink": "Afficher le dashboard",
             "tittle": "Dashboard",
-            "finder.tittle": "Fourchette de prix moyenne du finder",
+            "finder.price": "Fourchette de prix moyenne du finder",
             "finder.keywords": "Top 10 des mots clés dans les finders",
             "byManager": "Voyages par gestionnaire",
             "byApplication": "Demandes par voyage",
@@ -132,7 +144,8 @@
             "dev": "Déviation"
         },
         "user": {
-            "list": "Lister les utilisateurs"
+            "list": "Lister les utilisateurs",
+            "create.manager": "Create gestionnaire"
         },
         "sponsorship": {
             "list": "Lister les sponsorships"
@@ -156,7 +169,11 @@
         "sponsor.sponsorhip.created": "Le parrainage a été créé avec succès",
         "sponsor.sponsorhip.updated": "Le parrainage a été mis à jour avec succès",
         "sponsor.sponsorhip.deleted": "Le parrainage a été supprimé avec succès",
-        "sponsor.sponsorhip.payed": "Le parrainage a été payé correctement"
+        "sponsor.sponsorhip.payed": "Le parrainage a été payé correctement",
+        "profile.edit.correct": "Le profil a été mis à jour avec succès",
+        "trips.create.correct": "Le voyage a été créé avec succès",
+        "trips.update.correct": "Le voyage a été mis à jour avec succès",
+        "trips.delete.correct": "Le voyage a été supprimé avec succès"
     },
     "errorMessages": {
         "auth.registration.failed": "Erreur lors de l'inscription",
@@ -173,9 +190,14 @@
         "validation.url": "Ce champ contient une url incorrecte",
         "validation.tripTicker.exists": "Ce champ contient un ticker de voyage inexistant",
         "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques",
-        "validation.string.minLength": "Vous devez introduire au moins 6 caractères"
+        "validation.string.minLength": "Vous devez introduire au moins 6 caractères",
+        "profile.edit.failed": "Erreur lors de l'actualisation du profil",
+        "trips.create.failed": "Erreur lors de la création du voyage",
+        "trips.update.failed": "Erreur los de la modficiation du voyage",
+        "trips.delete.failed": "Erreur lors de la suppression du voyage"
     },
     "back": "Revenir",
     "save": "Sauvegarder",
-    "cancel": "Annuler"
+    "cancel": "Annuler",
+    "create": "Créer"
 }

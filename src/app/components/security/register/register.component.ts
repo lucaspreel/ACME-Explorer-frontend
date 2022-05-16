@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
-
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -11,12 +9,12 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent  {
- registrationForm: FormGroup;
- roleList: string[];
- returnUrl: string;
+export class RegisterComponent {
+  registrationForm: FormGroup;
+  roleList: string[];
+  returnUrl: string;
 
-  constructor( private authService: AuthService,
+  constructor(private authService: AuthService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router) {

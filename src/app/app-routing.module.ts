@@ -22,14 +22,18 @@ import { ApplicationDisplayComponent } from './components/application/applicatio
 import { ApplicationEditComponent } from './components/application/application-edit/application-edit.component';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProfileDisplayComponent } from './components/profile/profile-display/profile-display.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/trips', pathMatch: 'full'},
   {path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'register', component: RegisterComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'anonymous'}},
   {path: 'profile', children: [
-    {path: ':id', component: ProfileEditComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}}
+    {path: 'display/:id', component: ProfileDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}},
+    {path: 'edit/:id', component: ProfileEditComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'MANAGER|ADMINISTRATOR|EXPLORER|SPONSOR'}}
   ]},
   { path: 'dashboard', component: DashboardComponent, canActivate: [ActorRoleGuard], data: { expectedRole: RolesEnum.anonymous } },
   {
@@ -58,6 +62,21 @@ const appRoutes: Routes = [
     ],
   },
   {
+    path: 'users', children: [
+      { path: '', component: UserListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} },
+      { path: 'create', component: UserCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'ADMINISTRATOR'} }
+    ],
+  },
+  {path: 'sponsorships', children: [
+    {path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
+    {path: ':id', children: [
+      {path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
+      {path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}}
+    ]},
+    {path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR'}},
+    {path: '', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: {expectedRole: 'SPONSOR|ADMINISTRATOR'}}
+  ]},
+  {
     path: 'checkout', children: [
       {
         path: ':id', children: [
@@ -65,19 +84,6 @@ const appRoutes: Routes = [
         ]
       },
     ],
-  },
-  {
-    path: 'sponsorships', children: [
-      { path: 'create', component: SponsorshipCreateComponent, canActivate: [ActorRoleGuard], data: { expectedRole: 'SPONSOR|ADMINISTRATOR' } },
-      {
-        path: ':id', children: [
-          { path: '', component: SponsorshipDisplayComponent, canActivate: [ActorRoleGuard], data: { expectedRole: 'SPONSOR|ADMINISTRATOR' } },
-          { path: 'edit', component: SponsorshipUpdateComponent, canActivate: [ActorRoleGuard], data: { expectedRole: 'SPONSOR|ADMINISTRATOR' } }
-        ]
-      },
-      { path: ':sponsorId', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: { expectedRole: 'SPONSOR|ADMINISTRATOR' } },
-      { path: '', component: SponsorshipListComponent, canActivate: [ActorRoleGuard], data: { expectedRole: 'SPONSOR|ADMINISTRATOR' } }
-    ]
   },
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent },
   { path: 'not-found', component: NotFoundPageComponent },

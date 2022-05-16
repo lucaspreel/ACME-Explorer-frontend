@@ -1,0 +1,17 @@
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" dt-columns="dt-columns" width="100%">
+  <thead>
+    <tr>
+      <th>{{'actor.email' | translate}}</th>
+      <th>{{'actor.name' | translate}}</th>
+      <th>{{'actor.role' | translate}}</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let actor of actors; let i = index">
+        <td>{{actor.email}}</td>
+        <td>{{actor.name}}</td>
+        <td>{{actor.role}}</td>
+      </tr>
+  </tbody>
+</table>

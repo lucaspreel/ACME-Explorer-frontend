@@ -83,4 +83,9 @@ export class TripListComponent extends TranslatableComponent implements OnInit {
       return false;
     }
   }
+
+  deleteTrip(tripId: string) {
+    console.log("delete trip");
+    this.tripService.deleteTrip(tripId);
+  }
 }

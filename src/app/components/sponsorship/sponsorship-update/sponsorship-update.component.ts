@@ -66,7 +66,6 @@ export class SponsorshipUpdateComponent extends TranslatableComponent implements
   }
 
   onUpdate() {
-
     this.sponsorshipService.updateSponsorship(this.sponsorshipForm.value, this.id);
     this.router.navigate(['/sponsorships']);
     this.messageService.notifyMessage('messages.sponsor.sponsorhip.updated', 'alert alert-primary');

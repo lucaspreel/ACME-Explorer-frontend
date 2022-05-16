@@ -14,8 +14,13 @@
         "register.title": "Registro de actor",
         "placeholder.email": "Introduzca su email",
         "placeholder.password": "Introduzca su contraseña",
+        "photo.empty": "Todavía no tienes foto",
+        "address.empty" : "Todavía no tienes dirección",
+        "phone.empty": "Todavía no tienes teléfono",
+        "preferredLanguage.empty": "Todavía no tienes idioma por defecto",
         "profile": {
             "title": "Perfil",
+            "display": "Mostrar mi perfil",
             "edit": "Editar mi perfil"
         }
     },
@@ -62,7 +67,14 @@
         "startDate": "Fecha de inicio",
         "endDate": "Fecha de fin",
         "price": "Precio",
+        "photo": "Foto",
+        "stages": "Etapa(s)",
+        "stage.add": "Añadir una etapa",
+        "stage.title": "Titulo de la etapa",
+        "stage.description": "Descripción de la etapa",
+        "stage.price": "Precio de la etapa",
         "update": "Modificar este viaje",
+        "delete": "Borrar este viaje",
         "apply": "Aplicar"
     },
     "sponsorships": {
@@ -119,7 +131,7 @@
         "dashboard": {
             "menuLink": "Mostrar dashboard",
             "tittle": "Dashboard",
-            "finder.tittle": "Promedio rango de precio del finder",
+            "finder.price": "Promedio rango de precio del finder",
             "finder.keywords": "Top 10 palabras claves en finders",
             "byManager": "Viajes por manager",
             "byApplication": "Solicitudes por viaje",
@@ -131,7 +143,8 @@
             "dev": "Desviación"
         },
         "user": {
-            "list": "Listar los usarios"
+            "list": "Listar los usarios",
+            "create.manager": "Crear manager"
         },
         "sponsorship": {
             "list": "Listar sponsorships"
@@ -155,7 +168,11 @@
         "sponsor.sponsorhip.created": "El patrocinio se ha creado correctamente",
         "sponsor.sponsorhip.updated": "El patrocinio se ha actualizado correctamente",
         "sponsor.sponsorhip.deleted": "El patrocinio se ha borrado correctamente",
-        "sponsor.sponsorhip.payed": "El patrocinio se ha pagado correctamente"
+        "sponsor.sponsorhip.payed": "El patrocinio se ha pagado correctamente",
+        "profile.edit.correct": "Perfil actualizado correctamente",
+        "trips.create.correct": "El viaje se ha creado correctamente",
+        "trips.update.correct": "El viaje se ha actualizado correctamente",
+        "trips.delete.correct": "El viaje se ha borrado correctamente"
     },
     "errorMessages": {
         "auth.registration.failed": "Fallo en el registro",
@@ -172,9 +189,14 @@
         "validation.url": "Este campo contiene una url errónea",
         "validation.tripTicker.exists": "Este campo contiene un ticker de viaje inexistente",
         "validation.pattern.tel": "Este campo sólo puede contener números",
-        "validation.string.minLength": "Debes introducir al menos 6 carateres"
+        "validation.string.minLength": "Debes introducir al menos 6 carateres",
+        "profile.edit.failed": "Fallo en la actualización del perfil",
+        "trips.create.failed": "Fallo en la creación del viaje",
+        "trips.update.failed": "Fallo en la actualización del viaje",
+        "trips.delete.failed": "Fallo al borrar el viaje "
     },
     "back": "Volver",
     "save": "Guardar",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "create": "Crear"
 }

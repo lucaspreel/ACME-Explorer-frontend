@@ -1,29 +1,39 @@
 <main>
 <div class="card mb-3">
-    <h1 class="card-header">{{ 'trip.details' | translate }}</h1>
-    <div class="card-body">
-        <h2 class="card-title"> {{ 'trip.title' | translate }} </h2>
-        <h3 class="card-subtitle text-muted"> {{trip.title}} </h3>
-    </div>
-    <div class="card-body">
-        <h2 class="card-title"> {{ 'trip.description' | translate }} </h2>
-        <h3 class="card-subtitle text-muted"> {{trip.description}} </h3>
-    </div>
-    <div class="card-body">
-        <h2 class="card-title"> {{ 'trip.startDate' | translate }} </h2>
-        <h3 class="card-subtitle text-muted"> {{trip.startDate}} </h3>
-    </div>
-    <div class="card-body">
-        <h2 class="card-title"> {{ 'trip.endDate' | translate }} </h2>
-        <h3 class="card-subtitle text-muted"> {{trip.endDate}} </h3>
-    </div>
-    <div class="card-body">
-        <h2 class="card-title"> {{ 'trip.price' | translate }} </h2>
-        <h3 class="card-subtitle text-muted"> {{trip.price}} € </h3>
-    </div>
+    <h2 class="card-header text-center">{{ 'trip.details' | translate }}</h2>
     <div class="card-body">
         <img class="card-img-top img-fluid" style="width: 200px; display: block;"
             src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title "> {{ 'trip.title' | translate }} </h4>
+        <h6 class="card-subtitle text-muted"> {{trip.title}} </h6>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> {{ 'trip.description' | translate }} </h4>
+        <h6 class="card-subtitle text-muted"> {{trip.description}} </h6>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> {{ 'trip.startDate' | translate }} </h4>
+        <h6 class="card-subtitle text-muted"> {{trip.startDate}} </h6>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> {{ 'trip.endDate' | translate }} </h4>
+        <h6 class="card-subtitle text-muted"> {{trip.endDate}} </h6>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> {{ 'trip.price' | translate }} </h4>
+        <h6 class="card-subtitle text-muted"> {{trip.price}} € </h6>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"> {{ 'trip.stages' | translate }} </h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let stage of getStages(); let i = index">
+                <h5 class="card-text ml-2 m2-1">{{i+1}}) {{stage.title}}</h5>
+                <h6 class="card-text ml-2 m2-1 text-muted">{{stage.description}}</h6>
+                <h6 class="card-text ml-2 m2-1 text-muted">{{stage.price}} €</h6>
+            </li>
+        </ul>
     </div>
 
 </div>

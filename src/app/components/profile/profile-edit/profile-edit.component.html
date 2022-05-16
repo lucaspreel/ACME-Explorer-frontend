@@ -38,7 +38,6 @@
       <input class="form-control" formControlName="photo" (change)="onFileChange($event)" type="file">
     </label>
     <img *ngIf="picture != null" class="card-img-top img-fluid" style="display:block; object-fit:contain;" src="{{picture}}">
-    <img *ngIf="picture === null" class="card-img-top img-fluid" style="width:50%; display:block; object-fit:contain;"src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png">
     <textarea id="showResult" hidden="true"></textarea>
     <br/>
 

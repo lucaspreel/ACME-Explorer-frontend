@@ -45,24 +45,21 @@ export class SponsorshipListComponent extends TranslatableComponent implements O
       pageLength: 10,
       processing: true
     };
-    this.sponsorshipService.getSponsorshipsList()
-    .then((sponsorshipList: Sponsorship[]) => {
-      this.sponsorships = sponsorshipList;
-      this.filterSponsorships();
-      this.dtTrigger.next();
-    });
-  }
 
-  filterSponsorships() {
     this.actorId = this.authService.getUserId();
     this.role = this.authService.getRole();
 
-    if (this.role === 'SPONSOR') {
-      // tslint:disable-next-line: triple-equals
-      const res = this.sponsorships.filter(s => (s.isDeleted === false && s.sponsorId == Number(this.actorId)));
-      this.sponsorships = res;
-    } else {
-      this.sponsorships = [];
-    }
+    this.sponsorshipService.getSponsorshipsList()
+    .then((sponsorshipList: Sponsorship[]) => {
+      if (this.role === 'ADMINISTRATOR') {
+        this.sponsorships = sponsorshipList;
+      } else if (this.role === 'SPONSOR') {
+        const res = sponsorshipList.filter(s => (s.isDeleted === false && s.sponsorId === Number(this.actorId)));
+        this.sponsorships = res;
+      } else {
+        this.sponsorships = [];
+      }
+      this.dtTrigger.next();
+    });
   }
 }
