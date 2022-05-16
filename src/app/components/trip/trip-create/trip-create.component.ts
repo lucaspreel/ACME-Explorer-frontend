@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
@@ -37,15 +37,35 @@ export class TripCreateComponent extends TranslatableComponent implements OnInit
       ticker: [this.getRandomInt(999999).toString()+'-ABCD'],
       title: ['', Validators.required],
       description: ['', Validators.required],
-      price: ['', Validators.required],
+      price: [0],
       picture: [''],
       photoObject: [''],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      stages: [''],
+      stages: this.fb.array([
+        this.fb.group({
+          title: ['', Validators.required],
+          description: ['', Validators.required],
+          price: ['', Validators.required]
+        })
+      ]),
       cancelled: [false],
       managerId: [this.actorId]
     });
+  }
+
+  get stages() {
+    return this.tripForm.get('stages') as FormArray;
+  }
+
+  addStage() {
+    this.stages.push(
+      this.fb.group({
+        title: ['', Validators.required],
+        description: ['', Validators.required],
+        price: ['', Validators.required]
+      })
+    );
   }
 
   onSubmit () {
@@ -54,6 +74,9 @@ export class TripCreateComponent extends TranslatableComponent implements OnInit
       formModel.photoObject = new Picture();
       formModel.photoObject.Buffer = document.getElementById('showResult').textContent;
       formModel.photoObject.contentType = 'image/png';
+    }
+    for (var i=0; i<this.tripForm.value.stages.length; i++) {
+      formModel.price += this.tripForm.value.stages[i].price;
     }
     this.tripService.createTrip(formModel);
   }

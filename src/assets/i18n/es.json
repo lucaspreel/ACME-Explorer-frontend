@@ -69,10 +69,10 @@
         "price": "Precio",
         "photo": "Foto",
         "stages": "Etapa(s)",
-        "stage.add": "Añadir esta etapa",
+        "stage.add": "Añadir una etapa",
         "stage.title": "Titulo de la etapa",
-        "stage.description": "Descripción de la etape",
-        "stage.price": "Precio de la etape",
+        "stage.description": "Descripción de la etapa",
+        "stage.price": "Precio de la etapa",
         "update": "Modificar este viaje",
         "delete": "Borrar este viaje",
         "apply": "Aplicar"
