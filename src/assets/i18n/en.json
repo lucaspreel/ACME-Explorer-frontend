@@ -190,6 +190,7 @@
         "validation.tripTicker.exists": "This field contains an unexisting trip ticker",
         "validation.pattern.tel": "This field can only contain numeric characters",
         "validation.string.minLength": "You must introduce at least 6 characters",
+        "validation.email.not.correct": "This field must be a correct email",
         "profile.edit.failed": "Error when trying to update your profile",
         "trips.create.failed": "Error when trying to create the trip",
         "trips.update.failed": "Error when trying to update the trip",

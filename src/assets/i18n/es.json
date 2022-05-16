@@ -190,6 +190,7 @@
         "validation.tripTicker.exists": "Este campo contiene un ticker de viaje inexistente",
         "validation.pattern.tel": "Este campo sólo puede contener números",
         "validation.string.minLength": "Debes introducir al menos 6 carateres",
+        "validation.email.not.correct": "Este campo debe ser un correo electrónico correcto",
         "profile.edit.failed": "Fallo en la actualización del perfil",
         "trips.create.failed": "Fallo en la creación del viaje",
         "trips.update.failed": "Fallo en la actualización del viaje",

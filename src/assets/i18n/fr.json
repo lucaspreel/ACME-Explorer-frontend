@@ -191,6 +191,7 @@
         "validation.tripTicker.exists": "Ce champ contient un ticker de voyage inexistant",
         "validation.pattern.tel": "Ce champ ne peut contenir que des caractères numériques",
         "validation.string.minLength": "Vous devez introduire au moins 6 caractères",
+        "validation.email.not.correct": "Ce champ doit contenir une adresse mail valide",
         "profile.edit.failed": "Erreur lors de l'actualisation du profil",
         "trips.create.failed": "Erreur lors de la création du voyage",
         "trips.update.failed": "Erreur los de la modficiation du voyage",
