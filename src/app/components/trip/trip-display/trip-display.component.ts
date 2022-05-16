@@ -43,4 +43,8 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
   createSponsorship(): void {
     this.router.navigate(['/trips/' + this.id + '/sponsorship']);
   }
+
+  getStages () {
+    return this.trip.stages;
+  }
 }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
 import { Actor } from '../models/actor.model';
+import { MessageService } from './message.service';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'applications/json'})
@@ -17,7 +18,7 @@ export class ActorService {
   userRole: string;
   private apiUrl = environment.json_server_baseURL + '/actors';
 
-  constructor(private http: HttpClient, private authService: AuthService) {
+  constructor(private http: HttpClient, private authService: AuthService, private messageService: MessageService) {
   }
 
   getActor(id: string) {
@@ -36,9 +37,11 @@ export class ActorService {
       this.http.put(url, body, httpOptions).toPromise()
       .then(res => {
         this.authService.setCurrentActor(actor);
+        this.messageService.notifyMessage('messages.profile.edit.correct', 'alert alert-primary');
         resolve(res);
       }, err => {
         console.log(err);
+        this.messageService.notifyMessage('errorMessages.profile.edit.failed', 'alert alert-danger');
         reject(err);
       });
     });

@@ -23,15 +23,17 @@
       "id": 2
     },
     {
+      "id": 3,
       "name": "Manager",
       "surname": "Manager",
       "email": "manager@gmail.com",
       "password": "manager",
-      "phone": "0000000000",
+      "phone": "0000000004",
       "address": "Manager",
-      "role": "MANAGER",
-      "validated": "true",
-      "id": 3
+      "preferredLanguage": "es",
+      "photo": "",
+      "picture": "",
+      "role": "MANAGER"
     },
     {
       "name": "Admin",
@@ -71,12 +73,34 @@
     {
       "id": 1,
       "ticker": "220422-ABCD",
-      "title": "North of italia",
+      "title": "North of italy",
       "description": "Trip to famous cities of the north of Italia : Turin, Milan, Venice and Florence",
       "price": 1400,
       "picture": "NorthItaly.jpg",
       "startDate": "18/07/2022",
       "endDate": "30/07/2022",
+      "stages": [
+        {
+          "title": "Turin",
+          "description": "Visit of the best places and monuments in Turin (3 days)",
+          "price": 350
+        },
+        {
+          "title": "Milan",
+          "description": "Visit of the best places and monuments in Milan (3 days)",
+          "price": 350
+        },
+        {
+          "title": "Venice",
+          "description": "Visit of the best places and monuments in Venice (3 days)",
+          "price": 350
+        },
+        {
+          "title": "Venice",
+          "description": "Visit of the best places and monuments in Florence (3 days)",
+          "price": 350
+        }
+      ],
       "cancelled": false,
       "managerId": 3
     },
@@ -89,6 +113,23 @@
       "picture": "Germany.jpg",
       "startDate": "04/08/2022",
       "endDate": "12/08/2022",
+      "stages": [
+        {
+          "title": "Berlin",
+          "description": "Visit of the best places and monuments in Berlin (4 days)",
+          "price": 600
+        },
+        {
+          "title": "Hamburg",
+          "description": "Visit of the best places and monuments in Hamburg (2 days)",
+          "price": 250
+        },
+        {
+          "title": "Munich",
+          "description": "Visit of the best places and monuments in Munich (2 days)",
+          "price": 250
+        }
+      ],
       "cancelled": false,
       "managerId": 3
     },
@@ -101,6 +142,13 @@
       "picture": "London.jpg",
       "startDate": "15/08/2022",
       "endDate": "21/08/2022",
+      "stages": [
+        {
+          "title": "London",
+          "description": "Visit of the best places and monuments in London",
+          "price": 750
+        }
+      ],
       "cancelled": false,
       "managerId": 6
     }

@@ -1,7 +1,7 @@
 <main>
     <div class="breadcrumb">
         <legend class="text-center">
-            <h1>{{ 'trips.title' | translate}}</h1>
+            <h2>{{ 'trips.title' | translate}}</h2>
         </legend>
     </div>
 
@@ -12,12 +12,12 @@
     <div *ngIf="trips !== undefined " class="card-deck">
         <div *ngFor="let trip of trips" class="card mb-3">
             <div class="card-header">
-                <h2 class="card-title"> {{trip.title}}</h2>
+                <h3 class="card-title text-center"> {{trip.title}}</h3>
             </div>
             <div class="card-body">
                 <div class="container-fluid text-center">
                     <img class="card-img-top img-fluid mt-3" style="object-fit: contain;"
-                        src="../../../../assets/imgs/{{trip.picture}}" alt="Trip picture">
+                        src="../../../../assets/imgs/{{trip.picture}}" alt="There is no picture for this trip">
                     <span class="badge badge-primary">{{trip.price}} € </span>
                 </div>
             </div>
@@ -32,6 +32,11 @@
                         class="btn btn-primary pull-left col-5 mr-1">
                         <span class="fa fa-pencil" aria-hidden="true"></span>
                         {{ 'trip.update' | translate}}
+                    </a>
+                    <a *ngIf="actor != undefined && trip.managerId == actor.id" (click)="deleteTrip(trip.id)"
+                        class="btn btn-primary pull-left col-5 mr-1">
+                        <span class="fa fa-trash" aria-hidden="true"></span>
+                        {{ 'trip.delete' | translate}}
                     </a>
                     <a *ngIf="this.authService.checkRole('EXPLORER') && isAvailable(trip)" (click)="createApplication(trip.id);" routerLink=""
                         class="btn btn-primary pull-left col-5 ml-1">

@@ -1,3 +1,77 @@
-<p>
-  trip-update works!
-</p>
+<legend>{{'trip.update' | translate}}</legend>
+
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()">
+  <div class="form-group has-danger">
+    <input class="form-control" formControlName="id" type="hidden">
+    <input class="form-control" formControlName="ticker" type="hidden">
+    <input class="form-control" formControlName="stages" type="hidden">
+    <input class="form-control" formControlName="managerId" type="hidden">
+    <input class="form-control" formControlName="cancelled" type="hidden">
+
+    <label class="center-block"> {{ 'trip.title' | translate }}:
+      <input class="form-control" formControlName="title" placeholder="{{ 'trip.title' | translate}}">
+    </label>
+    <div *ngIf="tripForm.get('title').errors &&
+        tripForm.get('title').touched &&
+        tripForm.get('title').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    <br/>
+
+    <label class="center-block"> {{ 'trip.description' | translate }}:
+      <input class="form-control" formControlName="description" placeholder="{{ 'trip.description' | translate}}">
+    </label>
+    <div *ngIf="tripForm.get('description').errors &&
+        tripForm.get('description').touched &&
+        tripForm.get('description').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    <br/>
+
+    <label class="center-block"> {{ 'trip.price' | translate }}:
+      <input class="form-control" formControlName="price" placeholder="{{ 'trip.price' | translate}}" type="number">
+    </label>
+    <div *ngIf="tripForm.get('price').errors &&
+        tripForm.get('price').touched &&
+        tripForm.get('price').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    <br/>
+
+    <label class="center-block"> {{ 'trip.photo' | translate }}:
+      <input class="form-control" formControlName="photo" (change)="onFileChange($event)" type="file">
+    </label>
+    <img *ngIf="picture != null" class="card-img-top img-fluid" style="display:block; object-fit:contain;" src="{{picture}}">
+    <textarea id="showResult" hidden="true"></textarea>
+    <br/>
+
+    <label class="center-block"> {{ 'trip.startDate' | translate }}:
+      <input class="form-control" formControlName="startDate" placeholder="{{ 'trip.startDate' | translate}}" type="date">
+    </label>
+    <div *ngIf="tripForm.get('startDate').errors &&
+        tripForm.get('startDate').touched &&
+        tripForm.get('startDate').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    <br/>
+
+    <label class="center-block"> {{ 'trip.endDate' | translate }}:
+      <input class="form-control" formControlName="endDate" placeholder="{{ 'trip.endDate' | translate}}" type="date">
+    </label>
+    <div *ngIf="tripForm.get('endDate').errors &&
+        tripForm.get('endDate').touched &&
+        tripForm.get('endDate').errors.required" class="text-danger">
+        {{ 'errorMessages.validation.required' | translate }}
+      </div>
+    <br/>
+
+    <button type="submit" class="btn btn-success" [disabled]="tripForm.invalid">
+      {{ 'save' | translate }}
+    </button>&nbsp;
+
+    <button click="goBack()" class="btn btn-primary">
+      {{ 'cancel' | translate }}
+    </button>
+
+  </div>
+</form>

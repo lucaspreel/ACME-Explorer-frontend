@@ -66,8 +66,15 @@
         "description": "Description",
         "startDate": "Start date",
         "endDate": "End date",
+        "photo": "Picture",
         "price": "Price",
+        "stages": "Stage(s)",
+        "stage.add": "Add this stage",
+        "stage.title": "Title of the stage",
+        "stage.description": "Description of the stage",
+        "stage.price": "Price of the stage",
         "update": "Update this trip",
+        "delete": "Delete this trip",
         "apply": "Apply"
     },
     "sponsorships": {
@@ -161,7 +168,11 @@
         "sponsor.sponsorhip.created": "The sponsorhip has been created correctly",
         "sponsor.sponsorhip.updated": "The sponsorhip has been updated correctly",
         "sponsor.sponsorhip.deleted": "The sponsorhip has been deleted correctly",
-        "sponsor.sponsorhip.payed": "The sponsorhip has been payed correctly"
+        "sponsor.sponsorhip.payed": "The sponsorhip has been payed correctly",
+        "profile.edit.correct": "Your profile has been updated correctly",
+        "trips.create.correct": "The trip has been created correctly",
+        "trips.update.correct": "The trip has been updated correctly",
+        "trips.delete.correct": "The trip has been deleted correctly"
     },
     "errorMessages": {
         "auth.registration.failed": "Registration failed",
@@ -178,9 +189,14 @@
         "validation.url": "This field contains an incorrect url",
         "validation.tripTicker.exists": "This field contains an unexisting trip ticker",
         "validation.pattern.tel": "This field can only contain numeric characters",
-        "validation.string.minLength": "You must introduce at least 6 characters"
+        "validation.string.minLength": "You must introduce at least 6 characters",
+        "profile.edit.failed": "Error when trying to update your profile",
+        "trips.create.failed": "Error when trying to create the trip",
+        "trips.update.failed": "Error when trying to update the trip",
+        "trips.delete.failed": "Error when trying to delete the trip"
     },
     "back": "Return",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "create": "Create"
 }
