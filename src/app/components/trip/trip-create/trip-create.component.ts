@@ -78,5 +78,4 @@ export class TripCreateComponent extends TranslatableComponent implements OnInit
       reader.readAsDataURL(file);
     }
   }
-
 }
