@@ -91,7 +91,7 @@ registerLocaleData(locales, 'fr');
     ProfileEditComponent,
     ApplicationCreateComponent,
     UserListComponent,
-    UserCreateComponent
+    UserCreateComponent,
     ProfileDisplayComponent
   ],
   imports: [

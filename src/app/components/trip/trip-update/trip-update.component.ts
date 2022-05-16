@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Picture } from 'src/app/models/picture.model';
@@ -40,12 +40,12 @@ export class TripUpdateComponent extends TranslatableComponent implements OnInit
       ticker: [''],
       title: ['', Validators.required],
       description: ['', Validators.required],
-      price: ['', Validators.required],
+      price: [''],
       picture: [''],
       photoObject: [''],
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      stages: [''],
+      stages: this.fb.array([]),
       cancelled: [''],
       managerId: ['']
     });
@@ -63,6 +63,10 @@ export class TripUpdateComponent extends TranslatableComponent implements OnInit
         this.tripForm.controls['photoObject'].setValue(trip.photoObject);
         this.tripForm.controls['startDate'].setValue(trip.startDate);
         this.tripForm.controls['endDate'].setValue(trip.endDate);
+        for (let stage of trip.stages) {
+          this.addStage(stage.title, stage.description, stage.price);
+        };
+        console.log(this.tripForm.value.stages);
         this.tripForm.controls['cancelled'].setValue(trip.cancelled);
         this.tripForm.controls['managerId'].setValue(trip.managerId);
         this.picture = trip.photoObject.Buffer;
@@ -71,12 +75,40 @@ export class TripUpdateComponent extends TranslatableComponent implements OnInit
     });
   }
 
+  get stages() {
+    return this.tripForm.get('stages') as FormArray;
+  }
+
+  addStage(title: string, description: string, price: number) {
+    this.stages.push(
+      this.fb.group({
+        title: [title, Validators.required],
+        description: [description, Validators.required],
+        price: [price, Validators.required]
+      })
+    );
+  }
+
+  addEmptyStage() {
+    this.stages.push(
+      this.fb.group({
+        title: ['', Validators.required],
+        description: ['', Validators.required],
+        price: ['', Validators.required]
+      })
+    );
+  }
+
   onSubmit() {
     const formModel = this.tripForm.value;
     if (this.photoChanged) {
       formModel.photoObject = new Picture();
       formModel.photoObject.Buffer = document.getElementById('showResult').textContent;
       formModel.photoObject.contentType = 'image/png';
+    }
+    formModel.price = 0;
+    for (var i=0; i<this.tripForm.value.stages.length; i++) {
+      formModel.price += this.tripForm.value.stages[i].price;
     }
     this.tripService.updateTrip(formModel, this.idTrip);
   }

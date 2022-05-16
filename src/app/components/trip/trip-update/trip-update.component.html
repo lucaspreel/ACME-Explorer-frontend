@@ -8,9 +8,8 @@
     <input class="form-control" formControlName="managerId" type="hidden">
     <input class="form-control" formControlName="cancelled" type="hidden">
 
-    <label class="center-block"> {{ 'trip.title' | translate }}:
-      <input class="form-control" formControlName="title" placeholder="{{ 'trip.title' | translate}}">
-    </label>
+    <label class="form-control-label"> {{ 'trip.title' | translate }}</label>
+    <input class="form-control" formControlName="title" placeholder="{{ 'trip.title' | translate}}">
     <div *ngIf="tripForm.get('title').errors &&
         tripForm.get('title').touched &&
         tripForm.get('title').errors.required" class="text-danger">
@@ -18,9 +17,8 @@
       </div>
     <br/>
 
-    <label class="center-block"> {{ 'trip.description' | translate }}:
-      <input class="form-control" formControlName="description" placeholder="{{ 'trip.description' | translate}}">
-    </label>
+    <label class="form-control-label"> {{ 'trip.description' | translate }}</label>
+    <input class="form-control" formControlName="description" placeholder="{{ 'trip.description' | translate}}">
     <div *ngIf="tripForm.get('description').errors &&
         tripForm.get('description').touched &&
         tripForm.get('description').errors.required" class="text-danger">
@@ -28,26 +26,14 @@
       </div>
     <br/>
 
-    <label class="center-block"> {{ 'trip.price' | translate }}:
-      <input class="form-control" formControlName="price" placeholder="{{ 'trip.price' | translate}}" type="number">
-    </label>
-    <div *ngIf="tripForm.get('price').errors &&
-        tripForm.get('price').touched &&
-        tripForm.get('price').errors.required" class="text-danger">
-        {{ 'errorMessages.validation.required' | translate }}
-      </div>
-    <br/>
-
-    <label class="center-block"> {{ 'trip.photo' | translate }}:
-      <input class="form-control" formControlName="photo" (change)="onFileChange($event)" type="file">
-    </label>
+    <label class="form-control-label"> {{ 'trip.photo' | translate }}</label>
+    <input class="form-control" formControlName="photo" (change)="onFileChange($event)" type="file">
     <img *ngIf="picture != null" class="card-img-top img-fluid" style="display:block; object-fit:contain;" src="{{picture}}">
     <textarea id="showResult" hidden="true"></textarea>
     <br/>
 
-    <label class="center-block"> {{ 'trip.startDate' | translate }}:
-      <input class="form-control" formControlName="startDate" placeholder="{{ 'trip.startDate' | translate}}" type="date">
-    </label>
+    <label class="form-control-label"> {{ 'trip.startDate' | translate }}</label>
+    <input class="form-control" formControlName="startDate" placeholder="{{ 'trip.startDate' | translate}}" type="date">
     <div *ngIf="tripForm.get('startDate').errors &&
         tripForm.get('startDate').touched &&
         tripForm.get('startDate').errors.required" class="text-danger">
@@ -55,14 +41,43 @@
       </div>
     <br/>
 
-    <label class="center-block"> {{ 'trip.endDate' | translate }}:
-      <input class="form-control" formControlName="endDate" placeholder="{{ 'trip.endDate' | translate}}" type="date">
-    </label>
+    <label class="form-control-label"> {{ 'trip.endDate' | translate }}</label>
+    <input class="form-control" formControlName="endDate" placeholder="{{ 'trip.endDate' | translate}}" type="date">
     <div *ngIf="tripForm.get('endDate').errors &&
         tripForm.get('endDate').touched &&
         tripForm.get('endDate').errors.required" class="text-danger">
         {{ 'errorMessages.validation.required' | translate }}
       </div>
+    <br/>
+
+    <ng-container formArrayName="stages">
+      <h4> {{'trip.stages' | translate}} </h4> 
+      
+      <div *ngFor="let stage of stages.controls; let i=index">
+        <h6>{{i+1}})</h6>
+
+        <ng-container [formGroupName]="i">
+          <div class="form-group has-danger">
+            <label for="titleStage-{{ i }}" class="form-control-label">{{'trip.stage.title' | translate}}</label>
+            <input id="titleStage-{{ i }}" type="text" formControlName="title" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="descriptionStage-{{ i }}" class="form-control-label">{{'trip.stage.description' | translate}}</label>
+            <input id="descriptionStage-{{ i }}" type="text" formControlName="description" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="priceStage-{{ i }}" class="form-control-label">{{'trip.stage.price' | translate}}</label>
+            <input id="priceStage-{{ i }}" type="number" formControlName="price" class="form-control">
+          </div>
+        </ng-container>
+
+      </div>
+      
+      <button type="button" class="btn btn-primary" (click)="addEmptyStage()">{{'trip.stage.add' | translate}}</button>
+    </ng-container>
+    <br/>
     <br/>
 
     <button type="submit" class="btn btn-success" [disabled]="tripForm.invalid">

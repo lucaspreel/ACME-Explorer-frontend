@@ -49,15 +49,35 @@
       </div>
     </div>
 
-    <div class="form-group has-danger">
-      <label for="price" class="form-control-label">{{'trip.price' | translate}}</label>
-      <input id="price" type="number" formControlName="price" class="form-control">
-      <div *ngIf="tripForm.get('price').errors &&
-        tripForm.get('price').touched &&
-        tripForm.get('price').errors.required" class="text-danger">
-        {{ 'errorMessages.validation.required' | translate }}
+    <ng-container formArrayName="stages">
+      <h4> {{'trip.stages' | translate}} </h4> 
+      
+      <div *ngFor="let stage of stages.controls; let i=index">
+        <h6>{{i+1}})</h6>
+
+        <ng-container [formGroupName]="i">
+          <div class="form-group has-danger">
+            <label for="titleStage-{{ i }}" class="form-control-label">{{'trip.stage.title' | translate}}</label>
+            <input id="titleStage-{{ i }}" type="text" formControlName="title" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="descriptionStage-{{ i }}" class="form-control-label">{{'trip.stage.description' | translate}}</label>
+            <input id="descriptionStage-{{ i }}" type="text" formControlName="description" class="form-control">
+          </div>
+
+          <div class="form-group has-danger">
+            <label for="priceStage-{{ i }}" class="form-control-label">{{'trip.stage.price' | translate}}</label>
+            <input id="priceStage-{{ i }}" type="number" formControlName="price" class="form-control">
+          </div>
+        </ng-container>
+
       </div>
-    </div>
+      
+      <button type="button" class="btn btn-primary" (click)="addStage()">{{'trip.stage.add' | translate}}</button>
+    </ng-container>
+    <br/>
+    <br/>
     
     <button type="submit" class="btn btn-success" [disabled]="tripForm.invalid">
       {{ 'create' | translate }}
