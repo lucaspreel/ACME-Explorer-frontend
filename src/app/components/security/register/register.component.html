@@ -9,10 +9,12 @@
         </option>
       </select>
     </div>
+    <div *ngIf="registrationForm.controls.role.touched && registrationForm.controls.role.hasError('required')">Required</div>
 
     <div>
       <label for="name" class="form-control-label">{{'actor.name' | translate}}</label>
-      <input id="name " type="text" formControlName="name" class="form-control">
+      <input id="name" type="text" formControlName="name" class="form-control">
+      <div *ngIf="registrationForm.controls.name.touched && registrationForm.controls.name.hasError('required')">Required</div>
     </div>
 
 
@@ -24,9 +26,8 @@
     <div class="form-group has-danger">
       <label for="phone" class="form-control-label">{{'actor.phone' | translate}}</label>
       <input id="phone" type="text" formControlName="phone" class="form-control">
+      <div *ngIf="registrationForm.controls.phone.touched && registrationForm.controls.phone.hasError('required')">Required</div>
     </div>
-
-
 
     <div class="form-group has-danger">
       <label for="address" class="form-control-label">{{'actor.address' | translate}}</label>
@@ -37,14 +38,18 @@
     <div class="form-group has-danger">
       <label for="email" class="form-control-label">{{'actor.email' | translate}}</label>
       <input id="email" type="text" formControlName="email" class="form-control">
+      <div *ngIf="registrationForm.controls.email.touched && registrationForm.controls.email.hasError('required')">Required</div>
+      <div *ngIf="registrationForm.controls.email.touched && registrationForm.controls.email.hasError('email')">Bad email</div>
     </div>
 
     <div class="form-group has-danger">
       <label for="password" class="form-control-label">{{'actor.password' | translate}}</label>
       <input id="password" type="password" formControlName="password" class="form-control">
+      <div *ngIf="registrationForm.controls.phone.touched && registrationForm.controls.phone.hasError('required')">Required</div>
+      <div *ngIf="registrationForm.controls.phone.touched && registrationForm.controls.phone.hasError('minlength')">Longitud minima 6 caracteres</div>
     </div>
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">
       {{'security.register' | translate}}
     </button>
   </fieldset>
