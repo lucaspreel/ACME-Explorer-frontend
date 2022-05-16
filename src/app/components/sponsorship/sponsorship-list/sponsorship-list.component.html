@@ -4,7 +4,7 @@
       <th>{{'sponsorships.attributes.tripTicker' | translate}}</th>
       <th>{{'sponsorships.attributes.banner' | translate}}</th>
       <th>{{'sponsorships.attributes.page' | translate}}</th>
-      <th>{{'sponsorships.sponsor.actions' | translate}}</th>
+      <th *ngIf="role === 'SPONSOR'">{{'sponsorships.sponsor.actions' | translate}}</th>
     </tr>
   </thead>
 
@@ -13,7 +13,7 @@
         <td>{{sponsorship.tripTicker}}</td>
         <td><a href="{{sponsorship.banner}}">{{sponsorship.banner}}</a></td>
         <td><a href="{{sponsorship.page}}">{{sponsorship.page}}</a></td>
-        <td>
+        <td *ngIf="role === 'SPONSOR'">
           <a routerLink="/sponsorships/{{sponsorship.id}}"><i class="fa fa-search-plus" aria-hidden="true"></i></a>&nbsp;
           <a routerLink="/sponsorships/{{sponsorship.id}}/edit"><i class="fa fa-pencil"></i></a>&nbsp;
           <a routerLink="/sponsorships/" (click)="removeSponsorship(i)"><i class="fa fa-trash"></i></a>&nbsp;

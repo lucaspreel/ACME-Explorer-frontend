@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { SponsorshipService } from 'src/app/services/sponsorship.service';
 import { TripService } from 'src/app/services/trip.service';
+import { ValidateURL } from '../../shared/urlValidator.validator';
+import { ExistingTripTicker } from '../../shared/existingTripTicker.validator';
 
 @Component({
   selector: 'app-sponsorship-create',
@@ -29,55 +31,40 @@ export class SponsorshipCreateComponent implements OnInit {
 
 
   createForm() {
+    this.sponsorshipForm = this.fb.group({
+      banner: ['', [Validators.required, ValidateURL]],
+      page: ['', [Validators.required, ValidateURL]],
+      tripTicker: ['', [Validators.required], [ExistingTripTicker(this.tripService)]],
+      sponsorId: [''],
+      isPayed: [''],
+      isDeleted: ['']
+    });
+
+    this.sponsorshipForm.controls['isPayed'].setValue(false);
+    this.sponsorshipForm.controls['sponsorId'].setValue(Number(this.actorId));
+    this.sponsorshipForm.controls['isDeleted'].setValue(false);
+
     if (this.tripTicker) {
-      this.sponsorshipForm = this.fb.group({
-        banner: [''],
-        page: [''],
-        tripTicker: [this.tripTicker],
-        sponsorId: [this.actorId],
-        isPayed: [false],
-        isDeleted: [false]
-      });
-    } else {
-      this.sponsorshipForm = this.fb.group({
-        banner: [''],
-        page: [''],
-        tripTicker: [''],
-        sponsorId: [this.actorId],
-        isPayed: [false],
-        isDeleted: [false]
-      });
+      this.sponsorshipForm.controls['tripTicker'].setValue(this.tripTicker);
+      this.sponsorshipForm.controls['tripTicker'].disable();
     }
   }
 
   onCreate() {
     if (this.tripTicker) {
-      this.sponsorshipService.createSponsorship(this.sponsorshipForm.value);
-      this.messageService.notifyMessage('messages.sponsor.sponsorhip.created', 'alert alert-primary');
-    } else {
-      this.tripService.getTrips()
-      .then((val) => {
-        const trips = val;
-        const res = trips.find(t => t.ticker === this.sponsorshipForm.value.tripTicker);
-        if (!res) {
-          this.messageService.notifyMessage('errorMessages.sponsor.trip.not.found', 'alert alert-danger');
-        } else {
-          this.sponsorshipService.createSponsorship(this.sponsorshipForm.value);
-          this.router.navigateByUrl(`sponsorships`);
-          this.messageService.notifyMessage('messages.sponsor.sponsorhip.created', 'alert alert-primary');
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      this.sponsorshipForm.controls['tripTicker'].enable();
     }
+    this.sponsorshipService.createSponsorship(this.sponsorshipForm.value);
+    this.router.navigateByUrl(`sponsorships`);
+    this.messageService.notifyMessage('messages.sponsor.sponsorhip.created', 'alert alert-primary');
   }
 
   ngOnInit() {
     this.actorId = this.authService.getUserId();
     this.role = this.authService.getRole();
     this.id = this.route.snapshot.params['id'];
-    this.tripService.getTrip(this.id)
+    if (this.id) {
+      this.tripService.getTrip(this.id)
       .then((val) => {
         this.tripTicker = val.ticker;
       })
@@ -86,6 +73,9 @@ export class SponsorshipCreateComponent implements OnInit {
       }).then(_ => {
         this.createForm();
       });
+    } else {
+      this.createForm();
+    }
   }
 
 }

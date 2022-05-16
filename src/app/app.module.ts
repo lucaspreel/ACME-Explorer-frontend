@@ -37,6 +37,8 @@ import { ApplicationEditComponent } from './components/application/application-e
 import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
 import { ProfileEditComponent } from './components/profile/profile-edit/profile-edit.component';
 import { ApplicationCreateComponent } from './components/application/application-create/application-create.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
+import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { ProfileDisplayComponent } from './components/profile/profile-display/profile-display.component';
@@ -87,6 +89,9 @@ registerLocaleData(locales, 'fr');
     ApplicationCreateComponent,
     CheckoutComponent,
     ProfileEditComponent,
+    ApplicationCreateComponent,
+    UserListComponent,
+    UserCreateComponent
     ProfileDisplayComponent
   ],
   imports: [

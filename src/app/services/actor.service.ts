@@ -19,7 +19,6 @@ export class ActorService {
   private apiUrl = environment.json_server_baseURL + '/actors';
 
   constructor(private http: HttpClient, private authService: AuthService, private messageService: MessageService) {
-    
   }
 
   getActor(id: string) {
@@ -46,5 +45,9 @@ export class ActorService {
         reject(err);
       });
     });
+  }
+
+  getActors() {
+    return this.http.get<Actor[]>(this.apiUrl).toPromise();
   }
 }

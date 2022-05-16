@@ -28,7 +28,7 @@ export class TripService {
 
   getTripsOfAManager(managerId: string) {
     const url = `${environment.json_server_baseURL + '/trips?managerId=' + managerId}`;
-    return this.http.get<Trip[]>(url).toPromise(); 
+    return this.http.get<Trip[]>(url).toPromise();
   }
 
   createTrip(trip: Trip): void {

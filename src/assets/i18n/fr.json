@@ -132,7 +132,7 @@
         "dashboard": {
             "menuLink": "Afficher le dashboard",
             "tittle": "Dashboard",
-            "finder.tittle": "Fourchette de prix moyenne du finder",
+            "finder.price": "Fourchette de prix moyenne du finder",
             "finder.keywords": "Top 10 des mots clés dans les finders",
             "byManager": "Voyages par gestionnaire",
             "byApplication": "Demandes par voyage",
@@ -144,7 +144,8 @@
             "dev": "Déviation"
         },
         "user": {
-            "list": "Lister les utilisateurs"
+            "list": "Lister les utilisateurs",
+            "create.manager": "Create gestionnaire"
         },
         "sponsorship": {
             "list": "Lister les sponsorships"

@@ -143,7 +143,8 @@
             "dev": "Deviation"
         },
         "user": {
-            "list": "List users"
+            "list": "List users",
+            "create.manager": "Create manager"
         },
         "sponsorship": {
             "list": "List sponsorship"
